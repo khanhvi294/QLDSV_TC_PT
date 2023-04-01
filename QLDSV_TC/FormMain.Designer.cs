@@ -32,17 +32,6 @@ namespace QLDSV_TC
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.HeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.MA = new System.Windows.Forms.ToolStripStatusLabel();
-            this.HOTEN = new System.Windows.Forms.ToolStripStatusLabel();
-            this.NHOM = new System.Windows.Forms.ToolStripStatusLabel();
-            this.BaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.CauHinh = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.BtnSinhVien = new DevExpress.XtraBars.BarButtonItem();
             this.BtnMonHoc = new DevExpress.XtraBars.BarButtonItem();
             this.BtnLopTC = new DevExpress.XtraBars.BarButtonItem();
@@ -59,6 +48,17 @@ namespace QLDSV_TC
             this.BtnTaoTK = new DevExpress.XtraBars.BarButtonItem();
             this.BtnDoiMK = new DevExpress.XtraBars.BarButtonItem();
             this.BtnDangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.HeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.BaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.CauHinh = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.MA = new System.Windows.Forms.ToolStripStatusLabel();
+            this.HOTEN = new System.Windows.Forms.ToolStripStatusLabel();
+            this.NHOM = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -87,20 +87,164 @@ namespace QLDSV_TC
             this.BtnDoiMK,
             this.BtnDangXuat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.HeThong,
             this.BaoCao,
             this.CauHinh});
-            this.ribbonControl1.Size = new System.Drawing.Size(1656, 315);
+            this.ribbonControl1.Size = new System.Drawing.Size(966, 209);
+            // 
+            // BtnSinhVien
+            // 
+            this.BtnSinhVien.Caption = "Sinh Viên";
+            this.BtnSinhVien.Id = 3;
+            this.BtnSinhVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSinhVien.ImageOptions.Image")));
+            this.BtnSinhVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnSinhVien.ImageOptions.LargeImage")));
+            this.BtnSinhVien.LargeWidth = 60;
+            this.BtnSinhVien.Name = "BtnSinhVien";
+            // 
+            // BtnMonHoc
+            // 
+            this.BtnMonHoc.Caption = "Môn Học";
+            this.BtnMonHoc.Id = 4;
+            this.BtnMonHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnMonHoc.ImageOptions.Image")));
+            this.BtnMonHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnMonHoc.ImageOptions.LargeImage")));
+            this.BtnMonHoc.LargeWidth = 60;
+            this.BtnMonHoc.Name = "BtnMonHoc";
+            // 
+            // BtnLopTC
+            // 
+            this.BtnLopTC.Caption = "Lớp TC";
+            this.BtnLopTC.Id = 5;
+            this.BtnLopTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnLopTC.ImageOptions.Image")));
+            this.BtnLopTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnLopTC.ImageOptions.LargeImage")));
+            this.BtnLopTC.LargeWidth = 60;
+            this.BtnLopTC.Name = "BtnLopTC";
+            // 
+            // BtnLopHoc
+            // 
+            this.BtnLopHoc.Caption = "Lớp Học";
+            this.BtnLopHoc.Id = 6;
+            this.BtnLopHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnLopHoc.ImageOptions.Image")));
+            this.BtnLopHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnLopHoc.ImageOptions.LargeImage")));
+            this.BtnLopHoc.LargeWidth = 60;
+            this.BtnLopHoc.Name = "BtnLopHoc";
+            // 
+            // BtnDiem
+            // 
+            this.BtnDiem.Caption = "Điểm";
+            this.BtnDiem.Id = 7;
+            this.BtnDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnDiem.ImageOptions.Image")));
+            this.BtnDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDiem.ImageOptions.LargeImage")));
+            this.BtnDiem.LargeWidth = 60;
+            this.BtnDiem.Name = "BtnDiem";
+            // 
+            // BtnHocPhi
+            // 
+            this.BtnHocPhi.Caption = "Học Phí";
+            this.BtnHocPhi.Id = 8;
+            this.BtnHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnHocPhi.ImageOptions.Image")));
+            this.BtnHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnHocPhi.ImageOptions.LargeImage")));
+            this.BtnHocPhi.LargeWidth = 60;
+            this.BtnHocPhi.Name = "BtnHocPhi";
+            // 
+            // BtnDangKy
+            // 
+            this.BtnDangKy.Caption = "Đăng ký";
+            this.BtnDangKy.Id = 9;
+            this.BtnDangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnDangKy.ImageOptions.Image")));
+            this.BtnDangKy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDangKy.ImageOptions.LargeImage")));
+            this.BtnDangKy.LargeWidth = 60;
+            this.BtnDangKy.Name = "BtnDangKy";
+            // 
+            // BtnDSLTC
+            // 
+            this.BtnDSLTC.Caption = "In DSLTC";
+            this.BtnDSLTC.Id = 10;
+            this.BtnDSLTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnDSLTC.ImageOptions.Image")));
+            this.BtnDSLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDSLTC.ImageOptions.LargeImage")));
+            this.BtnDSLTC.LargeWidth = 60;
+            this.BtnDSLTC.Name = "BtnDSLTC";
+            // 
+            // BtnDKLTC
+            // 
+            this.BtnDKLTC.Caption = "In DSSV DKLTC";
+            this.BtnDKLTC.Id = 11;
+            this.BtnDKLTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnDKLTC.ImageOptions.Image")));
+            this.BtnDKLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDKLTC.ImageOptions.LargeImage")));
+            this.BtnDKLTC.LargeWidth = 60;
+            this.BtnDKLTC.Name = "BtnDKLTC";
+            // 
+            // BtnBDHM
+            // 
+            this.BtnBDHM.Caption = "In BDHM";
+            this.BtnBDHM.Id = 12;
+            this.BtnBDHM.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnBDHM.ImageOptions.Image")));
+            this.BtnBDHM.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnBDHM.ImageOptions.LargeImage")));
+            this.BtnBDHM.LargeWidth = 60;
+            this.BtnBDHM.Name = "BtnBDHM";
+            // 
+            // BtnPhieuDiem
+            // 
+            this.BtnPhieuDiem.Caption = "In Phiếu Điểm SV";
+            this.BtnPhieuDiem.Id = 13;
+            this.BtnPhieuDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnPhieuDiem.ImageOptions.Image")));
+            this.BtnPhieuDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnPhieuDiem.ImageOptions.LargeImage")));
+            this.BtnPhieuDiem.LargeWidth = 60;
+            this.BtnPhieuDiem.Name = "BtnPhieuDiem";
+            // 
+            // BtnHP
+            // 
+            this.BtnHP.Caption = "In DS Học Phí";
+            this.BtnHP.Id = 14;
+            this.BtnHP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnHP.ImageOptions.Image")));
+            this.BtnHP.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnHP.ImageOptions.LargeImage")));
+            this.BtnHP.LargeWidth = 60;
+            this.BtnHP.Name = "BtnHP";
+            // 
+            // BtnBangDiem
+            // 
+            this.BtnBangDiem.Caption = "In Bảng Điểm TK";
+            this.BtnBangDiem.Id = 15;
+            this.BtnBangDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnBangDiem.ImageOptions.Image")));
+            this.BtnBangDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnBangDiem.ImageOptions.LargeImage")));
+            this.BtnBangDiem.LargeWidth = 60;
+            this.BtnBangDiem.Name = "BtnBangDiem";
+            // 
+            // BtnTaoTK
+            // 
+            this.BtnTaoTK.Caption = "Tạo Tài Khoản";
+            this.BtnTaoTK.Id = 16;
+            this.BtnTaoTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTaoTK.ImageOptions.Image")));
+            this.BtnTaoTK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnTaoTK.ImageOptions.LargeImage")));
+            this.BtnTaoTK.LargeWidth = 70;
+            this.BtnTaoTK.Name = "BtnTaoTK";
+            // 
+            // BtnDoiMK
+            // 
+            this.BtnDoiMK.Caption = "Đổi Mật Khẩu";
+            this.BtnDoiMK.Id = 17;
+            this.BtnDoiMK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnDoiMK.ImageOptions.Image")));
+            this.BtnDoiMK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDoiMK.ImageOptions.LargeImage")));
+            this.BtnDoiMK.LargeWidth = 70;
+            this.BtnDoiMK.Name = "BtnDoiMK";
+            // 
+            // BtnDangXuat
+            // 
+            this.BtnDangXuat.Caption = "Đăng xuất";
+            this.BtnDangXuat.Id = 18;
+            this.BtnDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnDangXuat.ImageOptions.Image")));
+            this.BtnDangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDangXuat.ImageOptions.LargeImage")));
+            this.BtnDangXuat.LargeWidth = 70;
+            this.BtnDangXuat.Name = "BtnDangXuat";
             // 
             // HeThong
             // 
             this.HeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
-            this.HeThong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage1.ImageOptions.Image")));
+            this.HeThong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("HeThong.ImageOptions.Image")));
             this.HeThong.Name = "HeThong";
             this.HeThong.Text = "Hệ Thống";
             // 
@@ -116,46 +260,11 @@ namespace QLDSV_TC
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Quản lý dữ liệu";
             // 
-            // xtraTabbedMdiManager1
-            // 
-            this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MA,
-            this.HOTEN,
-            this.NHOM});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 650);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1656, 42);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // MA
-            // 
-            this.MA.Name = "MA";
-            this.MA.Size = new System.Drawing.Size(52, 32);
-            this.MA.Text = "MA";
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.Name = "HOTEN";
-            this.HOTEN.Size = new System.Drawing.Size(92, 32);
-            this.HOTEN.Text = "HOTEN";
-            // 
-            // NHOM
-            // 
-            this.NHOM.Name = "NHOM";
-            this.NHOM.Size = new System.Drawing.Size(90, 32);
-            this.NHOM.Text = "NHOM";
-            // 
             // BaoCao
             // 
             this.BaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2});
-            this.BaoCao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage2.ImageOptions.Image")));
+            this.BaoCao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BaoCao.ImageOptions.Image")));
             this.BaoCao.Name = "BaoCao";
             this.BaoCao.Text = "Báo Cáo";
             // 
@@ -173,7 +282,7 @@ namespace QLDSV_TC
             // 
             this.CauHinh.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3});
-            this.CauHinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage3.ImageOptions.Image")));
+            this.CauHinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("CauHinh.ImageOptions.Image")));
             this.CauHinh.Name = "CauHinh";
             this.CauHinh.Text = "Cấu Hình";
             // 
@@ -185,162 +294,56 @@ namespace QLDSV_TC
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Chức năng";
             // 
-            // BtnSinhVien
+            // xtraTabbedMdiManager1
             // 
-            this.BtnSinhVien.Caption = "Sinh Viên";
-            this.BtnSinhVien.Id = 3;
-            this.BtnSinhVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.BtnSinhVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.BtnSinhVien.LargeWidth = 60;
-            this.BtnSinhVien.Name = "BtnSinhVien";
+            this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // BtnMonHoc
+            // statusStrip1
             // 
-            this.BtnMonHoc.Caption = "Môn Học";
-            this.BtnMonHoc.Id = 4;
-            this.BtnMonHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.BtnMonHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.BtnMonHoc.LargeWidth = 60;
-            this.BtnMonHoc.Name = "BtnMonHoc";
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MA,
+            this.HOTEN,
+            this.NHOM});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 417);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 8, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(966, 26);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // BtnLopTC
+            // MA
             // 
-            this.BtnLopTC.Caption = "Lớp TC";
-            this.BtnLopTC.Id = 5;
-            this.BtnLopTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.BtnLopTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.BtnLopTC.LargeWidth = 60;
-            this.BtnLopTC.Name = "BtnLopTC";
+            this.MA.Name = "MA";
+            this.MA.Size = new System.Drawing.Size(32, 20);
+            this.MA.Text = "MA";
             // 
-            // BtnLopHoc
+            // HOTEN
             // 
-            this.BtnLopHoc.Caption = "Lớp Học";
-            this.BtnLopHoc.Id = 6;
-            this.BtnLopHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
-            this.BtnLopHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage1")));
-            this.BtnLopHoc.LargeWidth = 60;
-            this.BtnLopHoc.Name = "BtnLopHoc";
+            this.HOTEN.Name = "HOTEN";
+            this.HOTEN.Size = new System.Drawing.Size(57, 20);
+            this.HOTEN.Text = "HOTEN";
             // 
-            // BtnDiem
+            // NHOM
             // 
-            this.BtnDiem.Caption = "Điểm";
-            this.BtnDiem.Id = 7;
-            this.BtnDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image2")));
-            this.BtnDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage2")));
-            this.BtnDiem.LargeWidth = 60;
-            this.BtnDiem.Name = "BtnDiem";
+            this.NHOM.Name = "NHOM";
+            this.NHOM.Size = new System.Drawing.Size(55, 20);
+            this.NHOM.Text = "NHOM";
             // 
-            // BtnHocPhi
+            // FormMain
             // 
-            this.BtnHocPhi.Caption = "Học Phí";
-            this.BtnHocPhi.Id = 8;
-            this.BtnHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image3")));
-            this.BtnHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage3")));
-            this.BtnHocPhi.LargeWidth = 60;
-            this.BtnHocPhi.Name = "BtnHocPhi";
-            // 
-            // BtnDangKy
-            // 
-            this.BtnDangKy.Caption = "Đăng ký";
-            this.BtnDangKy.Id = 9;
-            this.BtnDangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image4")));
-            this.BtnDangKy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage4")));
-            this.BtnDangKy.LargeWidth = 60;
-            this.BtnDangKy.Name = "BtnDangKy";
-            // 
-            // BtnDSLTC
-            // 
-            this.BtnDSLTC.Caption = "In DSLTC";
-            this.BtnDSLTC.Id = 10;
-            this.BtnDSLTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image5")));
-            this.BtnDSLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage5")));
-            this.BtnDSLTC.LargeWidth = 60;
-            this.BtnDSLTC.Name = "BtnDSLTC";
-            // 
-            // BtnDKLTC
-            // 
-            this.BtnDKLTC.Caption = "In DSSV DKLTC";
-            this.BtnDKLTC.Id = 11;
-            this.BtnDKLTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnDKLTC.ImageOptions.Image")));
-            this.BtnDKLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDKLTC.ImageOptions.LargeImage")));
-            this.BtnDKLTC.LargeWidth = 60;
-            this.BtnDKLTC.Name = "BtnDKLTC";
-            // 
-            // BtnBDHM
-            // 
-            this.BtnBDHM.Caption = "In BDHM";
-            this.BtnBDHM.Id = 12;
-            this.BtnBDHM.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image6")));
-            this.BtnBDHM.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage6")));
-            this.BtnBDHM.LargeWidth = 60;
-            this.BtnBDHM.Name = "BtnBDHM";
-            // 
-            // BtnPhieuDiem
-            // 
-            this.BtnPhieuDiem.Caption = "In Phiếu Điểm SV";
-            this.BtnPhieuDiem.Id = 13;
-            this.BtnPhieuDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image7")));
-            this.BtnPhieuDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage7")));
-            this.BtnPhieuDiem.LargeWidth = 60;
-            this.BtnPhieuDiem.Name = "BtnPhieuDiem";
-            // 
-            // BtnHP
-            // 
-            this.BtnHP.Caption = "In DS Học Phí";
-            this.BtnHP.Id = 14;
-            this.BtnHP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image8")));
-            this.BtnHP.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage8")));
-            this.BtnHP.LargeWidth = 60;
-            this.BtnHP.Name = "BtnHP";
-            // 
-            // BtnBangDiem
-            // 
-            this.BtnBangDiem.Caption = "In Bảng Điểm TK";
-            this.BtnBangDiem.Id = 15;
-            this.BtnBangDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image9")));
-            this.BtnBangDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage9")));
-            this.BtnBangDiem.LargeWidth = 60;
-            this.BtnBangDiem.Name = "BtnBangDiem";
-            // 
-            // BtnTaoTK
-            // 
-            this.BtnTaoTK.Caption = "Tạo Tài Khoản";
-            this.BtnTaoTK.Id = 16;
-            this.BtnTaoTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image10")));
-            this.BtnTaoTK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage10")));
-            this.BtnTaoTK.LargeWidth = 70;
-            this.BtnTaoTK.Name = "BtnTaoTK";
-            // 
-            // BtnDoiMK
-            // 
-            this.BtnDoiMK.Caption = "Đổi Mật Khẩu";
-            this.BtnDoiMK.Id = 17;
-            this.BtnDoiMK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image1")));
-            this.BtnDoiMK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage1")));
-            this.BtnDoiMK.LargeWidth = 70;
-            this.BtnDoiMK.Name = "BtnDoiMK";
-            // 
-            // BtnDangXuat
-            // 
-            this.BtnDangXuat.Caption = "Đăng xuất";
-            this.BtnDangXuat.Id = 18;
-            this.BtnDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image11")));
-            this.BtnDangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage11")));
-            this.BtnDangXuat.LargeWidth = 70;
-            this.BtnDangXuat.Name = "BtnDangXuat";
-            // 
-            // frmMain
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1656, 692);
+            this.ClientSize = new System.Drawing.Size(966, 443);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "frmMain";
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "FormMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Quản lý điểm sinh viên tín chỉ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
+            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
