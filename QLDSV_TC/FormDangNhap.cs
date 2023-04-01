@@ -28,9 +28,9 @@ namespace QLDSV_TC
             da.Fill(dt);
             conn_publisher.Close();
             Program.bds_dspm.DataSource = dt;
-            cmbKhoa.DataSource = Program.bds_dspm;
-            cmbKhoa.DisplayMember = "TENCN";
-            cmbKhoa.ValueMember = "TENSERVER";
+            CmbKhoa.DataSource = Program.bds_dspm;
+            CmbKhoa.DisplayMember = "TENKHOA";
+            CmbKhoa.ValueMember = "TENSERVER";
         }
         private int KetNoi_CSDLGOC()
         {
@@ -49,50 +49,47 @@ namespace QLDSV_TC
             }
         }
 
-        private void frmDangNhap_Load(object sender, EventArgs e)
+        private void FormDangNhap_Load(object sender, EventArgs e)
         {
             if (KetNoi_CSDLGOC() == 0) return;
             LayDSPM("SELECT * FROM Get_Subscribes");
-            cmbKhoa.SelectedIndex = 1;
-            cmbKhoa.SelectedIndex = 0;
-        }
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Close();
-            Program.mainForm.Close();
+            CmbKhoa.SelectedIndex = 1;
+            CmbKhoa.SelectedIndex = 0;
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
+
+     
+
+
+       
+
+        private void BtnDangNhap_Click(object sender, EventArgs e)
         {
             if (isSinhVien == false)
             {
-                if (txbTaiKhoan.Text.Trim() == "" || txbMatKhau.Text.Trim() == "")
+                if (TxbTaiKhoan.Text.Trim() == "" || TxbMatKhau.Text.Trim() == "")
                 {
                     MessageBox.Show("Login name và mật khẩu không được trống", "", MessageBoxButtons.OK);
                     return;
                 }
+
+                Program.login = TxbTaiKhoan.Text; Program.password = TxbMatKhau.Text;
+                if (Program.KetNoi() == 0) return;
             }
             else
             {
-                if (txbTaiKhoan.Text.Trim() == "")
+                if (TxbTaiKhoan.Text.Trim() == "")
                 {
                     MessageBox.Show("Login name không được trống", "", MessageBoxButtons.OK);
                     return;
                 }
-            }
-            if (isSinhVien == true)
-            {
                 Program.login = "SVKN";
                 Program.password = "123456";
                 if (Program.KetNoi() == 0) return;
             }
-            else
-            {
-                Program.login = txbTaiKhoan.Text; Program.password = txbMatKhau.Text;
-                if (Program.KetNoi() == 0) return;
-            }
 
-            Program.mKhoa = cmbKhoa.SelectedIndex;
+
+            Program.mKhoa = CmbKhoa.SelectedIndex;
             Program.mLogin = Program.login;
             Program.mPassword = Program.password;
 
@@ -111,82 +108,54 @@ namespace QLDSV_TC
             }
             else
             {
-                string strlenh1 = "EXEC [dbo].[SP_LayThongTinSV_DangNhap] '" + txbTaiKhoan.Text + "', '" + txbMatKhau.Text + "'";
+                string strlenh1 = "EXEC [dbo].[SP_LayThongTinSVTuLogin] '" + TxbTaiKhoan.Text + "', '" + TxbMatKhau.Text + "'";
                 SqlDataReader reader = Program.ExecSqlDataReader(strlenh1);
 
-                if (reader.HasRows == false && isSinhVien == true)
-                {
-                    MessageBox.Show("Đăng nhập thất bại! \nMã sinh viên không tồn tại");
-                    return;
-                }
-
-                reader.Read();
-
-                if (Convert.IsDBNull(Program.username))
-                {
-                    MessageBox.Show("Login bạn nhập không có quyền truy cập dữ liệu\n Bạn xem lại username, password", "", MessageBoxButtons.OK);
-                    return;
-                }
                 try
                 {
-                    Program.mHoten = reader.GetString(1);
-                    Program.username = reader.GetString(0);
+                    if (reader == null) return;
+                    reader.Read();
+                    Program.mHoten = reader.GetString(0);
+                    Program.username = TxbTaiKhoan.Text;
                     Program.mGroup = "SV";
                 }
-                catch (Exception) { }
 
-                reader.Close();
-            }
-            /*string strlenh1 = "EXEC [dbo].[SP_LayThongTinSV_DangNhap] '" + txbTaiKhoan.Text + "', '" + txbMatKhau.Text + "'";
-            SqlDataReader reader = Program.ExecSqlDataReader(strlenh1);
-
-            if (reader.HasRows == false && isSinhVien == true)
-            {
-                MessageBox.Show("Đăng nhập thất bại! \nMã sinh viên không tồn tại");
-                return;
-            }
-
-            reader.Read();
-
-            if (Convert.IsDBNull(Program.username))
-            {
-                MessageBox.Show("Login bạn nhập không có quyền truy cập dữ liệu\n Bạn xem lại username, password", "", MessageBoxButtons.OK);
-                return;
-            }*/
-
-            /*if (isSinhVien == true)
-            {
-                try
+                catch (Exception ex)
                 {
-                    Program.mHoten = reader.GetString(1);
-                    Program.username = reader.GetString(0);
-                    Program.mGroup = "SV";
+                    if (ex.Message.Contains("Error converting data type varchar to int"))
+                        MessageBox.Show("Bạn format cell lại cột \"Ngày \" qua kiểu Number hoặc mở file Excel.");
+                    else
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception) { }
-            }*/
+            }
+
             Program.conn.Close();
-            /*reader.Close();*/
-            // MessageBox.Show("Đăng nhập thành công !!!");
-            //Form f = new frmMain();
-            //f.ShowDialog();
-            // truy cập vào frm main 
-            Program.conn.Close();
-            Program.mainForm = new FormMain();
 
-            // hiện thông tin tài khoản
-
-
-            Program.mainForm.Show();
-            Program.dangNhapForm.Visible = false;
+            Program.formMain = new FormMain();
+            Program.formMain.Show();
+            Program.formDangNhap.Visible = false;
         }
 
-        private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                Program.servername = cmbKhoa.SelectedValue.ToString();
+                Program.servername = CmbKhoa.SelectedValue.ToString();
             }
             catch (Exception) { }
+        }
+
+        private void CbSinhVien_CheckedChanged(object sender, EventArgs e)
+        {
+            isSinhVien = !isSinhVien;
+            if (isSinhVien)
+            {
+                label2.Text = "Mã Sinh Viên";
+                return;
+            }
+            label2.Text = "Tài Khoản";
         }
     }
 }

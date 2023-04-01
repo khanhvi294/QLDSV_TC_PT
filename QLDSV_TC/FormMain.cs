@@ -16,18 +16,25 @@ namespace QLDSV_TC
             InitializeComponent();
 
         }
-        private Form CheckExists(Type ftype)
+        private void FormMain_Load(object sender, EventArgs e)
         {
-            foreach (Form f in this.MdiChildren)
-                if (f.GetType() == ftype)
-                    return f;
-            return null;
+            this.MA.Text = "Mã: " + Program.username;
+            this.HOTEN.Text = "Họ và tên: " + Program.mHoten;
+            this.NHOM.Text = "Nhóm: " + Program.mGroup;
         }
-        private void frmMain_Load(object sender, EventArgs e)
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.MA.Text = "MA " + Program.username;
-            this.HOTEN.Text = "HOTEN " + Program.mHoten;
-            this.NHOM.Text = "NHOM " + Program.mGroup;
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                if (MessageBox.Show("Are you sure you want to exit?", "Confirm Exit", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
         }
     }
 }
