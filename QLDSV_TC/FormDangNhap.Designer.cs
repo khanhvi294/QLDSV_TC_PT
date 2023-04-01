@@ -134,6 +134,7 @@ namespace QLDSV_TC
 
         #endregion
 
+
         private System.Windows.Forms.ComboBox CmbKhoa;
         private System.Windows.Forms.TextBox TxbTaiKhoan;
         private System.Windows.Forms.TextBox TxbMatKhau;

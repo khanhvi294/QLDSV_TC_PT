@@ -132,6 +132,7 @@ namespace QLDSV_TC
             }
 
             Program.conn.Close();
+
             Program.formMain = new FormMain();
             Program.formMain.Show();
             Program.formDangNhap.Visible = false;
