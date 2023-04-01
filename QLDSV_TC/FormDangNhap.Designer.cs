@@ -1,7 +1,7 @@
 ﻿
 namespace QLDSV_TC
 {
-    partial class frmDangNhap
+    partial class FormDangNhap
     {
         /// <summary>
         /// Required designer variable.

@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace QLDSV_TC
 {
-    public partial class frmDangNhap : Form
+    public partial class FormDangNhap : Form
     {
         private SqlConnection conn_publisher = new SqlConnection();
         private bool isSinhVien = false;
-        public frmDangNhap()
+        public FormDangNhap()
         {
             InitializeComponent();
         }
@@ -171,7 +171,7 @@ namespace QLDSV_TC
             //f.ShowDialog();
             // truy cập vào frm main 
             Program.conn.Close();
-            Program.mainForm = new frmMain();
+            Program.mainForm = new FormMain();
 
             // hiện thông tin tài khoản
 

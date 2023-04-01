@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace QLDSV_TC
 {
-    public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frmMain()
+        public FormMain()
         {
             InitializeComponent();
 

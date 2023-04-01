@@ -39,8 +39,8 @@ namespace QLDSV_TC
         public static int mKhoa = 0;
 
         public static BindingSource bds_dspm = new BindingSource();
-        public static frmMain mainForm;
-        public static frmDangNhap dangNhapForm;
+        public static FormMain mainForm;
+        public static FormDangNhap dangNhapForm;
 
         public static int KetNoi()
         {
@@ -131,8 +131,8 @@ namespace QLDSV_TC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            mainForm = new frmMain();
-            dangNhapForm = new frmDangNhap();
+            mainForm = new FormMain();
+            dangNhapForm = new FormDangNhap();
             Application.Run(mainForm);
         }
     }
