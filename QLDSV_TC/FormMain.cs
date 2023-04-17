@@ -36,5 +36,11 @@ namespace QLDSV_TC
                 }
             }
         }
+
+        private void BtnLopHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormLopHoc f = new FormLopHoc();
+            f.Show();
+        }
     }
 }
