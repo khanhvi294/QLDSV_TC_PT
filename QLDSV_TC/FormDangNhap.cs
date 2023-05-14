@@ -16,6 +16,7 @@ namespace QLDSV_TC
     {
         private SqlConnection conn_publisher = new SqlConnection();
         private bool isSinhVien = false;
+        private bool isShowPass = false;
         public FormDangNhap()
         {
             InitializeComponent();
@@ -55,34 +56,32 @@ namespace QLDSV_TC
             LayDSPM("SELECT * FROM Get_Subscribes");
             CmbKhoa.SelectedIndex = 1;
             CmbKhoa.SelectedIndex = 0;
+            this.CenterToScreen();
         }
-
-
-     
-
-
-       
 
         private void BtnDangNhap_Click(object sender, EventArgs e)
         {
+    
+            if (TxbTaiKhoan.Text.Trim() == "" || TxbMatKhau.Text.Trim() == "")
+            {
+                String message;
+                if(isSinhVien)
+                {
+                    message = "Mã sinh viên";
+                } else
+                {
+                    message = "Tên đăng nhập";
+                }
+                MessageBox.Show(message + " và mật khẩu không được trống", "", MessageBoxButtons.OK);
+                return;
+            }
             if (isSinhVien == false)
             {
-                if (TxbTaiKhoan.Text.Trim() == "" || TxbMatKhau.Text.Trim() == "")
-                {
-                    MessageBox.Show("Login name và mật khẩu không được trống", "", MessageBoxButtons.OK);
-                    return;
-                }
-
                 Program.login = TxbTaiKhoan.Text; Program.password = TxbMatKhau.Text;
                 if (Program.KetNoi() == 0) return;
             }
             else
             {
-                if (TxbTaiKhoan.Text.Trim() == "")
-                {
-                    MessageBox.Show("Login name không được trống", "", MessageBoxButtons.OK);
-                    return;
-                }
                 Program.login = "SVKN";
                 Program.password = "123456";
                 if (Program.KetNoi() == 0) return;
@@ -109,6 +108,7 @@ namespace QLDSV_TC
             else
             {
                 string strlenh1 = "EXEC [dbo].[SP_LayThongTinSVTuLogin] '" + TxbTaiKhoan.Text + "', '" + TxbMatKhau.Text + "'";
+
                 SqlDataReader reader = Program.ExecSqlDataReader(strlenh1);
 
                 try
@@ -132,7 +132,6 @@ namespace QLDSV_TC
             }
 
             Program.conn.Close();
-
             Program.formMain = new FormMain();
             Program.formMain.Show();
             Program.formDangNhap.Visible = false;
@@ -152,10 +151,23 @@ namespace QLDSV_TC
             isSinhVien = !isSinhVien;
             if (isSinhVien)
             {
-                label2.Text = "Mã Sinh Viên";
+                LabelTK.Text = "Mã Sinh Viên";
                 return;
             }
-            label2.Text = "Tài Khoản";
+            LabelTK.Text = "Tài Khoản";
+        }
+
+        private void cbHienMK_CheckedChanged(object sender, EventArgs e)
+        {
+            isShowPass = !isShowPass;
+            if (isShowPass)
+            {
+                cbHienMK.Text = "Ẩn mật khẩu";
+                TxbMatKhau.UseSystemPasswordChar = false;
+                return;
+            }
+            cbHienMK.Text = "Hiện mật khẩu";
+            TxbMatKhau.UseSystemPasswordChar = true;
         }
     }
 }

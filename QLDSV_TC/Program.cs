@@ -11,11 +11,7 @@ using System.Windows.Forms;
 namespace QLDSV_TC
 {
     static class Program
-    {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-       
+    {       
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static String connstr_publicsher = "Data Source=NOVEMBER;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456";
@@ -47,6 +43,8 @@ namespace QLDSV_TC
             if (Program.conn != null && Program.conn.State == ConnectionState.Open) Program.conn.Close();
             try
             {
+                MessageBox.Show("Data Source=" + Program.servername + ";Initial Catalog=" + Program.database + ";User ID=" +
+                      Program.login + ";Password=" + Program.password);
                 Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" + Program.database + ";User ID=" +
                       Program.login + ";Password=" + Program.password;
                 Program.conn.ConnectionString = Program.connstr;

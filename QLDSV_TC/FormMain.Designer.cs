@@ -87,7 +87,7 @@ namespace QLDSV_TC
             this.BtnDoiMK,
             this.BtnDangXuat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -158,6 +158,7 @@ namespace QLDSV_TC
             this.BtnDangKy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDangKy.ImageOptions.LargeImage")));
             this.BtnDangKy.LargeWidth = 60;
             this.BtnDangKy.Name = "BtnDangKy";
+            this.BtnDangKy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDangKy_ItemClick);
             // 
             // BtnDSLTC
             // 
