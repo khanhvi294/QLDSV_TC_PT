@@ -51,9 +51,15 @@ namespace QLDSV_TC
             else
             {
                 FormDangKy f = new FormDangKy();
-              // f.MdiParent = this;
+                // f.MdiParent = this;
                 f.Show();
             }
+        }
+
+        private void BtnLopHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormLopHoc f = new FormLopHoc();
+            f.Show();
         }
     }
 }

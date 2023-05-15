@@ -172,6 +172,7 @@ namespace QLDSV_TC
             this.TxbMatKhau.Name = "TxbMatKhau";
             this.TxbMatKhau.Size = new System.Drawing.Size(352, 35);
             this.TxbMatKhau.TabIndex = 8;
+            this.TxbMatKhau.UseSystemPasswordChar = true;
             // 
             // label2
             // 

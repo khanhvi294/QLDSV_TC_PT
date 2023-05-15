@@ -341,6 +341,7 @@ namespace QLDSV_TC
             // 
             this.gridControlDSLTC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlDSLTC.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(8);
+            this.gridControlDSLTC.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridControlDSLTC.Location = new System.Drawing.Point(2, 2);
             this.gridControlDSLTC.MainView = this.gridView2;
             this.gridControlDSLTC.Margin = new System.Windows.Forms.Padding(8);
