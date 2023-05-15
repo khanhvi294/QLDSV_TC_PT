@@ -1,7 +1,8 @@
 ﻿
 namespace QLDSV_TC
 {
-    partial class FormMain
+    partial class 
+        FormMain
     {
         /// <summary>
         /// Required designer variable.
