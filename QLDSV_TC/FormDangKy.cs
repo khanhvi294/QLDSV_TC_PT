@@ -17,9 +17,8 @@ namespace QLDSV_TC
         private string ho = "";
         private string ten = "";
         private string maLop = "";
-        private BindingSource bdsSinhVien = new BindingSource();
-        private BindingSource bdsLopTinchi = new BindingSource();
-        private BindingSource bdsDSLTC_HUY = new BindingSource();
+        private BindingSource bdsDSLopTC = new BindingSource();
+        private BindingSource bdsDSLopTCHuy = new BindingSource();
         public FormDangKy()
         {
             InitializeComponent();
@@ -36,6 +35,10 @@ namespace QLDSV_TC
             this.ho = Program.myReader.GetString(1);
             this.ten = Program.myReader.GetString(2);
             this.maLop = Program.myReader.GetString(3);
+            this.lbDataMaSV.Text = this.maSV;
+            this.lbDataHo.Text = this.ho;
+            this.lbDataTen.Text = this.ten;
+            this.lbDataMaLop.Text = this.maLop;
             Program.myReader.Close();
 
         }
@@ -63,17 +66,20 @@ namespace QLDSV_TC
             CmbHocKy.DisplayMember = "HOCKY";
             CmbHocKy.ValueMember = "HOCKY";
         }
-
+        void LayDSLopTCHuy()
+        {
+            string cmd = "EXEC [dbo].[SP_LayDSDangKyCoTheHuy] '" + this.maSV + "'";
+            DataTable tableLopTC = Program.ExecSqlDataTable(cmd);
+            this.bdsDSLopTCHuy.DataSource = tableLopTC;
+            this.gridControlDSLTCHuy.DataSource = this.bdsDSLopTCHuy;
+        }
         private void FormDangKy_Load(object sender, EventArgs e)
         {
             LayThongTinSV();
             LayDSNienKhoa();
-            this.lbDataMaSV.Text = this.maSV;
-            this.lbDataHo.Text = this.ho;
-            this.lbDataTen.Text = this.ten;
-            this.lbDataMaLop.Text = this.maLop;
             CmbNienKhoa.SelectedIndex = 0;
             LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+            LayDSLopTCHuy();
         }
 
         private void CmbNienKhoa_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,20 +100,20 @@ namespace QLDSV_TC
         {
             string cmd = "EXEC [dbo].[SP_LayDSLopTinChi] '" + CmbNienKhoa.Text + "', '" + CmbHocKy.Text + "'";
             DataTable tableLopTC = Program.ExecSqlDataTable(cmd);
-            this.bdsLopTinchi.DataSource = tableLopTC;
-            this.gridControlDSLTC.DataSource = this.bdsLopTinchi;
+            this.bdsDSLopTC.DataSource = tableLopTC;
+            this.gridControlDSLTC.DataSource = this.bdsDSLopTC;
         }
 
         private void gridControlDSLTC_Click(object sender, EventArgs e)
         {
-            if (bdsLopTinchi.Count > 0)
+            if (bdsDSLopTC.Count > 0)
             {
 
-                this.txbMaLopTC.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MALTC"].ToString();
-                this.txbMaMH.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MAMH"].ToString();
-                this.txbTenMH.Text =((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["TENMH"].ToString();
-                this.txbNhom.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["NHOM"].ToString();
-                this.txbGV.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["HOTENGV"].ToString();
+                this.txbMaLopTC.Text = ((DataRowView)bdsDSLopTC[bdsDSLopTC.Position])["MALTC"].ToString();
+                this.txbMaMH.Text = ((DataRowView)bdsDSLopTC[bdsDSLopTC.Position])["MAMH"].ToString();
+                this.txbTenMH.Text =((DataRowView)bdsDSLopTC[bdsDSLopTC.Position])["TENMH"].ToString();
+                this.txbNhom.Text = ((DataRowView)bdsDSLopTC[bdsDSLopTC.Position])["NHOM"].ToString();
+                this.txbGV.Text = ((DataRowView)bdsDSLopTC[bdsDSLopTC.Position])["HOTENGV"].ToString();
                 this.btnDangky.Enabled = true;
             }
 

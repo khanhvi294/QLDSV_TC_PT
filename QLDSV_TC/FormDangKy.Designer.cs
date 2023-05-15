@@ -57,7 +57,6 @@ namespace QLDSV_TC
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelControl17 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl20 = new DevExpress.XtraEditors.PanelControl();
@@ -88,7 +87,7 @@ namespace QLDSV_TC
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlDSLTCHuy = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -161,7 +160,7 @@ namespace QLDSV_TC
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDSLTCHuy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl27)).BeginInit();
@@ -364,14 +363,17 @@ namespace QLDSV_TC
             this.gridColumn10,
             this.gridColumn7,
             this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn11});
+            this.gridColumn9});
             this.gridView2.DetailHeight = 852;
             this.gridView2.GridControl = this.gridControlDSLTC;
             this.gridView2.Name = "gridView2";
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn5.Caption = "Mã lớp tín chỉ";
             this.gridColumn5.FieldName = "MALTC";
             this.gridColumn5.MinWidth = 61;
@@ -383,6 +385,10 @@ namespace QLDSV_TC
             // 
             // gridColumn15
             // 
+            this.gridColumn15.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn15.AppearanceCell.Options.UseFont = true;
+            this.gridColumn15.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn15.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn15.Caption = "Mã môn học";
             this.gridColumn15.FieldName = "MAMH";
             this.gridColumn15.MinWidth = 25;
@@ -393,6 +399,10 @@ namespace QLDSV_TC
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn6.AppearanceCell.Options.UseFont = true;
+            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn6.Caption = "Tên môn học";
             this.gridColumn6.FieldName = "TENMH";
             this.gridColumn6.MinWidth = 61;
@@ -404,6 +414,10 @@ namespace QLDSV_TC
             // 
             // gridColumn10
             // 
+            this.gridColumn10.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn10.AppearanceCell.Options.UseFont = true;
+            this.gridColumn10.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn10.Caption = "Nhóm";
             this.gridColumn10.FieldName = "NHOM";
             this.gridColumn10.MinWidth = 61;
@@ -415,6 +429,8 @@ namespace QLDSV_TC
             // 
             // gridColumn7
             // 
+            this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn7.AppearanceCell.Options.UseFont = true;
             this.gridColumn7.Caption = "Họ và Tên Giảng Viên";
             this.gridColumn7.FieldName = "HOTENGV";
             this.gridColumn7.MinWidth = 61;
@@ -426,6 +442,10 @@ namespace QLDSV_TC
             // 
             // gridColumn8
             // 
+            this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn8.AppearanceCell.Options.UseFont = true;
+            this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn8.Caption = "Số sinh viên tối thiểu";
             this.gridColumn8.FieldName = "SOSVTOITHIEU";
             this.gridColumn8.MinWidth = 61;
@@ -437,6 +457,10 @@ namespace QLDSV_TC
             // 
             // gridColumn9
             // 
+            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn9.AppearanceCell.Options.UseFont = true;
+            this.gridColumn9.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn9.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn9.Caption = "Số sinh viên đăng ký";
             this.gridColumn9.FieldName = "SOSVDANGKY";
             this.gridColumn9.MinWidth = 61;
@@ -445,16 +469,6 @@ namespace QLDSV_TC
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 6;
             this.gridColumn9.Width = 227;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "đăng ký";
-            this.gridColumn11.ColumnEdit = this.repositoryItemButtonEdit1;
-            this.gridColumn11.MinWidth = 61;
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 7;
-            this.gridColumn11.Width = 227;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -781,27 +795,27 @@ namespace QLDSV_TC
             // 
             // panelControl5
             // 
-            this.panelControl5.Controls.Add(this.gridControl1);
+            this.panelControl5.Controls.Add(this.gridControlDSLTCHuy);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(2, 65);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(1022, 270);
             this.panelControl5.TabIndex = 2;
             // 
-            // gridControl1
+            // gridControlDSLTCHuy
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(8);
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(8);
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gridControlDSLTCHuy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlDSLTCHuy.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(8);
+            this.gridControlDSLTCHuy.Location = new System.Drawing.Point(2, 2);
+            this.gridControlDSLTCHuy.MainView = this.gridView1;
+            this.gridControlDSLTCHuy.Margin = new System.Windows.Forms.Padding(8);
+            this.gridControlDSLTCHuy.MenuManager = this.barManager1;
+            this.gridControlDSLTCHuy.Name = "gridControlDSLTCHuy";
+            this.gridControlDSLTCHuy.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1018, 266);
-            this.gridControl1.TabIndex = 3;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlDSLTCHuy.Size = new System.Drawing.Size(1018, 266);
+            this.gridControlDSLTCHuy.TabIndex = 3;
+            this.gridControlDSLTCHuy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -815,12 +829,17 @@ namespace QLDSV_TC
             this.gridColumn13,
             this.gridColumn14});
             this.gridView1.DetailHeight = 852;
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gridControlDSLTCHuy;
             this.gridView1.Name = "gridView1";
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn1.Caption = "Mã lớp tín chỉ";
+            this.gridColumn1.FieldName = "MALTC";
             this.gridColumn1.MinWidth = 61;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
@@ -830,7 +849,12 @@ namespace QLDSV_TC
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "Tên môn học";
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn2.Caption = "Niên khoá";
+            this.gridColumn2.FieldName = "NIENKHOA";
             this.gridColumn2.MinWidth = 61;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
@@ -840,7 +864,12 @@ namespace QLDSV_TC
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Nhóm";
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn3.Caption = "Học kỳ";
+            this.gridColumn3.FieldName = "HOCKY";
             this.gridColumn3.MinWidth = 61;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
@@ -850,7 +879,10 @@ namespace QLDSV_TC
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "Họ và Tên Giảng Viên";
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
+            this.gridColumn4.Caption = "Mã môn học";
+            this.gridColumn4.FieldName = "MAMH";
             this.gridColumn4.MinWidth = 61;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
@@ -860,7 +892,8 @@ namespace QLDSV_TC
             // 
             // gridColumn12
             // 
-            this.gridColumn12.Caption = "Số sinh viên tối đa";
+            this.gridColumn12.Caption = "Tên môn học";
+            this.gridColumn12.FieldName = "TENMH";
             this.gridColumn12.MinWidth = 61;
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.AllowEdit = false;
@@ -870,7 +903,8 @@ namespace QLDSV_TC
             // 
             // gridColumn13
             // 
-            this.gridColumn13.Caption = "Số sinh viên đăng ký";
+            this.gridColumn13.Caption = "Họ và tên giảng viên";
+            this.gridColumn13.FieldName = "HOTENGV";
             this.gridColumn13.MinWidth = 61;
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
@@ -1189,7 +1223,7 @@ namespace QLDSV_TC
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDSLTCHuy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl27)).EndInit();
@@ -1260,7 +1294,6 @@ namespace QLDSV_TC
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl17;
         private DevExpress.XtraEditors.PanelControl panelControl20;
@@ -1283,7 +1316,7 @@ namespace QLDSV_TC
         private System.Windows.Forms.TextBox txbMaLopTC;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.PanelControl panelControl5;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridControlDSLTCHuy;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
