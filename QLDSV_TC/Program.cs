@@ -11,14 +11,10 @@ using System.Windows.Forms;
 namespace QLDSV_TC
 {
     static class Program
-    {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-       
+    {       
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-        public static String connstr_publicsher = "Data Source=KHANHVI;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456";
+        public static String connstr_publicsher = "Data Source=NOVEMBER;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456";
         public static SqlDataAdapter da;
         public static SqlDataReader myReader;
         public static String servername = "";

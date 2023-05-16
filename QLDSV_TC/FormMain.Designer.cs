@@ -1,7 +1,8 @@
 ﻿
 namespace QLDSV_TC
 {
-    partial class FormMain
+    partial class 
+        FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -159,6 +160,7 @@ namespace QLDSV_TC
             this.BtnDangKy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDangKy.ImageOptions.LargeImage")));
             this.BtnDangKy.LargeWidth = 60;
             this.BtnDangKy.Name = "BtnDangKy";
+            this.BtnDangKy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDangKy_ItemClick);
             // 
             // BtnDSLTC
             // 

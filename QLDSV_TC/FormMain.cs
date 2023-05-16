@@ -16,6 +16,13 @@ namespace QLDSV_TC
             InitializeComponent();
 
         }
+        private Form CheckExists(Type ftype)
+        {
+            foreach (Form f in this.MdiChildren)
+                if (f.GetType() == ftype)
+                    return f;
+            return null;
+        }
         private void FormMain_Load(object sender, EventArgs e)
         {
             this.MA.Text = "Mã: " + Program.username;
@@ -34,6 +41,18 @@ namespace QLDSV_TC
                 {
                     Application.Exit();
                 }
+            }
+        }
+
+        private void BtnDangKy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormDangKy));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormDangKy f = new FormDangKy();
+                // f.MdiParent = this;
+                f.Show();
             }
         }
 
