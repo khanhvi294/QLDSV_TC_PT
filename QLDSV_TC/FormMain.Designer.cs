@@ -105,6 +105,7 @@ namespace QLDSV_TC
             this.BtnSinhVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnSinhVien.ImageOptions.LargeImage")));
             this.BtnSinhVien.LargeWidth = 60;
             this.BtnSinhVien.Name = "BtnSinhVien";
+            this.BtnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSinhVien_ItemClick);
             // 
             // BtnMonHoc
             // 

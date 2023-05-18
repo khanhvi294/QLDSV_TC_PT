@@ -90,7 +90,7 @@ namespace QLDSV_TC
         private void BtnPhucHoiLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             BdsLH.CancelEdit();
-            if (BtnThemLH.Enabled = false) BdsLH.Position = vitri;
+            if (BtnThemLH.Enabled == false) BdsLH.Position = vitri;
             GcLopHoc.Enabled = true;
             panelControl2.Enabled = false;
             BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled = true;
