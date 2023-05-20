@@ -250,7 +250,7 @@ namespace QLDSV_TC
             // 
             this.BtnThem.Caption = "Thêm";
             this.BtnThem.Id = 0;
-            this.BtnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnThemLH.ImageOptions.SvgImage")));
+            this.BtnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnThem.ImageOptions.SvgImage")));
             this.BtnThem.Name = "BtnThem";
             this.BtnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnThemLH_ItemClick);
             // 
@@ -258,14 +258,14 @@ namespace QLDSV_TC
             // 
             this.BtnGhi.Caption = "Ghi";
             this.BtnGhi.Id = 1;
-            this.BtnGhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnGhiLH.ImageOptions.SvgImage")));
+            this.BtnGhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnGhi.ImageOptions.SvgImage")));
             this.BtnGhi.Name = "BtnGhi";
             // 
             // BtnPhucHoi
             // 
             this.BtnPhucHoi.Caption = "Phục hồi";
             this.BtnPhucHoi.Id = 2;
-            this.BtnPhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnPhucHoiLH.ImageOptions.SvgImage")));
+            this.BtnPhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnPhucHoi.ImageOptions.SvgImage")));
             this.BtnPhucHoi.Name = "BtnPhucHoi";
             this.BtnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPhucHoi_ItemClick);
             // 
@@ -273,15 +273,15 @@ namespace QLDSV_TC
             // 
             this.BtnXoa.Caption = "Xóa";
             this.BtnXoa.Id = 3;
-            this.BtnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnXoaLH.ImageOptions.Image")));
-            this.BtnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnXoaLH.ImageOptions.LargeImage")));
+            this.BtnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnXoa.ImageOptions.Image")));
+            this.BtnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnXoa.ImageOptions.LargeImage")));
             this.BtnXoa.Name = "BtnXoa";
             // 
             // BtnLamMoi
             // 
             this.BtnLamMoi.Caption = "Làm mới";
             this.BtnLamMoi.Id = 4;
-            this.BtnLamMoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnLamMoiLH.ImageOptions.SvgImage")));
+            this.BtnLamMoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnLamMoi.ImageOptions.SvgImage")));
             this.BtnLamMoi.Name = "BtnLamMoi";
             this.BtnLamMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLamMoi_ItemClick);
             // 
@@ -289,15 +289,15 @@ namespace QLDSV_TC
             // 
             this.BtnThoat.Caption = "Thoát";
             this.BtnThoat.Id = 5;
-            this.BtnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnThoatLH.ImageOptions.SvgImage")));
+            this.BtnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnThoat.ImageOptions.SvgImage")));
             this.BtnThoat.Name = "BtnThoat";
             // 
             // BtnSua
             // 
             this.BtnSua.Caption = "Sửa";
             this.BtnSua.Id = 12;
-            this.BtnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSuaLH.ImageOptions.Image")));
-            this.BtnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnSuaLH.ImageOptions.LargeImage")));
+            this.BtnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSua.ImageOptions.Image")));
+            this.BtnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnSua.ImageOptions.LargeImage")));
             this.BtnSua.Name = "BtnSua";
             this.BtnSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
             // 

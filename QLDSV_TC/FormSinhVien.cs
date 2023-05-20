@@ -55,7 +55,7 @@ namespace QLDSV_TC
         {
             vitri = BdsLH.Position;
             panelControl2.Enabled = true;
-            BdsLH.AddNew();
+            BdsSv.AddNew();
             TxtMaSV.Focus();
             BtnThem.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnSua.Enabled = false;
             BtnGhi.Enabled = BtnPhucHoi.Enabled = true;
@@ -66,15 +66,23 @@ namespace QLDSV_TC
 
         private void BtnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           // undoStk.Undo();
-          /*  this.sINHVIENBindingSource.EndEdit();
-            this.sINHVIENBindingSource.ResetCurrentItem();
-            this.sINHVIENTableAdapter.Update(this.qLDSVDataSet);
-
-            if (undoStk.Empty())
+            if (MessageBox.Show("Bạn muốn hủy bỏ tất cả thao tác?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                undoBtn.Enabled = false;
-            }*/
+                BdsSv.CancelEdit();
+               /* this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
+                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lOPTableAdapter.Fill(this.dS.LOP);*/
+                if (BtnThem.Enabled == false) BdsLH.Position = vitri;
+                BtnThem.Enabled = true;
+       
+          
+                GcLopHoc.Enabled = true;
+                panelControl2.Enabled = false;
+                BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled = true;
+                btnGhi.Enabled = btnPhucHoi.Enabled = false;
+            }
+
         }
 
         private void BtnLamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

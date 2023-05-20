@@ -30,11 +30,11 @@ namespace QLDSV_TC
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLopHoc));
             System.Windows.Forms.Label mALOPLabel;
             System.Windows.Forms.Label tENLOPLabel;
             System.Windows.Forms.Label kHOAHOCLabel;
             System.Windows.Forms.Label mAKHOALabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLopHoc));
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
@@ -51,6 +51,7 @@ namespace QLDSV_TC
             this.BtnXoaLH = new DevExpress.XtraBars.BarButtonItem();
             this.BtnLamMoiLH = new DevExpress.XtraBars.BarButtonItem();
             this.BtnThoatLH = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnSuaLH = new DevExpress.XtraBars.BarButtonItem();
             this.bar6 = new DevExpress.XtraBars.Bar();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -61,12 +62,17 @@ namespace QLDSV_TC
             this.PHCTHPBtn = new DevExpress.XtraBars.BarButtonItem();
             this.btnTest = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.CmbKhoa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.DS2 = new QLDSV_TC.DS2();
+            this.TxtMaKhoa = new System.Windows.Forms.TextBox();
             this.BdsLH = new System.Windows.Forms.BindingSource(this.components);
+            this.DS2 = new QLDSV_TC.DS2();
+            this.TxtKhoaHoc = new System.Windows.Forms.TextBox();
+            this.TxtTenLop = new System.Windows.Forms.TextBox();
+            this.TxtMaLop = new System.Windows.Forms.TextBox();
             this.lOPTableAdapter = new QLDSV_TC.DS2TableAdapters.LOPTableAdapter();
             this.tableAdapterManager = new QLDSV_TC.DS2TableAdapters.TableAdapterManager();
             this.sINHVIENTableAdapter = new QLDSV_TC.DS2TableAdapters.SINHVIENTableAdapter();
@@ -77,12 +83,6 @@ namespace QLDSV_TC
             this.colKHOAHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHOA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BdsSV = new System.Windows.Forms.BindingSource(this.components);
-            this.TxtMaLop = new System.Windows.Forms.TextBox();
-            this.TxtTenLop = new System.Windows.Forms.TextBox();
-            this.TxtKhoaHoc = new System.Windows.Forms.TextBox();
-            this.TxtMaKhoa = new System.Windows.Forms.TextBox();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnSuaLH = new DevExpress.XtraBars.BarButtonItem();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             kHOAHOCLabel = new System.Windows.Forms.Label();
@@ -92,12 +92,48 @@ namespace QLDSV_TC
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DS2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BdsLH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GcLopHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BdsSV)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mALOPLabel
+            // 
+            mALOPLabel.AutoSize = true;
+            mALOPLabel.Location = new System.Drawing.Point(24, 36);
+            mALOPLabel.Name = "mALOPLabel";
+            mALOPLabel.Size = new System.Drawing.Size(85, 25);
+            mALOPLabel.TabIndex = 0;
+            mALOPLabel.Text = "MALOP:";
+            // 
+            // tENLOPLabel
+            // 
+            tENLOPLabel.AutoSize = true;
+            tENLOPLabel.Location = new System.Drawing.Point(24, 84);
+            tENLOPLabel.Name = "tENLOPLabel";
+            tENLOPLabel.Size = new System.Drawing.Size(94, 25);
+            tENLOPLabel.TabIndex = 2;
+            tENLOPLabel.Text = "TENLOP:";
+            // 
+            // kHOAHOCLabel
+            // 
+            kHOAHOCLabel.AutoSize = true;
+            kHOAHOCLabel.Location = new System.Drawing.Point(24, 137);
+            kHOAHOCLabel.Name = "kHOAHOCLabel";
+            kHOAHOCLabel.Size = new System.Drawing.Size(115, 25);
+            kHOAHOCLabel.TabIndex = 4;
+            kHOAHOCLabel.Text = "KHOAHOC:";
+            // 
+            // mAKHOALabel
+            // 
+            mAKHOALabel.AutoSize = true;
+            mAKHOALabel.Location = new System.Drawing.Point(24, 196);
+            mAKHOALabel.Name = "mAKHOALabel";
+            mAKHOALabel.Size = new System.Drawing.Size(102, 25);
+            mAKHOALabel.TabIndex = 6;
+            mAKHOALabel.Text = "MAKHOA:";
             // 
             // btnThem
             // 
@@ -254,6 +290,16 @@ namespace QLDSV_TC
             this.BtnThoatLH.Name = "BtnThoatLH";
             this.BtnThoatLH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnThoatLH_ItemClick);
             // 
+            // BtnSuaLH
+            // 
+            this.BtnSuaLH.Caption = "Sửa";
+            this.BtnSuaLH.Id = 12;
+            this.BtnSuaLH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSuaLH.ImageOptions.Image")));
+            this.BtnSuaLH.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnSuaLH.ImageOptions.LargeImage")));
+            this.BtnSuaLH.Name = "BtnSuaLH";
+            this.BtnSuaLH.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
+            this.BtnSuaLH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSuaLH_ItemClick);
+            // 
             // bar6
             // 
             this.bar6.BarName = "Status bar";
@@ -338,6 +384,14 @@ namespace QLDSV_TC
             this.barButtonItem7.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Sửa";
+            this.barButtonItem1.Id = 11;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.CmbKhoa);
@@ -355,6 +409,7 @@ namespace QLDSV_TC
             this.CmbKhoa.Name = "CmbKhoa";
             this.CmbKhoa.Size = new System.Drawing.Size(504, 33);
             this.CmbKhoa.TabIndex = 1;
+            this.CmbKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbKhoa_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -382,15 +437,48 @@ namespace QLDSV_TC
             this.panelControl2.Size = new System.Drawing.Size(1560, 468);
             this.panelControl2.TabIndex = 11;
             // 
-            // DS2
+            // TxtMaKhoa
             // 
-            this.DS2.DataSetName = "DS2";
-            this.DS2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.TxtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "MAKHOA", true));
+            this.TxtMaKhoa.Enabled = false;
+            this.TxtMaKhoa.Location = new System.Drawing.Point(158, 196);
+            this.TxtMaKhoa.Name = "TxtMaKhoa";
+            this.TxtMaKhoa.Size = new System.Drawing.Size(301, 33);
+            this.TxtMaKhoa.TabIndex = 7;
             // 
             // BdsLH
             // 
             this.BdsLH.DataMember = "LOP";
             this.BdsLH.DataSource = this.DS2;
+            // 
+            // DS2
+            // 
+            this.DS2.DataSetName = "DS2";
+            this.DS2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // TxtKhoaHoc
+            // 
+            this.TxtKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "KHOAHOC", true));
+            this.TxtKhoaHoc.Location = new System.Drawing.Point(158, 137);
+            this.TxtKhoaHoc.Name = "TxtKhoaHoc";
+            this.TxtKhoaHoc.Size = new System.Drawing.Size(301, 33);
+            this.TxtKhoaHoc.TabIndex = 5;
+            // 
+            // TxtTenLop
+            // 
+            this.TxtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "TENLOP", true));
+            this.TxtTenLop.Location = new System.Drawing.Point(158, 84);
+            this.TxtTenLop.Name = "TxtTenLop";
+            this.TxtTenLop.Size = new System.Drawing.Size(301, 33);
+            this.TxtTenLop.TabIndex = 3;
+            // 
+            // TxtMaLop
+            // 
+            this.TxtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "MALOP", true));
+            this.TxtMaLop.Location = new System.Drawing.Point(158, 28);
+            this.TxtMaLop.Name = "TxtMaLop";
+            this.TxtMaLop.Size = new System.Drawing.Size(301, 33);
+            this.TxtMaLop.TabIndex = 1;
             // 
             // lOPTableAdapter
             // 
@@ -476,93 +564,6 @@ namespace QLDSV_TC
             this.BdsSV.DataMember = "FK_SINHVIEN_LOP";
             this.BdsSV.DataSource = this.BdsLH;
             // 
-            // mALOPLabel
-            // 
-            mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(24, 36);
-            mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(85, 25);
-            mALOPLabel.TabIndex = 0;
-            mALOPLabel.Text = "MALOP:";
-            // 
-            // TxtMaLop
-            // 
-            this.TxtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "MALOP", true));
-            this.TxtMaLop.Location = new System.Drawing.Point(158, 28);
-            this.TxtMaLop.Name = "TxtMaLop";
-            this.TxtMaLop.Size = new System.Drawing.Size(301, 33);
-            this.TxtMaLop.TabIndex = 1;
-            // 
-            // tENLOPLabel
-            // 
-            tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(24, 84);
-            tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(94, 25);
-            tENLOPLabel.TabIndex = 2;
-            tENLOPLabel.Text = "TENLOP:";
-            // 
-            // TxtTenLop
-            // 
-            this.TxtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "TENLOP", true));
-            this.TxtTenLop.Location = new System.Drawing.Point(158, 84);
-            this.TxtTenLop.Name = "TxtTenLop";
-            this.TxtTenLop.Size = new System.Drawing.Size(301, 33);
-            this.TxtTenLop.TabIndex = 3;
-            // 
-            // kHOAHOCLabel
-            // 
-            kHOAHOCLabel.AutoSize = true;
-            kHOAHOCLabel.Location = new System.Drawing.Point(24, 137);
-            kHOAHOCLabel.Name = "kHOAHOCLabel";
-            kHOAHOCLabel.Size = new System.Drawing.Size(115, 25);
-            kHOAHOCLabel.TabIndex = 4;
-            kHOAHOCLabel.Text = "KHOAHOC:";
-            // 
-            // TxtKhoaHoc
-            // 
-            this.TxtKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "KHOAHOC", true));
-            this.TxtKhoaHoc.Location = new System.Drawing.Point(158, 137);
-            this.TxtKhoaHoc.Name = "TxtKhoaHoc";
-            this.TxtKhoaHoc.Size = new System.Drawing.Size(301, 33);
-            this.TxtKhoaHoc.TabIndex = 5;
-            // 
-            // mAKHOALabel
-            // 
-            mAKHOALabel.AutoSize = true;
-            mAKHOALabel.Location = new System.Drawing.Point(24, 196);
-            mAKHOALabel.Name = "mAKHOALabel";
-            mAKHOALabel.Size = new System.Drawing.Size(102, 25);
-            mAKHOALabel.TabIndex = 6;
-            mAKHOALabel.Text = "MAKHOA:";
-            // 
-            // TxtMaKhoa
-            // 
-            this.TxtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "MAKHOA", true));
-            this.TxtMaKhoa.Enabled = false;
-            this.TxtMaKhoa.Location = new System.Drawing.Point(158, 196);
-            this.TxtMaKhoa.Name = "TxtMaKhoa";
-            this.TxtMaKhoa.Size = new System.Drawing.Size(301, 33);
-            this.TxtMaKhoa.TabIndex = 7;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Sửa";
-            this.barButtonItem1.Id = 11;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // BtnSuaLH
-            // 
-            this.BtnSuaLH.Caption = "Sửa";
-            this.BtnSuaLH.Id = 12;
-            this.BtnSuaLH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.BtnSuaLH.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.BtnSuaLH.Name = "BtnSuaLH";
-            this.BtnSuaLH.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
-            this.BtnSuaLH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSuaLH_ItemClick);
-            // 
             // FormLopHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
@@ -590,8 +591,8 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DS2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BdsLH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GcLopHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BdsSV)).EndInit();

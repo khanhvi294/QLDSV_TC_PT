@@ -56,7 +56,7 @@ namespace QLDSV_TC
             makhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
 
             // makhoa = ((DataRowView)BdsLH[0])["MAKHOA"].ToString(); //tiềm ẩn lỗi, cần xử lí
-            Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
+           // Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
             CmbKhoa.DataSource = Program.bds_dspm;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
@@ -309,6 +309,47 @@ namespace QLDSV_TC
 
         }
 
+        private void CmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Hello, world!");
+            if (CmbKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
+            {
+                Console.WriteLine("bug");
+                return;
+            }
+               
+            Program.servername = CmbKhoa.SelectedValue.ToString();
+            if (CmbKhoa.SelectedIndex != Program.mKhoa)
+            {
+                Console.WriteLine("Hello, world2!");
+                Program.login = Program.remotelogin;
+                Program.password = Program.remotepassword;
+            }
+            else
+            {
+                Console.WriteLine("Hello, world3!");
+                Program.login = Program.mLogin;
+                Program.password = Program.mPassword;
+            }
+            if (Program.KetNoi() == 0)
+                MessageBox.Show("Lỗi kết nối về chi nhánh mới","", MessageBoxButtons.OK);
+            else
+            {
+                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                // TODO: This line of code loads data into the 'dS2.LOP' table. You can move, or remove it, as needed.
+                this.lOPTableAdapter.Fill(this.DS2.LOP);
+                this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                // TODO: This line of code loads data into the 'dS2.SINHVIEN' table. You can move, or remove it, as needed.
+                this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
 
+
+                DataTable dt = new DataTable();
+                dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
+                BindingSource bdsCN = new BindingSource();
+                bdsCN.DataSource = dt;
+                makhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
+            }
+
+        }
     }
 }
