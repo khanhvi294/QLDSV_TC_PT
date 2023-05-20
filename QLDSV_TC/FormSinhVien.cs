@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace QLDSV_TC
 {
+  
     public partial class FormSinhVien : Form
     {
+        int vitri = 0;
+        string maLop = "";
         public FormSinhVien()
         {
             InitializeComponent();
@@ -20,7 +23,7 @@ namespace QLDSV_TC
         private void lOPBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.LopBds.EndEdit();
+            this.BdsLH.EndEdit();
             this.tableAdapterManager.UpdateAll(this.DS2);
 
         }
@@ -43,9 +46,40 @@ namespace QLDSV_TC
         private void lOPBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
-            this.LopBds.EndEdit();
+            this.BdsLH.EndEdit();
             this.tableAdapterManager.UpdateAll(this.DS2);
 
+        }
+
+        private void BtnThemLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            vitri = BdsLH.Position;
+            panelControl2.Enabled = true;
+            BdsLH.AddNew();
+            TxtMaSV.Focus();
+            BtnThem.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnSua.Enabled = false;
+            BtnGhi.Enabled = BtnPhucHoi.Enabled = true;
+            GcLopHoc.Enabled = false;
+            GcSinhVien.Enabled = false;
+            // TxtMaLop.Text = this.lOPTableAdapter.GetData();
+        }
+
+        private void BtnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           // undoStk.Undo();
+          /*  this.sINHVIENBindingSource.EndEdit();
+            this.sINHVIENBindingSource.ResetCurrentItem();
+            this.sINHVIENTableAdapter.Update(this.qLDSVDataSet);
+
+            if (undoStk.Empty())
+            {
+                undoBtn.Enabled = false;
+            }*/
+        }
+
+        private void BtnLamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
         }
     }
 }
