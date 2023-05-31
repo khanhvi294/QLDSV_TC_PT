@@ -67,5 +67,30 @@ namespace QLDSV_TC
             FormSinhVien f = new FormSinhVien();
             f.Show();
         }
+
+        private void BtnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormMonHoc));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Form f = new FormMonHoc();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void BtnLopTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            Form frm = this.CheckExists(typeof(FormMonHoc));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Form f = new FormLopTinChi();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

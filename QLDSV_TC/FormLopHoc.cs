@@ -309,6 +309,9 @@ namespace QLDSV_TC
 
         }
 
+        private void CmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
