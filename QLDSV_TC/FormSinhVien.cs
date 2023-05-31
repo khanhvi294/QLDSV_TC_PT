@@ -15,6 +15,7 @@ namespace QLDSV_TC
     {
         int vitri = 0;
         string maLop = "";
+        string maKhoa = "";
         public FormSinhVien()
         {
             InitializeComponent();
@@ -38,8 +39,27 @@ namespace QLDSV_TC
             this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'dS2.SINHVIEN' table. You can move, or remove it, as needed.
             this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
-      
-           
+
+            DataTable dt = new DataTable();
+            dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
+            BindingSource bdsCN = new BindingSource();
+            bdsCN.DataSource = dt;
+            maKhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
+            CmbKhoa.DataSource = Program.bds_dspm;
+            CmbKhoa.DisplayMember = "TENKHOA";
+            CmbKhoa.ValueMember = "TENSERVER";
+            CmbKhoa.SelectedIndex = Program.mKhoa;
+            panelControl2.Enabled = false;
+            if (Program.mGroup == "PGV")
+            {
+                CmbKhoa.Enabled = true;
+            }
+            else
+            {
+                CmbKhoa.Enabled = false;
+            }
+
+
 
         }
 
@@ -69,25 +89,89 @@ namespace QLDSV_TC
             if (MessageBox.Show("Bạn muốn hủy bỏ tất cả thao tác?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 BdsSv.CancelEdit();
-               /* this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
-                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.lOPTableAdapter.Fill(this.dS.LOP);*/
                 if (BtnThem.Enabled == false) BdsLH.Position = vitri;
                 BtnThem.Enabled = true;
-       
-          
+
+
+
                 GcLopHoc.Enabled = true;
                 panelControl2.Enabled = false;
-                BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled = true;
-                btnGhi.Enabled = btnPhucHoi.Enabled = false;
+                BtnThem.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnSua.Enabled = true;
+                BtnGhi.Enabled = BtnPhucHoi.Enabled = false;
             }
 
         }
 
         private void BtnLamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            try
+            {
+
+                //check lại chỗ này coi - lỗi maybe
+                
+                this.lOPTableAdapter.Fill(this.DS2.LOP);
+                this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Reload:" + ex.Message, "", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void CmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
+                return;
+
+            Program.servername = CmbKhoa.SelectedValue.ToString();
+            if (CmbKhoa.SelectedIndex != Program.mKhoa)
+            {
+                Program.login = Program.remotelogin;
+                Program.password = Program.remotepassword;
+            }
+            else
+            {
+                Program.login = Program.mLogin;
+                Program.password = Program.mPassword;
+            }
+            if (Program.KetNoi() == 0)
+                MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
+            else
+            {
+                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                // TODO: This line of code loads data into the 'dS2.LOP' table. You can move, or remove it, as needed.
+                this.lOPTableAdapter.Fill(this.DS2.LOP);
+                this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                // TODO: This line of code loads data into the 'dS2.SINHVIEN' table. You can move, or remove it, as needed.
+                this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
+
+
+                DataTable dt = new DataTable();
+                dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
+                BindingSource bdsCN = new BindingSource();
+                bdsCN.DataSource = dt;
+                maKhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
+            }
+
+        }
+
+        private void BtnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            vitri = BdsLH.Position;
+            BtnSua.Enabled = BtnThem.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnXoa.Enabled = false;
+            panelControl2.Enabled = BtnPhucHoi.Enabled = BtnGhi.Enabled = true;
+            GcLopHoc.Enabled = false;
+        }
+
+        private void BtnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

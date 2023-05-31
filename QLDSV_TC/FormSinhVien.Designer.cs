@@ -61,7 +61,7 @@ namespace QLDSV_TC
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CmbKhoa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DS2 = new QLDSV_TC.DS2();
             this.BdsLH = new System.Windows.Forms.BindingSource(this.components);
@@ -276,6 +276,7 @@ namespace QLDSV_TC
             this.BtnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnXoa.ImageOptions.Image")));
             this.BtnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnXoa.ImageOptions.LargeImage")));
             this.BtnXoa.Name = "BtnXoa";
+            this.BtnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnXoa_ItemClick);
             // 
             // BtnLamMoi
             // 
@@ -291,6 +292,7 @@ namespace QLDSV_TC
             this.BtnThoat.Id = 5;
             this.BtnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnThoat.ImageOptions.SvgImage")));
             this.BtnThoat.Name = "BtnThoat";
+            this.BtnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnThoat_ItemClick);
             // 
             // BtnSua
             // 
@@ -300,6 +302,7 @@ namespace QLDSV_TC
             this.BtnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnSua.ImageOptions.LargeImage")));
             this.BtnSua.Name = "BtnSua";
             this.BtnSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
+            this.BtnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSua_ItemClick);
             // 
             // bar6
             // 
@@ -394,7 +397,7 @@ namespace QLDSV_TC
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.comboBox1);
+            this.panelControl1.Controls.Add(this.CmbKhoa);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 67);
@@ -402,13 +405,14 @@ namespace QLDSV_TC
             this.panelControl1.Size = new System.Drawing.Size(1552, 54);
             this.panelControl1.TabIndex = 11;
             // 
-            // comboBox1
+            // CmbKhoa
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(192, 8);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(374, 33);
-            this.comboBox1.TabIndex = 1;
+            this.CmbKhoa.FormattingEnabled = true;
+            this.CmbKhoa.Location = new System.Drawing.Point(192, 8);
+            this.CmbKhoa.Name = "CmbKhoa";
+            this.CmbKhoa.Size = new System.Drawing.Size(374, 33);
+            this.CmbKhoa.TabIndex = 1;
+            this.CmbKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbKhoa_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -457,7 +461,7 @@ namespace QLDSV_TC
             this.GcLopHoc.MainView = this.gridView1;
             this.GcLopHoc.MenuManager = this.barManager2;
             this.GcLopHoc.Name = "GcLopHoc";
-            this.GcLopHoc.Size = new System.Drawing.Size(1552, 398);
+            this.GcLopHoc.Size = new System.Drawing.Size(1552, 521);
             this.GcLopHoc.TabIndex = 16;
             this.GcLopHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -527,9 +531,9 @@ namespace QLDSV_TC
             this.panelControl2.Controls.Add(mASVLabel);
             this.panelControl2.Controls.Add(this.TxtMaSV);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl2.Location = new System.Drawing.Point(0, 519);
+            this.panelControl2.Location = new System.Drawing.Point(0, 642);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(688, 418);
+            this.panelControl2.Size = new System.Drawing.Size(688, 295);
             this.panelControl2.TabIndex = 17;
             // 
             // nGAYSINHDateEdit
@@ -614,11 +618,11 @@ namespace QLDSV_TC
             // 
             this.GcSinhVien.DataSource = this.BdsSv;
             this.GcSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GcSinhVien.Location = new System.Drawing.Point(688, 519);
+            this.GcSinhVien.Location = new System.Drawing.Point(688, 642);
             this.GcSinhVien.MainView = this.gridView2;
             this.GcSinhVien.MenuManager = this.barManager2;
             this.GcSinhVien.Name = "GcSinhVien";
-            this.GcSinhVien.Size = new System.Drawing.Size(864, 418);
+            this.GcSinhVien.Size = new System.Drawing.Size(864, 295);
             this.GcSinhVien.TabIndex = 17;
             this.GcSinhVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -772,7 +776,7 @@ namespace QLDSV_TC
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CmbKhoa;
         private System.Windows.Forms.BindingSource BdsLH;
         private DS2 DS2;
         private DS2TableAdapters.LOPTableAdapter lOPTableAdapter;

@@ -311,23 +311,18 @@ namespace QLDSV_TC
 
         private void CmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Hello, world!");
+           
             if (CmbKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
-            {
-                Console.WriteLine("bug");
                 return;
-            }
                
             Program.servername = CmbKhoa.SelectedValue.ToString();
             if (CmbKhoa.SelectedIndex != Program.mKhoa)
             {
-                Console.WriteLine("Hello, world2!");
                 Program.login = Program.remotelogin;
                 Program.password = Program.remotepassword;
             }
             else
             {
-                Console.WriteLine("Hello, world3!");
                 Program.login = Program.mLogin;
                 Program.password = Program.mPassword;
             }
