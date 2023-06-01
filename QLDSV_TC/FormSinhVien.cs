@@ -15,7 +15,6 @@ namespace QLDSV_TC
     {
         int vitri = 0;
         string maLop = "";
-        string maKhoa = "";
         public FormSinhVien()
         {
             InitializeComponent();
@@ -31,7 +30,7 @@ namespace QLDSV_TC
 
         private void FormSinhVien_Load(object sender, EventArgs e)
         {
-
+         
             DS2.EnforceConstraints = false;
             this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'dS2.LOP' table. You can move, or remove it, as needed.
@@ -40,11 +39,15 @@ namespace QLDSV_TC
             // TODO: This line of code loads data into the 'dS2.SINHVIEN' table. You can move, or remove it, as needed.
             this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
 
+            // TODO: This line of code loads data into the 'DS2.DANGKY' table. You can move, or remove it, as needed.
+            this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.dANGKYTableAdapter.Fill(this.DS2.DANGKY);
+
+
             DataTable dt = new DataTable();
             dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
             BindingSource bdsCN = new BindingSource();
             bdsCN.DataSource = dt;
-            maKhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
             CmbKhoa.DataSource = Program.bds_dspm;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
@@ -59,8 +62,6 @@ namespace QLDSV_TC
                 CmbKhoa.Enabled = false;
             }
 
-
-
         }
 
         private void lOPBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -71,17 +72,101 @@ namespace QLDSV_TC
 
         }
 
+        private bool validatorSinhVien()
+        {
+            if (TxtMaSV.Text.Trim() == "")
+            {
+                MessageBox.Show("Mã sinh viên không được thiếu!", "", MessageBoxButtons.OK);
+                TxtMaSV.Focus();
+                return false;
+            }
+            if (TxtHo.Text.Trim() == "")
+            {
+                MessageBox.Show("Họ không được thiếu!", "", MessageBoxButtons.OK);
+                TxtHo.Focus();
+                return false;
+            }
+            if (TxtTenSV.Text.Trim() == "")
+            {
+                MessageBox.Show("Tên không được thiếu!", "", MessageBoxButtons.OK);
+                TxtTenSV.Focus();
+                return false;
+            }
+           // if((TxtTenLop.Text.Trim() == tenLopSua) && (chonThem == false)))
+
+            string query1 = " DECLARE @result INT " +
+
+                            " EXEC @result= KT_MASV " +
+
+                            TxtMaSV.Text.Trim() +
+
+                            " SELECT  @result AS Result";
+
+                int result = Program.CheckDataHelper(query1);
+                if (result == -1)
+                {
+                    MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                    this.Close();
+                }
+                if (result == 1)
+                {
+                    MessageBox.Show("Mã Sinh Viên đã tồn tại. Mời bạn nhập mã khác !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                if (result == 2)
+                {
+                   MessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            
+          /*  if (_flagOptionSinhVien == "UPDATE")
+            {
+                if (!this.tedMasv.Text.Trim().ToString().Equals(_oldMaSV))
+                {
+                    string query2 = " DECLARE @return_value INT " +
+
+                            " EXEC @return_value = [dbo].[SP_CHECKID] " +
+
+                            " @code = N'" + tedMasv.Text.Trim() + "',  " +
+
+                            " @Type = N'MASV' " +
+
+                            " SELECT  'Return Value' = @return_value ";
+
+                    int resultMa = Program.CheckDataHelper(query2);
+                    if (resultMa == -1)
+                    {
+                        XtraMessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                        this.Close();
+                    }
+                    if (resultMa == 1)
+                    {
+                        XtraMessageBox.Show("Mã Sinh Viên đã tồn tại. Mời bạn nhập mã khác !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                    if (resultMa == 2)
+                    {
+                        XtraMessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+
+            }*/
+            return true;
+        }
         private void BtnThemLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            vitri = BdsLH.Position;
+            vitri = BdsSv.Position;
             panelControl2.Enabled = true;
             BdsSv.AddNew();
             TxtMaSV.Focus();
+            TxtMaLop.Text = ((DataRowView)this.BdsLH[this.gridViewLH.FocusedRowHandle])["MALOP"].ToString();
+            CbPhai.Checked = true;
+            CbNghiHoc.Checked = false;
             BtnThem.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnSua.Enabled = false;
             BtnGhi.Enabled = BtnPhucHoi.Enabled = true;
-            GcLopHoc.Enabled = false;
-            GcSinhVien.Enabled = false;
-            // TxtMaLop.Text = this.lOPTableAdapter.GetData();
+            GcLopHoc.Enabled = GcSinhVien.Enabled = false;
+
         }
 
         private void BtnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -89,12 +174,9 @@ namespace QLDSV_TC
             if (MessageBox.Show("Bạn muốn hủy bỏ tất cả thao tác?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 BdsSv.CancelEdit();
-                if (BtnThem.Enabled == false) BdsLH.Position = vitri;
-                BtnThem.Enabled = true;
+                if (BtnThem.Enabled == false) BdsSv.Position = vitri;
 
-
-
-                GcLopHoc.Enabled = true;
+                GcLopHoc.Enabled = GcSinhVien.Enabled= true;
                 panelControl2.Enabled = false;
                 BtnThem.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnSua.Enabled = true;
                 BtnGhi.Enabled = BtnPhucHoi.Enabled = false;
@@ -151,7 +233,6 @@ namespace QLDSV_TC
                 dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
                 BindingSource bdsCN = new BindingSource();
                 bdsCN.DataSource = dt;
-                maKhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
             }
 
         }
@@ -166,12 +247,93 @@ namespace QLDSV_TC
             vitri = BdsLH.Position;
             BtnSua.Enabled = BtnThem.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnXoa.Enabled = false;
             panelControl2.Enabled = BtnPhucHoi.Enabled = BtnGhi.Enabled = true;
-            GcLopHoc.Enabled = false;
+            GcLopHoc.Enabled = GcSinhVien.Enabled = false;
+
+            /* flag = false;//  Update 
+            oldMaLop = this.maLop.Text.Trim().ToString();
+            //oldTenLop = this.cbLop.Text.Trim().ToString();
+            oldMaSV = this.maSinhVien.Text.Trim().ToString();
+            if(viewDSSV.DataRowCount<=0)
+            {
+                MessageBox.Show("Không có dữ liệu để sửa", "", MessageBoxButtons.OK);
+                return;
+            }
+            saveBtn.Enabled 
+                = exitBtn.Enabled 
+                = maLop.Enabled
+                = groupEdit.Enabled = true;
+
+            addBtn.Enabled
+                = deleteBtn.Enabled
+                = adjustBtn.Enabled
+                = undoBtn.Enabled
+                = reloadBtn.Enabled
+                = cbKhoa.Enabled
+                = danhSachSV.Enabled = false;*/
         }
 
         private void BtnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+            string masv = "";
+            if (BdsSv.Count == 0) {
+                MessageBox.Show("Lớp không có sinh viên", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+            if (BdsDK.Count > 0)
+            {
+                MessageBox.Show("Không thể xóa sinh viên này vì sinh viên đã đăng kí lớp tín chỉ", "", MessageBoxButtons.OK);
+                return;
+            }
+
+
+            if (MessageBox.Show("Bạn có thật sự muốn xóa sinh viên khỏi lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                try
+                {
+                    masv = ((DataRowView)BdsSv[BdsSv.Position])["MASV"].ToString();
+                    BdsSv.RemoveCurrent();
+                    this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.sINHVIENTableAdapter.Update(this.DS2.SINHVIEN);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi xóa sinh viên: " + ex.Message, "", MessageBoxButtons.OK);
+                    this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
+                    BdsSv.Position = BdsLH.Find("MASV", masv);
+                    return;
+                }
+            }
+
+            if (BdsSv.Count == 0) BtnXoa.Enabled = false;
+
+        }
+
+        private void BtnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //bắt lỗi
+            if (validatorSinhVien() == true)
+            {
+                try
+                {
+                    BdsSv.EndEdit(); //kt hiệu chỉnh ghi vào bds
+                    BdsSv.ResetCurrentItem(); //đưa thông tin lên lưới
+                    this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.sINHVIENTableAdapter.Update(this.DS2.SINHVIEN);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi ghi sinh viên.\n" + ex.Message, "", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else  return;
+         
+            GcLopHoc.Enabled = GcSinhVien.Enabled = true;
+            panelControl2.Enabled = false;
+            BtnThem.Enabled = BtnThoat.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnSua.Enabled = true;
+            BtnGhi.Enabled = BtnPhucHoi.Enabled = false;
         }
     }
 }

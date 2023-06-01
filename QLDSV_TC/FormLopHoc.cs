@@ -15,6 +15,9 @@ namespace QLDSV_TC
     {
         private string makhoa = "";
         int vitri = 0;
+        private string maLopSua = "";
+        private string tenLopSua = "";
+        private Boolean chonThem = true;
         public FormLopHoc()
         {
             InitializeComponent();
@@ -80,7 +83,7 @@ namespace QLDSV_TC
             BdsLH.AddNew();
             TxtMaKhoa.Text = makhoa;
             TxtMaLop.Focus();
-
+        
             BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled =false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
             GcLopHoc.Enabled = false;
@@ -113,6 +116,13 @@ namespace QLDSV_TC
         private void BtnXoaLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string maLH = "";
+
+            if (BdsLH.Count == 0)
+            {
+                MessageBox.Show("Không có lớp", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+
             if (BdsSV.Count > 0)
             {
                 MessageBox.Show("Không thể xóa lớp học vì đã có sinh viên đăng kí", "", MessageBoxButtons.OK);
@@ -138,102 +148,107 @@ namespace QLDSV_TC
             if (BdsLH.Count == 0) BtnXoaLH.Enabled = false;
         }
 
-        private void BtnGhiLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private bool validatorLopHoc()
         {
             if (TxtMaLop.Text.Trim() == "")
             {
                 MessageBox.Show("Mã lớp không được để trống!", "", MessageBoxButtons.OK);
                 TxtMaLop.Focus();
-                return;
+                return false;
             }
             if (TxtTenLop.Text.Trim() == "")
             {
                 MessageBox.Show("Tên lớp không được để trống!", "", MessageBoxButtons.OK);
                 TxtTenLop.Focus();
-                return;
+                return false;
             }
             if (TxtKhoaHoc.Text.Trim() == "")
             {
                 MessageBox.Show("Khóa học không được để trống!", "", MessageBoxButtons.OK);
                 TxtKhoaHoc.Focus();
-                return;
+                return false;
             }
 
-            String query = "DECLARE @result INT;"+
-            "EXEC @result = SP_KTMaLopHoc "+TxtMaLop.Text.Trim()+ " SELECT @result AS Result;";
-    
-            int result = -1;
-            SqlDataReader dataReader = Program.ExecSqlDataReader(query);
+            String query = "DECLARE @result INT;" +
+           "EXEC @result = SP_KTMaLopHoc " + TxtMaLop.Text.Trim() + " SELECT @result AS Result;";
+
+            int result = Program.CheckDataHelper(query);
 
 
-            if (dataReader == null)
+            if (result == -1)
             {
                 MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
                 this.Close();
             }
-            dataReader.Read();
-            result = int.Parse(dataReader.GetValue(0).ToString());
-            dataReader.Close();
 
             if (result == 1)
             {
                 MessageBox.Show("Mã lớp đã tồn tại!", "", MessageBoxButtons.OK);
                 TxtMaLop.Focus();
-                return;
-           
+                return false;
+
             }
-            else if(result == 2)
+            else if (result == 2)
             {
                 MessageBox.Show("Mã lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
                 TxtMaLop.Focus();
-                return;
+                return false;
             }
 
 
-            String query2 = "DECLARE @result INT;" +
-          "EXEC @result = SP_KTTenLop N'" + TxtTenLop.Text.Trim() + "' SELECT @result AS Result;";
-
-            int result2 = -1;
-            SqlDataReader dataReader2 = Program.ExecSqlDataReader(query2);
 
 
-            if (dataReader2 == null)
+            if (((TxtTenLop.Text.Trim() != tenLopSua)&&(chonThem == false))||chonThem == true)
             {
-                MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
-                this.Close();
-            }
-            dataReader2.Read();
-            result2 = int.Parse(dataReader2.GetValue(0).ToString());
-            dataReader2.Close();
-        
+                String query2 = "DECLARE @result INT;" +
+               "EXEC @result = SP_KTTenLop N'" + TxtTenLop.Text.Trim() + "' SELECT @result AS Result;";
 
-            if (result2 == 1)
-            {
-                MessageBox.Show("Tên lớp đã tồn tại!", "", MessageBoxButtons.OK);
-                TxtMaLop.Focus();
-                return;
+                int result2 = Program.CheckDataHelper(query2);
+                if (result2 == -1)
+                {
+                    MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                    this.Close();
+                }
 
-            }
-            else if (result2 == 2)
-            {
-                MessageBox.Show("Tên lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
-                TxtMaLop.Focus();
-                return;
+                if (result2 == 1)
+                {
+                    MessageBox.Show("Tên lớp đã tồn tại!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
+
+                }
+                else if (result2 == 2)
+                {
+                    MessageBox.Show("Tên lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
+                }
             }
 
-            try
-            {
-                BdsLH.EndEdit(); //kt hiệu chỉnh ghi vào bds
-                BdsLH.ResetCurrentItem(); //đưa thông tin lên lưới
-                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.lOPTableAdapter.Update(this.DS2.LOP);
+          
+            return true;
+        }
 
-            }
-            catch (Exception ex)
+        private void BtnGhiLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (validatorLopHoc() == true)
             {
-                MessageBox.Show("Lỗi ghi lớp học.\n" + ex.Message, "", MessageBoxButtons.OK);
-                return;
+
+                try
+                {
+                    BdsLH.EndEdit(); //kt hiệu chỉnh ghi vào bds
+                    BdsLH.ResetCurrentItem(); //đưa thông tin lên lưới
+                    this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.lOPTableAdapter.Update(this.DS2.LOP);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi ghi lớp học.\n" + ex.Message, "", MessageBoxButtons.OK);
+                    return;
+                }
             }
+            else return;
             GcLopHoc.Enabled = true;
             panelControl2.Enabled = false;
             BtnThemLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnSuaLH.Enabled = true;
@@ -242,6 +257,8 @@ namespace QLDSV_TC
         }
         private void BtnSuaLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            maLopSua = TxtMaLop.Text;
+            tenLopSua = TxtTenLop.Text;
             vitri = BdsLH.Position;
             BtnSuaLH.Enabled = BtnThemLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled= false;
             panelControl2.Enabled = BtnPhucHoiLH.Enabled = BtnGhiLH.Enabled = true;
