@@ -113,6 +113,18 @@
     <Compile Include="FormSinhVien.Designer.cs">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frpt_DANHSACHLOPTINCHI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frpt_DANHSACHLOPTINCHI.Designer.cs">
+      <DependentUpon>Frpt_DANHSACHLOPTINCHI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frpt_DanhSachSVDangKyLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frpt_DanhSachSVDangKyLTC.Designer.cs">
+      <DependentUpon>Frpt_DanhSachSVDangKyLTC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormDangKy.cs">
@@ -127,6 +139,12 @@
     <Compile Include="Xrpt_DANHSACHLOPTINCHI.Designer.cs">
       <DependentUpon>Xrpt_DANHSACHLOPTINCHI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xrpt_DanhSachSVDangKyLTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DanhSachSVDangKyLTC.Designer.cs">
+      <DependentUpon>Xrpt_DanhSachSVDangKyLTC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSinhVien.resx">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frpt_DANHSACHLOPTINCHI.resx">
+      <DependentUpon>Frpt_DANHSACHLOPTINCHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frpt_DanhSachSVDangKyLTC.resx">
+      <DependentUpon>Frpt_DanhSachSVDangKyLTC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -154,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_DANHSACHLOPTINCHI.resx">
       <DependentUpon>Xrpt_DANHSACHLOPTINCHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DanhSachSVDangKyLTC.resx">
+      <DependentUpon>Xrpt_DanhSachSVDangKyLTC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">

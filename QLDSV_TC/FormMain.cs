@@ -43,6 +43,20 @@ namespace QLDSV_TC
                 }
             }
         }
+        private void ShowMdiChildren(Type fType)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == fType)
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form form = (Form)Activator.CreateInstance(fType);
+            form.MdiParent = this;
+            form.Show();
+        }
 
         private void BtnDangKy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -58,13 +72,27 @@ namespace QLDSV_TC
 
         private void BtnLopHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FormLopHoc f = new FormLopHoc();
-            f.Show();
+            ShowMdiChildren(typeof(FormLopHoc)); 
+       
         }
 
         private void BtnSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FormSinhVien f = new FormSinhVien();
+           // if (!(Program.MGroup == Program.NhomQuyen[2]))
+            //{
+                ShowMdiChildren(typeof(FormSinhVien));
+            //}
+        }
+
+        private void BtnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frpt_DanhSachSVDangKyLTC F = new Frpt_DanhSachSVDangKyLTC();
+            F.Show();
+        }
+
+        private void BtnLopTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frpt_DANHSACHLOPTINCHI f = new Frpt_DANHSACHLOPTINCHI();
             f.Show();
         }
     }

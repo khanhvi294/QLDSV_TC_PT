@@ -115,6 +115,7 @@ namespace QLDSV_TC
             this.BtnMonHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnMonHoc.ImageOptions.LargeImage")));
             this.BtnMonHoc.LargeWidth = 60;
             this.BtnMonHoc.Name = "BtnMonHoc";
+            this.BtnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnMonHoc_ItemClick);
             // 
             // BtnLopTC
             // 
@@ -124,6 +125,7 @@ namespace QLDSV_TC
             this.BtnLopTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnLopTC.ImageOptions.LargeImage")));
             this.BtnLopTC.LargeWidth = 60;
             this.BtnLopTC.Name = "BtnLopTC";
+            this.BtnLopTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLopTC_ItemClick);
             // 
             // BtnLopHoc
             // 
