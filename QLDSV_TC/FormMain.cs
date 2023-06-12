@@ -28,6 +28,27 @@ namespace QLDSV_TC
             this.MA.Text = "Mã: " + Program.username;
             this.HOTEN.Text = "Họ và tên: " + Program.mHoten;
             this.NHOM.Text = "Nhóm: " + Program.mGroup;
+            PhanQuyen();
+        }
+
+        void PhanQuyen()
+        {
+            if (Program.mGroup.Equals("SV"))
+            {
+                BtnDangKy.Enabled = true;
+                BtnDiem.Enabled = BtnHocPhi.Enabled = BtnLopHoc.Enabled = BtnLopTC.Enabled = BtnMonHoc.Enabled = BtnSinhVien.Enabled  = false;
+                BaoCao.Visible = false;
+            }
+            if (Program.mGroup.Equals("PKT"))
+            {
+                BtnHocPhi.Enabled = true;
+                BtnDiem.Enabled = BtnLopHoc.Enabled = BtnLopTC.Enabled = BtnMonHoc.Enabled = BtnSinhVien.Enabled = BtnDangKy.Enabled = false;
+                BaoCao.Visible = false;
+            }
+            if (Program.mGroup.Equals("PGV") || Program.mGroup.Equals("KHOA"))
+            {
+                BtnDangKy.Enabled = BtnHocPhi.Enabled = false;
+            }
         }
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -71,6 +92,7 @@ namespace QLDSV_TC
         private void BtnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.CheckExists(typeof(FormMonHoc));
+   
             if (frm != null) frm.Activate();
             else
             {
@@ -88,6 +110,30 @@ namespace QLDSV_TC
             else
             {
                 Form f = new FormLopTinChi();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void BtnHocPhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormHocPhi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Form f = new FormHocPhi();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void BtnBDHM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(Frpt_BANGDIEMHETMONCUALOP1));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Frpt_BANGDIEMHETMONCUALOP1 f = new Frpt_BANGDIEMHETMONCUALOP1();
                 f.MdiParent = this;
                 f.Show();
             }

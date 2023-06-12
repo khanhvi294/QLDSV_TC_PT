@@ -220,7 +220,8 @@ namespace QLDSV_TC
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Close(); Program.formMain.Close();
+            this.Dispose();
+
         }
 
         private void btnLamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -356,21 +357,27 @@ namespace QLDSV_TC
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             btnPhucHoi.Enabled = true;
-            if(HOCKY.Value <= 0)
+            if(HOCKY.Value < 1)
             {
-                MessageBox.Show("Học kì không được thiếu va Phai Lon Hon Khong!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Học kì không được thiếu va Phai Lon Hon va bang 1!", "", MessageBoxButtons.OK);
                 HOCKY.Focus();
                 return;
             }
-            if(SL_SVMIN.Value <= 0)
+            if (HOCKY.Value > 4 )
+            {
+                MessageBox.Show("Học kì phai nho hon hoac bang 4", "", MessageBoxButtons.OK);
+                HOCKY.Focus();
+                return;
+            }
+            if (SL_SVMIN.Value <= 0)
             {
                 MessageBox.Show("Số sinh viên tối thiểu không được thiếu Va Phai Lon Hon !", "", MessageBoxButtons.OK);
                 SL_SVMIN.Focus();
                 return;
             }
-            if(NHOM.Value <= 0)
+            if(NHOM.Value < 1)
             {
-                MessageBox.Show("Nhóm không được thiếu va Phai lon hon khong!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Nhóm không được thiếu va Phai lon hon hoac bang 1!", "", MessageBoxButtons.OK);
                 NHOM.Focus();
                 return;
             }
@@ -578,6 +585,11 @@ namespace QLDSV_TC
         private void txtMAKHOA_EditValueChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
  }

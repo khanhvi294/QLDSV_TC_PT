@@ -88,7 +88,7 @@ namespace QLDSV_TC
             this.BtnDoiMK,
             this.BtnDangXuat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -154,6 +154,7 @@ namespace QLDSV_TC
             this.BtnHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnHocPhi.ImageOptions.LargeImage")));
             this.BtnHocPhi.LargeWidth = 60;
             this.BtnHocPhi.Name = "BtnHocPhi";
+            this.BtnHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnHocPhi_ItemClick);
             // 
             // BtnDangKy
             // 
@@ -191,6 +192,7 @@ namespace QLDSV_TC
             this.BtnBDHM.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnBDHM.ImageOptions.LargeImage")));
             this.BtnBDHM.LargeWidth = 60;
             this.BtnBDHM.Name = "BtnBDHM";
+            this.BtnBDHM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnBDHM_ItemClick);
             // 
             // BtnPhieuDiem
             // 

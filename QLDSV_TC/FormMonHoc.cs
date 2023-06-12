@@ -328,11 +328,11 @@ namespace QLDSV_TC
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Close(); Program.formMain.Close();
-           // Application.Exit();
+            this.Dispose();
+            // Application.Exit();
         }
 
-    
+
 
         private void gcMonHoc_Click(object sender, EventArgs e)
         {

@@ -97,36 +97,40 @@ namespace QLDSV_TC
             // mAMHLabel
             // 
             mAMHLabel.AutoSize = true;
-            mAMHLabel.Location = new System.Drawing.Point(550, 95);
+            mAMHLabel.Location = new System.Drawing.Point(688, 119);
+            mAMHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAMHLabel.Name = "mAMHLabel";
-            mAMHLabel.Size = new System.Drawing.Size(64, 21);
+            mAMHLabel.Size = new System.Drawing.Size(50, 17);
             mAMHLabel.TabIndex = 0;
             mAMHLabel.Text = "MAMH:";
             // 
             // tENMHLabel
             // 
             tENMHLabel.AutoSize = true;
-            tENMHLabel.Location = new System.Drawing.Point(550, 146);
+            tENMHLabel.Location = new System.Drawing.Point(688, 182);
+            tENMHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             tENMHLabel.Name = "tENMHLabel";
-            tENMHLabel.Size = new System.Drawing.Size(71, 21);
+            tENMHLabel.Size = new System.Drawing.Size(57, 17);
             tENMHLabel.TabIndex = 2;
             tENMHLabel.Text = "TENMH:";
             // 
             // sOTIET_LTLabel1
             // 
             sOTIET_LTLabel1.AutoSize = true;
-            sOTIET_LTLabel1.Location = new System.Drawing.Point(550, 198);
+            sOTIET_LTLabel1.Location = new System.Drawing.Point(688, 248);
+            sOTIET_LTLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sOTIET_LTLabel1.Name = "sOTIET_LTLabel1";
-            sOTIET_LTLabel1.Size = new System.Drawing.Size(96, 21);
+            sOTIET_LTLabel1.Size = new System.Drawing.Size(78, 17);
             sOTIET_LTLabel1.TabIndex = 10;
             sOTIET_LTLabel1.Text = "SOTIET LT:";
             // 
             // sOTIET_THLabel1
             // 
             sOTIET_THLabel1.AutoSize = true;
-            sOTIET_THLabel1.Location = new System.Drawing.Point(550, 252);
+            sOTIET_THLabel1.Location = new System.Drawing.Point(688, 315);
+            sOTIET_THLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sOTIET_THLabel1.Name = "sOTIET_THLabel1";
-            sOTIET_THLabel1.Size = new System.Drawing.Size(99, 21);
+            sOTIET_THLabel1.Size = new System.Drawing.Size(80, 17);
             sOTIET_THLabel1.TabIndex = 11;
             sOTIET_THLabel1.Text = "SOTIET TH:";
             // 
@@ -302,19 +306,22 @@ namespace QLDSV_TC
             this.panelControl1.Controls.Add(this.gcMonHoc);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 51);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1383, 320);
+            this.panelControl1.Size = new System.Drawing.Size(1383, 400);
             this.panelControl1.TabIndex = 4;
             // 
             // gcMonHoc
             // 
             this.gcMonHoc.DataSource = this.bdsMH;
             this.gcMonHoc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcMonHoc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcMonHoc.Location = new System.Drawing.Point(2, 2);
             this.gcMonHoc.MainView = this.gridView1;
+            this.gcMonHoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcMonHoc.MenuManager = this.barManager1;
             this.gcMonHoc.Name = "gcMonHoc";
-            this.gcMonHoc.Size = new System.Drawing.Size(1379, 364);
+            this.gcMonHoc.Size = new System.Drawing.Size(1379, 455);
             this.gcMonHoc.TabIndex = 0;
             this.gcMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -414,6 +421,7 @@ namespace QLDSV_TC
             this.tableAdapterManager.LOPTINCHITableAdapter = this.lOPTINCHITableAdapter;
             this.tableAdapterManager.MONHOCTableAdapter = this.MONHOCTableAdapter;
             this.tableAdapterManager.SINHVIENTableAdapter = null;
+            this.tableAdapterManager.SP_CHECKMONHOC_ID_NAMETableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLDSV_TC.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // lOPTINCHITableAdapter
@@ -433,9 +441,10 @@ namespace QLDSV_TC
             this.groupBox1.Controls.Add(mAMHLabel);
             this.groupBox1.Controls.Add(this.txtMaMH);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 371);
+            this.groupBox1.Location = new System.Drawing.Point(0, 451);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1383, 404);
+            this.groupBox1.Size = new System.Drawing.Size(1383, 324);
             this.groupBox1.TabIndex = 5;
             // 
             // ST_TH
@@ -446,12 +455,13 @@ namespace QLDSV_TC
             0,
             0,
             0});
-            this.ST_TH.Location = new System.Drawing.Point(655, 245);
+            this.ST_TH.Location = new System.Drawing.Point(819, 306);
+            this.ST_TH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ST_TH.MenuManager = this.barManager1;
             this.ST_TH.Name = "ST_TH";
             this.ST_TH.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ST_TH.Size = new System.Drawing.Size(205, 28);
+            this.ST_TH.Size = new System.Drawing.Size(256, 24);
             this.ST_TH.TabIndex = 12;
             // 
             // ST_LT
@@ -462,19 +472,21 @@ namespace QLDSV_TC
             0,
             0,
             0});
-            this.ST_LT.Location = new System.Drawing.Point(655, 195);
+            this.ST_LT.Location = new System.Drawing.Point(819, 244);
+            this.ST_LT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ST_LT.MenuManager = this.barManager1;
             this.ST_LT.Name = "ST_LT";
             this.ST_LT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ST_LT.Size = new System.Drawing.Size(205, 28);
+            this.ST_LT.Size = new System.Drawing.Size(256, 24);
             this.ST_LT.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(189, 89);
+            this.label1.Location = new System.Drawing.Point(236, 111);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(227, 17);
             this.label1.TabIndex = 10;
@@ -483,9 +495,10 @@ namespace QLDSV_TC
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(207, 126);
+            this.pictureBox1.Location = new System.Drawing.Point(259, 158);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 143);
+            this.pictureBox1.Size = new System.Drawing.Size(194, 179);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -493,18 +506,20 @@ namespace QLDSV_TC
             // txtTenMH
             // 
             this.txtTenMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "TENMH", true));
-            this.txtTenMH.Location = new System.Drawing.Point(655, 141);
+            this.txtTenMH.Location = new System.Drawing.Point(819, 176);
+            this.txtTenMH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenMH.MenuManager = this.barManager1;
             this.txtTenMH.Name = "txtTenMH";
-            this.txtTenMH.Size = new System.Drawing.Size(205, 28);
+            this.txtTenMH.Size = new System.Drawing.Size(256, 22);
             this.txtTenMH.TabIndex = 3;
             // 
             // txtMaMH
             // 
             this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMH, "MAMH", true));
-            this.txtMaMH.Location = new System.Drawing.Point(655, 89);
+            this.txtMaMH.Location = new System.Drawing.Point(819, 111);
+            this.txtMaMH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaMH.Name = "txtMaMH";
-            this.txtMaMH.Size = new System.Drawing.Size(205, 28);
+            this.txtMaMH.Size = new System.Drawing.Size(255, 23);
             this.txtMaMH.TabIndex = 1;
             // 
             // bdsLTC
