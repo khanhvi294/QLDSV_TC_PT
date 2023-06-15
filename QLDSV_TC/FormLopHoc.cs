@@ -58,7 +58,7 @@ namespace QLDSV_TC
             bdsCN.DataSource = dt;
             makhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
 
-            // makhoa = ((DataRowView)BdsLH[0])["MAKHOA"].ToString(); //tiềm ẩn lỗi, cần xử lí
+            //makhoa = ((DataRowView)BdsLH[0])["MAKHOA"].ToString(); //tiềm ẩn lỗi, cần xử lí
            // Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
             CmbKhoa.DataSource = Program.bds_dspm;
             CmbKhoa.DisplayMember = "TENKHOA";
@@ -169,30 +169,31 @@ namespace QLDSV_TC
                 return false;
             }
 
-            String query = "DECLARE @result INT;" +
+
+            if (((TxtMaLop.Text.Trim() != maLopSua) && (chonThem == false)) || chonThem == true)
+            {
+                String query = "DECLARE @result INT;" +
            "EXEC @result = SP_KTMaLopHoc " + TxtMaLop.Text.Trim() + " SELECT @result AS Result;";
+                int result = Program.CheckDataHelper(query);
+                if (result == -1)
+                {
+                    MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                    this.Close();
+                }
 
-            int result = Program.CheckDataHelper(query);
+                if (result == 1)
+                {
+                    MessageBox.Show("Mã lớp đã tồn tại!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
 
-
-            if (result == -1)
-            {
-                MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
-                this.Close();
-            }
-
-            if (result == 1)
-            {
-                MessageBox.Show("Mã lớp đã tồn tại!", "", MessageBoxButtons.OK);
-                TxtMaLop.Focus();
-                return false;
-
-            }
-            else if (result == 2)
-            {
-                MessageBox.Show("Mã lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
-                TxtMaLop.Focus();
-                return false;
+                }
+                else if (result == 2)
+                {
+                    MessageBox.Show("Mã lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
+                }
             }
 
 

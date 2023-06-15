@@ -67,6 +67,7 @@ namespace QLDSV_TC
             this.CmbKhoa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.label3 = new System.Windows.Forms.Label();
             this.TxtMaKhoa = new System.Windows.Forms.TextBox();
             this.BdsLH = new System.Windows.Forms.BindingSource(this.components);
             this.DS2 = new QLDSV_TC.DS2();
@@ -84,6 +85,7 @@ namespace QLDSV_TC
             this.colMAKHOA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BdsSV = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             kHOAHOCLabel = new System.Windows.Forms.Label();
@@ -103,38 +105,42 @@ namespace QLDSV_TC
             // mALOPLabel
             // 
             mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(24, 36);
+            mALOPLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            mALOPLabel.Location = new System.Drawing.Point(58, 96);
             mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(85, 25);
+            mALOPLabel.Size = new System.Drawing.Size(100, 27);
             mALOPLabel.TabIndex = 0;
-            mALOPLabel.Text = "MALOP:";
+            mALOPLabel.Text = "Mã Lớp:";
             // 
             // tENLOPLabel
             // 
             tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(24, 84);
+            tENLOPLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            tENLOPLabel.Location = new System.Drawing.Point(58, 144);
             tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(94, 25);
+            tENLOPLabel.Size = new System.Drawing.Size(107, 27);
             tENLOPLabel.TabIndex = 2;
-            tENLOPLabel.Text = "TENLOP:";
+            tENLOPLabel.Text = "Tên Lớp:";
             // 
             // kHOAHOCLabel
             // 
             kHOAHOCLabel.AutoSize = true;
-            kHOAHOCLabel.Location = new System.Drawing.Point(24, 137);
+            kHOAHOCLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            kHOAHOCLabel.Location = new System.Drawing.Point(58, 197);
             kHOAHOCLabel.Name = "kHOAHOCLabel";
-            kHOAHOCLabel.Size = new System.Drawing.Size(115, 25);
+            kHOAHOCLabel.Size = new System.Drawing.Size(125, 27);
             kHOAHOCLabel.TabIndex = 4;
-            kHOAHOCLabel.Text = "KHOAHOC:";
+            kHOAHOCLabel.Text = "Khóa Học:";
             // 
             // mAKHOALabel
             // 
             mAKHOALabel.AutoSize = true;
-            mAKHOALabel.Location = new System.Drawing.Point(24, 196);
+            mAKHOALabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            mAKHOALabel.Location = new System.Drawing.Point(58, 256);
             mAKHOALabel.Name = "mAKHOALabel";
-            mAKHOALabel.Size = new System.Drawing.Size(102, 25);
+            mAKHOALabel.Size = new System.Drawing.Size(115, 27);
             mAKHOALabel.TabIndex = 6;
-            mAKHOALabel.Text = "MAKHOA:";
+            mAKHOALabel.Text = "Mã Khoa:";
             // 
             // btnThem
             // 
@@ -228,7 +234,7 @@ namespace QLDSV_TC
             // 
             this.bar5.BarName = "Main menu";
             this.bar5.DockCol = 0;
-            this.bar5.DockRow = 0;
+            this.bar5.DockRow = 1;
             this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.BtnThemLH, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -400,7 +406,7 @@ namespace QLDSV_TC
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 67);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1567, 69);
+            this.panelControl1.Size = new System.Drawing.Size(1567, 75);
             this.panelControl1.TabIndex = 8;
             // 
             // CmbKhoa
@@ -425,6 +431,7 @@ namespace QLDSV_TC
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.label3);
             this.panelControl2.Controls.Add(mAKHOALabel);
             this.panelControl2.Controls.Add(this.TxtMaKhoa);
             this.panelControl2.Controls.Add(kHOAHOCLabel);
@@ -439,11 +446,23 @@ namespace QLDSV_TC
             this.panelControl2.Size = new System.Drawing.Size(1567, 300);
             this.panelControl2.TabIndex = 11;
             // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1561, 65);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Thông tin lớp học";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // TxtMaKhoa
             // 
             this.TxtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "MAKHOA", true));
             this.TxtMaKhoa.Enabled = false;
-            this.TxtMaKhoa.Location = new System.Drawing.Point(158, 196);
+            this.TxtMaKhoa.Location = new System.Drawing.Point(192, 256);
             this.TxtMaKhoa.Name = "TxtMaKhoa";
             this.TxtMaKhoa.Size = new System.Drawing.Size(301, 33);
             this.TxtMaKhoa.TabIndex = 7;
@@ -461,7 +480,7 @@ namespace QLDSV_TC
             // TxtKhoaHoc
             // 
             this.TxtKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "KHOAHOC", true));
-            this.TxtKhoaHoc.Location = new System.Drawing.Point(158, 137);
+            this.TxtKhoaHoc.Location = new System.Drawing.Point(192, 197);
             this.TxtKhoaHoc.Name = "TxtKhoaHoc";
             this.TxtKhoaHoc.Size = new System.Drawing.Size(301, 33);
             this.TxtKhoaHoc.TabIndex = 5;
@@ -469,7 +488,7 @@ namespace QLDSV_TC
             // TxtTenLop
             // 
             this.TxtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "TENLOP", true));
-            this.TxtTenLop.Location = new System.Drawing.Point(158, 84);
+            this.TxtTenLop.Location = new System.Drawing.Point(192, 144);
             this.TxtTenLop.Name = "TxtTenLop";
             this.TxtTenLop.Size = new System.Drawing.Size(301, 33);
             this.TxtTenLop.TabIndex = 3;
@@ -477,7 +496,7 @@ namespace QLDSV_TC
             // TxtMaLop
             // 
             this.TxtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "MALOP", true));
-            this.TxtMaLop.Location = new System.Drawing.Point(158, 28);
+            this.TxtMaLop.Location = new System.Drawing.Point(192, 88);
             this.TxtMaLop.Name = "TxtMaLop";
             this.TxtMaLop.Size = new System.Drawing.Size(301, 33);
             this.TxtMaLop.TabIndex = 1;
@@ -506,11 +525,11 @@ namespace QLDSV_TC
             // 
             this.GcLopHoc.DataSource = this.BdsLH;
             this.GcLopHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GcLopHoc.Location = new System.Drawing.Point(0, 136);
+            this.GcLopHoc.Location = new System.Drawing.Point(0, 142);
             this.GcLopHoc.MainView = this.gridView1;
             this.GcLopHoc.MenuManager = this.barManager2;
             this.GcLopHoc.Name = "GcLopHoc";
-            this.GcLopHoc.Size = new System.Drawing.Size(1567, 275);
+            this.GcLopHoc.Size = new System.Drawing.Size(1567, 269);
             this.GcLopHoc.TabIndex = 23;
             this.GcLopHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -568,14 +587,20 @@ namespace QLDSV_TC
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 136);
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 31);
-            this.label2.TabIndex = 29;
+            this.label2.Size = new System.Drawing.Size(1567, 65);
+            this.label2.TabIndex = 35;
             this.label2.Text = "Danh sách lớp học";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // FormLopHoc
             // 
@@ -664,6 +689,8 @@ namespace QLDSV_TC
         private System.Windows.Forms.TextBox TxtMaLop;
         private DevExpress.XtraBars.BarButtonItem BtnSuaLH;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

@@ -316,7 +316,7 @@ namespace QLDSV_TC
             this.panelControl8.Controls.Add(this.panelControl9);
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl8.Location = new System.Drawing.Point(0, 249);
-            this.panelControl8.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl8.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Size = new System.Drawing.Size(1698, 1496);
             this.panelControl8.TabIndex = 12;
@@ -328,7 +328,7 @@ namespace QLDSV_TC
             this.panelControl10.Controls.Add(this.panelControl16);
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl10.Location = new System.Drawing.Point(1951, 3);
-            this.panelControl10.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl10.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl10.Name = "panelControl10";
             this.panelControl10.Size = new System.Drawing.Size(0, 1490);
             this.panelControl10.TabIndex = 1;
@@ -338,7 +338,7 @@ namespace QLDSV_TC
             this.panelControl21.Controls.Add(this.gridControlDSLTC);
             this.panelControl21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl21.Location = new System.Drawing.Point(1, 449);
-            this.panelControl21.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl21.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl21.Name = "panelControl21";
             this.panelControl21.Size = new System.Drawing.Size(0, 1038);
             this.panelControl21.TabIndex = 2;
@@ -494,7 +494,7 @@ namespace QLDSV_TC
             this.panelControl17.Controls.Add(this.panelControl18);
             this.panelControl17.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl17.Location = new System.Drawing.Point(1, 199);
-            this.panelControl17.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl17.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl17.Name = "panelControl17";
             this.panelControl17.Size = new System.Drawing.Size(0, 250);
             this.panelControl17.TabIndex = 1;
@@ -505,7 +505,7 @@ namespace QLDSV_TC
             this.panelControl20.Controls.Add(this.BtnTimDSLTC);
             this.panelControl20.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl20.Location = new System.Drawing.Point(2057, 3);
-            this.panelControl20.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl20.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl20.Name = "panelControl20";
             this.panelControl20.Size = new System.Drawing.Size(686, 244);
             this.panelControl20.TabIndex = 2;
@@ -531,7 +531,7 @@ namespace QLDSV_TC
             this.panelControl19.Controls.Add(this.label5);
             this.panelControl19.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl19.Location = new System.Drawing.Point(1029, 3);
-            this.panelControl19.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl19.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl19.Name = "panelControl19";
             this.panelControl19.Padding = new System.Windows.Forms.Padding(54, 0, 54, 0);
             this.panelControl19.Size = new System.Drawing.Size(1028, 244);
@@ -568,7 +568,7 @@ namespace QLDSV_TC
             this.panelControl18.Controls.Add(this.label4);
             this.panelControl18.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl18.Location = new System.Drawing.Point(1, 3);
-            this.panelControl18.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl18.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl18.Name = "panelControl18";
             this.panelControl18.Padding = new System.Windows.Forms.Padding(14, 0, 54, 0);
             this.panelControl18.Size = new System.Drawing.Size(1028, 244);
@@ -603,7 +603,7 @@ namespace QLDSV_TC
             this.panelControl16.Controls.Add(this.label15);
             this.panelControl16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl16.Location = new System.Drawing.Point(1, 3);
-            this.panelControl16.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl16.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl16.Name = "panelControl16";
             this.panelControl16.Size = new System.Drawing.Size(0, 196);
             this.panelControl16.TabIndex = 0;
@@ -632,7 +632,7 @@ namespace QLDSV_TC
             this.panelControl9.Controls.Add(this.panelControl11);
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl9.Location = new System.Drawing.Point(3, 3);
-            this.panelControl9.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl9.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Size = new System.Drawing.Size(1948, 1490);
             this.panelControl9.TabIndex = 0;
@@ -644,7 +644,7 @@ namespace QLDSV_TC
             this.panelControl15.Controls.Add(this.label14);
             this.panelControl15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl15.Location = new System.Drawing.Point(3, 568);
-            this.panelControl15.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl15.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl15.Name = "panelControl15";
             this.panelControl15.Size = new System.Drawing.Size(1942, 123);
             this.panelControl15.TabIndex = 4;
@@ -680,7 +680,7 @@ namespace QLDSV_TC
             this.panelControl14.Controls.Add(this.label12);
             this.panelControl14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl14.Location = new System.Drawing.Point(3, 445);
-            this.panelControl14.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl14.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl14.Name = "panelControl14";
             this.panelControl14.Size = new System.Drawing.Size(1942, 123);
             this.panelControl14.TabIndex = 3;
@@ -716,7 +716,7 @@ namespace QLDSV_TC
             this.panelControl13.Controls.Add(this.label10);
             this.panelControl13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl13.Location = new System.Drawing.Point(3, 322);
-            this.panelControl13.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl13.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl13.Name = "panelControl13";
             this.panelControl13.Size = new System.Drawing.Size(1942, 123);
             this.panelControl13.TabIndex = 2;
@@ -752,7 +752,7 @@ namespace QLDSV_TC
             this.panelControl12.Controls.Add(this.label8);
             this.panelControl12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl12.Location = new System.Drawing.Point(3, 199);
-            this.panelControl12.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl12.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl12.Name = "panelControl12";
             this.panelControl12.Size = new System.Drawing.Size(1942, 123);
             this.panelControl12.TabIndex = 1;
@@ -786,7 +786,7 @@ namespace QLDSV_TC
             this.panelControl11.Controls.Add(this.label7);
             this.panelControl11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl11.Location = new System.Drawing.Point(3, 3);
-            this.panelControl11.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl11.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl11.Name = "panelControl11";
             this.panelControl11.Size = new System.Drawing.Size(1942, 196);
             this.panelControl11.TabIndex = 0;
@@ -810,7 +810,7 @@ namespace QLDSV_TC
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 1745);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1698, 0);
             this.panelControl2.TabIndex = 17;
@@ -821,7 +821,7 @@ namespace QLDSV_TC
             this.panelControl4.Controls.Add(this.panelControl27);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl4.Location = new System.Drawing.Point(1951, 1);
-            this.panelControl4.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl4.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(0, 0);
             this.panelControl4.TabIndex = 2;
@@ -831,7 +831,7 @@ namespace QLDSV_TC
             this.panelControl5.Controls.Add(this.gridControlDSLTCHuy);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(0, 196);
-            this.panelControl5.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl5.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(0, 0);
             this.panelControl5.TabIndex = 2;
@@ -971,7 +971,7 @@ namespace QLDSV_TC
             this.panelControl27.Controls.Add(this.label6);
             this.panelControl27.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl27.Location = new System.Drawing.Point(0, 0);
-            this.panelControl27.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl27.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl27.Name = "panelControl27";
             this.panelControl27.Size = new System.Drawing.Size(0, 196);
             this.panelControl27.TabIndex = 0;
@@ -1000,7 +1000,7 @@ namespace QLDSV_TC
             this.panelControl3.Controls.Add(this.panelControl22);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl3.Location = new System.Drawing.Point(3, 1);
-            this.panelControl3.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl3.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 23);
             this.panelControl3.Size = new System.Drawing.Size(1948, 0);
@@ -1013,7 +1013,7 @@ namespace QLDSV_TC
             this.panelControl25.Controls.Add(this.label11);
             this.panelControl25.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl25.Location = new System.Drawing.Point(3, 689);
-            this.panelControl25.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl25.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl25.Name = "panelControl25";
             this.panelControl25.Size = new System.Drawing.Size(1942, 123);
             this.panelControl25.TabIndex = 7;
@@ -1023,7 +1023,7 @@ namespace QLDSV_TC
             this.txbGV.Enabled = false;
             this.txbGV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbGV.Location = new System.Drawing.Point(532, 12);
-            this.txbGV.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.txbGV.Margin = new System.Windows.Forms.Padding(10);
             this.txbGV.Name = "txbGV";
             this.txbGV.ReadOnly = true;
             this.txbGV.Size = new System.Drawing.Size(1382, 46);
@@ -1049,7 +1049,7 @@ namespace QLDSV_TC
             this.panelControl24.Controls.Add(this.label9);
             this.panelControl24.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl24.Location = new System.Drawing.Point(3, 566);
-            this.panelControl24.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl24.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl24.Name = "panelControl24";
             this.panelControl24.Size = new System.Drawing.Size(1942, 123);
             this.panelControl24.TabIndex = 6;
@@ -1059,7 +1059,7 @@ namespace QLDSV_TC
             this.txbNhom.Enabled = false;
             this.txbNhom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNhom.Location = new System.Drawing.Point(528, 12);
-            this.txbNhom.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.txbNhom.Margin = new System.Windows.Forms.Padding(10);
             this.txbNhom.Name = "txbNhom";
             this.txbNhom.ReadOnly = true;
             this.txbNhom.Size = new System.Drawing.Size(1382, 46);
@@ -1085,7 +1085,7 @@ namespace QLDSV_TC
             this.panelControl23.Controls.Add(this.label3);
             this.panelControl23.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl23.Location = new System.Drawing.Point(3, 443);
-            this.panelControl23.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl23.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl23.Name = "panelControl23";
             this.panelControl23.Size = new System.Drawing.Size(1942, 123);
             this.panelControl23.TabIndex = 5;
@@ -1095,7 +1095,7 @@ namespace QLDSV_TC
             this.txbTenMH.Enabled = false;
             this.txbTenMH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTenMH.Location = new System.Drawing.Point(532, 12);
-            this.txbTenMH.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.txbTenMH.Margin = new System.Windows.Forms.Padding(10);
             this.txbTenMH.Name = "txbTenMH";
             this.txbTenMH.ReadOnly = true;
             this.txbTenMH.Size = new System.Drawing.Size(1382, 46);
@@ -1121,7 +1121,7 @@ namespace QLDSV_TC
             this.panelControl7.Controls.Add(this.label2);
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl7.Location = new System.Drawing.Point(3, 320);
-            this.panelControl7.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl7.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl7.Name = "panelControl7";
             this.panelControl7.Size = new System.Drawing.Size(1942, 123);
             this.panelControl7.TabIndex = 4;
@@ -1131,7 +1131,7 @@ namespace QLDSV_TC
             this.txbMaMH.Enabled = false;
             this.txbMaMH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMaMH.Location = new System.Drawing.Point(528, 12);
-            this.txbMaMH.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.txbMaMH.Margin = new System.Windows.Forms.Padding(10);
             this.txbMaMH.Name = "txbMaMH";
             this.txbMaMH.ReadOnly = true;
             this.txbMaMH.Size = new System.Drawing.Size(1382, 46);
@@ -1156,7 +1156,7 @@ namespace QLDSV_TC
             this.btnDangky.Enabled = false;
             this.btnDangky.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangky.Location = new System.Drawing.Point(3, -174);
-            this.btnDangky.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnDangky.Margin = new System.Windows.Forms.Padding(10);
             this.btnDangky.Name = "btnDangky";
             this.btnDangky.Size = new System.Drawing.Size(1942, 150);
             this.btnDangky.TabIndex = 3;
@@ -1170,7 +1170,7 @@ namespace QLDSV_TC
             this.panelControl6.Controls.Add(this.label13);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl6.Location = new System.Drawing.Point(3, 197);
-            this.panelControl6.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl6.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(1942, 123);
             this.panelControl6.TabIndex = 2;
@@ -1179,7 +1179,7 @@ namespace QLDSV_TC
             // 
             this.txbMaLopTC.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMaLopTC.Location = new System.Drawing.Point(524, 12);
-            this.txbMaLopTC.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.txbMaLopTC.Margin = new System.Windows.Forms.Padding(10);
             this.txbMaLopTC.Name = "txbMaLopTC";
             this.txbMaLopTC.ReadOnly = true;
             this.txbMaLopTC.Size = new System.Drawing.Size(1382, 46);
@@ -1203,7 +1203,7 @@ namespace QLDSV_TC
             this.panelControl22.Controls.Add(this.label18);
             this.panelControl22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl22.Location = new System.Drawing.Point(3, 1);
-            this.panelControl22.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl22.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl22.Name = "panelControl22";
             this.panelControl22.Size = new System.Drawing.Size(1942, 196);
             this.panelControl22.TabIndex = 0;

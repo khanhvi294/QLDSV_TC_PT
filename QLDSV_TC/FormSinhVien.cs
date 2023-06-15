@@ -335,5 +335,10 @@ namespace QLDSV_TC
             BtnThem.Enabled = BtnThoat.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnSua.Enabled = true;
             BtnGhi.Enabled = BtnPhucHoi.Enabled = false;
         }
+
+        private void panelControl2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
