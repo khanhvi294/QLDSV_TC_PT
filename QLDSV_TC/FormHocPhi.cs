@@ -142,9 +142,9 @@ namespace QLDSV_TC
                     txtMASV.Focus();
                     return;
                 }
-                if(float.Parse(((DataRowView)bdsHocPhi[bdsHocPhi.Position])["HOCPHI"].ToString()) <= 0)
+                if (((DataRowView)bdsHocPhi[bdsHocPhi.Position])["NIENKHOA"].ToString() == "")
                 {
-                    MessageBox.Show("Số tiền không được nhỏ hơn 0đ");
+                    MessageBox.Show("Nien Khoa chưa nhập!");
                     return;
                 }
                 if (((DataRowView)bdsHocPhi[bdsHocPhi.Position])["HOCKY"].ToString() == "")
@@ -162,16 +162,17 @@ namespace QLDSV_TC
                     MessageBox.Show("Học kì không được nhỏ hơn 1");
                     return;
                 }
+                if (float.Parse(((DataRowView)bdsHocPhi[bdsHocPhi.Position])["HOCPHI"].ToString()) <= 0)
+                {
+                    MessageBox.Show("Số tiền không được nhỏ hơn 0đ");
+                    return;
+                }
                 if (float.Parse(((DataRowView)bdsHocPhi[bdsHocPhi.Position])["HOCKY"].ToString()) > 4)
                 {
                     MessageBox.Show("Học kì không được Lon hon 4");
                     return;
                 }
-                if (((DataRowView)bdsHocPhi[bdsHocPhi.Position])["NIENKHOA"].ToString() == "")
-                {
-                    MessageBox.Show("Nien Khoa chưa nhập!");
-                    return;
-                }
+              
                 string nienKhoaParts = ((DataRowView)bdsHocPhi[bdsHocPhi.Position])["NIENKHOA"].ToString();
                 string[] nienKhoaPart1 = nienKhoaParts.Split('-');
                

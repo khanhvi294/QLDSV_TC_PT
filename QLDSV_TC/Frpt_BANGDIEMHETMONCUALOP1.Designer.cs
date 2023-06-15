@@ -53,6 +53,7 @@ namespace QLDSV_TC
             this.cmbHOCKY = new System.Windows.Forms.ComboBox();
             this.cmbNHOM = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             tENMHLabel1 = new System.Windows.Forms.Label();
             nIENKHOALabel = new System.Windows.Forms.Label();
             nHOMLabel = new System.Windows.Forms.Label();
@@ -68,46 +69,51 @@ namespace QLDSV_TC
             // tENMHLabel1
             // 
             tENMHLabel1.AutoSize = true;
-            tENMHLabel1.Location = new System.Drawing.Point(134, 290);
+            tENMHLabel1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            tENMHLabel1.Location = new System.Drawing.Point(128, 286);
             tENMHLabel1.Name = "tENMHLabel1";
-            tENMHLabel1.Size = new System.Drawing.Size(57, 17);
+            tENMHLabel1.Size = new System.Drawing.Size(65, 17);
             tENMHLabel1.TabIndex = 28;
             tENMHLabel1.Text = "TENMH:";
             // 
             // nIENKHOALabel
             // 
             nIENKHOALabel.AutoSize = true;
-            nIENKHOALabel.Location = new System.Drawing.Point(580, 369);
+            nIENKHOALabel.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            nIENKHOALabel.Location = new System.Drawing.Point(128, 109);
             nIENKHOALabel.Name = "nIENKHOALabel";
-            nIENKHOALabel.Size = new System.Drawing.Size(78, 17);
+            nIENKHOALabel.Size = new System.Drawing.Size(93, 17);
             nIENKHOALabel.TabIndex = 32;
             nIENKHOALabel.Text = "NIENKHOA:";
             // 
             // nHOMLabel
             // 
             nHOMLabel.AutoSize = true;
-            nHOMLabel.Location = new System.Drawing.Point(706, 157);
+            nHOMLabel.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            nHOMLabel.Location = new System.Drawing.Point(128, 225);
             nHOMLabel.Name = "nHOMLabel";
-            nHOMLabel.Size = new System.Drawing.Size(51, 17);
+            nHOMLabel.Size = new System.Drawing.Size(58, 17);
             nHOMLabel.TabIndex = 34;
             nHOMLabel.Text = "NHOM:";
             // 
             // hOCKYLabel
             // 
             hOCKYLabel.AutoSize = true;
-            hOCKYLabel.Location = new System.Drawing.Point(371, 207);
+            hOCKYLabel.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            hOCKYLabel.Location = new System.Drawing.Point(128, 166);
             hOCKYLabel.Name = "hOCKYLabel";
-            hOCKYLabel.Size = new System.Drawing.Size(57, 17);
+            hOCKYLabel.Size = new System.Drawing.Size(64, 17);
             hOCKYLabel.TabIndex = 35;
             hOCKYLabel.Text = "HOCKY:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(128, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 14;
             this.label1.Text = "KHOA";
             // 
@@ -165,9 +171,9 @@ namespace QLDSV_TC
             // 
             this.cmbTENMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMONHOC, "TENMH", true));
             this.cmbTENMH.FormattingEnabled = true;
-            this.cmbTENMH.Location = new System.Drawing.Point(234, 110);
+            this.cmbTENMH.Location = new System.Drawing.Point(234, 279);
             this.cmbTENMH.Name = "cmbTENMH";
-            this.cmbTENMH.Size = new System.Drawing.Size(121, 24);
+            this.cmbTENMH.Size = new System.Drawing.Size(529, 24);
             this.cmbTENMH.TabIndex = 29;
             this.cmbTENMH.SelectedIndexChanged += new System.EventHandler(this.cmbTENMH_SelectedIndexChanged_1);
             // 
@@ -184,9 +190,21 @@ namespace QLDSV_TC
             // 
             this.cmbNIENKHOA.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nIENKHOABindingSource, "NIENKHOA", true));
             this.cmbNIENKHOA.FormattingEnabled = true;
-            this.cmbNIENKHOA.Location = new System.Drawing.Point(664, 366);
+            this.cmbNIENKHOA.Items.AddRange(new object[] {
+            "2012-2013",
+            "2014-2015",
+            "2015-2016",
+            "2016-2017",
+            "2017-2018",
+            "2018-2019",
+            "2020-2021",
+            "2021-2022",
+            "2022-2023",
+            "2024-2025",
+            "2026-2027"});
+            this.cmbNIENKHOA.Location = new System.Drawing.Point(234, 109);
             this.cmbNIENKHOA.Name = "cmbNIENKHOA";
-            this.cmbNIENKHOA.Size = new System.Drawing.Size(121, 24);
+            this.cmbNIENKHOA.Size = new System.Drawing.Size(529, 24);
             this.cmbNIENKHOA.TabIndex = 33;
             // 
             // nHOMBindingSource
@@ -216,40 +234,54 @@ namespace QLDSV_TC
             "2",
             "3",
             "4"});
-            this.cmbHOCKY.Location = new System.Drawing.Point(452, 200);
+            this.cmbHOCKY.Location = new System.Drawing.Point(234, 166);
             this.cmbHOCKY.Name = "cmbHOCKY";
-            this.cmbHOCKY.Size = new System.Drawing.Size(121, 24);
+            this.cmbHOCKY.Size = new System.Drawing.Size(529, 24);
             this.cmbHOCKY.TabIndex = 36;
             // 
             // cmbNHOM
             // 
-            this.cmbNHOM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNHOM.FormattingEnabled = true;
             this.cmbNHOM.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
             "4"});
-            this.cmbNHOM.Location = new System.Drawing.Point(774, 148);
+            this.cmbNHOM.Location = new System.Drawing.Point(234, 218);
             this.cmbNHOM.Name = "cmbNHOM";
-            this.cmbNHOM.Size = new System.Drawing.Size(121, 24);
+            this.cmbNHOM.Size = new System.Drawing.Size(529, 24);
             this.cmbNHOM.TabIndex = 37;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(318, 428);
+            this.button1.BackColor = System.Drawing.Color.SpringGreen;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(337, 368);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(93, 33);
             this.button1.TabIndex = 38;
             this.button1.Text = "IN";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.LightCoral;
+            this.btnThoat.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.btnThoat.Location = new System.Drawing.Point(466, 368);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(91, 33);
+            this.btnThoat.TabIndex = 39;
+            this.btnThoat.Text = "Thoat";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // Frpt_BANGDIEMHETMONCUALOP1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 545);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cmbNHOM);
             this.Controls.Add(this.cmbHOCKY);
@@ -262,7 +294,7 @@ namespace QLDSV_TC
             this.Controls.Add(this.cmbKHOA);
             this.Controls.Add(this.label1);
             this.Name = "Frpt_BANGDIEMHETMONCUALOP1";
-            this.Text = "XtraForm1";
+            this.Text = "Bang diem mon hoc";
             this.Load += new System.EventHandler(this.Frpt_BANGDIEMHETMONCUALOP1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIANGVIENBindingSource)).EndInit();
@@ -296,5 +328,6 @@ namespace QLDSV_TC
         private System.Windows.Forms.ComboBox cmbHOCKY;
         private System.Windows.Forms.ComboBox cmbNHOM;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

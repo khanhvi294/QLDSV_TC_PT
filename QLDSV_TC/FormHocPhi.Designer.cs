@@ -678,6 +678,7 @@ namespace QLDSV_TC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1818, 720);
             this.Controls.Add(this.CT_HOCPHI_GRIDCONTROL);
             this.Controls.Add(this.HOCPHIGRIDCONTROL);

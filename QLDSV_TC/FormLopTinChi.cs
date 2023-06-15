@@ -248,12 +248,6 @@ namespace QLDSV_TC
 
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            /* bdsLTC.CancelEdit();
-             if (btnThem.Enabled == false) bdsLTC.Position = vitri;
-             gcLTC.Enabled = true;
-             groupBox2.Enabled = false;
-             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = true;
-             btnGhi.Enabled = btnPhucHoi.Enabled = false;*/
             if (dangthemmoi == true && this.btnThem.Enabled == false)
             {
                 dangthemmoi = false;
@@ -291,19 +285,6 @@ namespace QLDSV_TC
                 MessageBox.Show("Khong the xoa Lop Tin Chi nay vi da duoc dang ky", "", MessageBoxButtons.OK);
                 return;
             }
-           /* maLTC = ((DataRowView)bdsLTC[bdsLTC.Position])["MALTC"].ToString();
-            string queryUndo =
-                               "INSERT INTO DBO.LOPTINCHI( MALTC,NIENKHOA,HOCKY,MAMH,NHOM, MAGV, MAKHOA,SOSVTOITHIEU,HUYLOP) " +
-                                " VALUES( '" + maLTC + "',N'" +
-                                               txtNIENKHOA.Text + "','" +
-                                               HOCKY.Value + "', '" +
-                                               txtMAMH.Text + "',' " +
-                                               NHOM.Value + "',' " +
-                                               txtMAGV.Text + "', '" +
-                                               txtMAKHOA.Text + "',' " +
-                                               SL_SVMIN.Value + "', '" +
-                                               HUYLOP.Checked + "' ) ";
-            undoList.Push(queryUndo);*/
 
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa LTC này không ?", "Thông báo",
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -346,7 +327,7 @@ namespace QLDSV_TC
         {
             groupBox2.Enabled = false;
             gcLTC.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnGhi.Enabled = true;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnGhi.Enabled= btnThoat.Enabled = true;
         }
 
         public static bool CheckSpecialCharacters(string inputString)
@@ -588,6 +569,21 @@ namespace QLDSV_TC
         }
 
         private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void mAMHLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HUYLOP_CheckedChanged(object sender, EventArgs e)
         {
 
         }

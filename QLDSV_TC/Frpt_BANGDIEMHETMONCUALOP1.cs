@@ -37,8 +37,7 @@ namespace QLDSV_TC
             cmbKHOA.SelectedIndex = Program.mKhoa;
             cmbTENMH.DataSource = this.dS.MONHOC;
             cmbTENMH.DisplayMember = "TENMH";
-            cmbNIENKHOA.DataSource = this.dS.NIENKHOA;
-            cmbNIENKHOA.DisplayMember = "NIENKHOA";
+           
             if (Program.mGroup == "KHOA")
             {
                 cmbKHOA.Enabled = false;
@@ -108,7 +107,7 @@ namespace QLDSV_TC
             int hocky = int.Parse(cmbHOCKY.SelectedValue.ToString());
             int nhom = int.Parse(cmbNHOM.SelectedValue.ToString());
 
-            Xrpt_BANGDIENHEMONCUALOPTC1 rpt = new Xrpt_BANGDIENHEMONCUALOPTC1(nienkhoa, hocky, nhom, maMH);
+            Xrpt_BANGDIEMHETMONLTC rpt = new Xrpt_BANGDIEMHETMONLTC(nienkhoa, hocky, nhom, maMH);
 
             /*      rpt.lblTieuDe.Text = “DANH SÁCH PHIẾU “ +cmbLoai.Text.ToUpper() + “ NHÂN VIÊN LẬP TRONG NĂM “ +cmbNam.Text;
                   rpt.lblHoTen.Text = cmbHoten.Text;*/
@@ -126,12 +125,16 @@ namespace QLDSV_TC
             int hocky = int.Parse(cmbHOCKY.Text);
             int nhom = int.Parse(cmbNHOM.Text);
 
-            Xrpt_BANGDIENHEMONCUALOPTC1 rpt = new Xrpt_BANGDIENHEMONCUALOPTC1(nienkhoa, hocky, nhom, maMH1);
+            Xrpt_BANGDIEMHETMONLTC rpt = new Xrpt_BANGDIEMHETMONLTC(nienkhoa, hocky, nhom, maMH1);
 
-            /*      rpt.lblTieuDe.Text = “DANH SÁCH PHIẾU “ +cmbLoai.Text.ToUpper() + “ NHÂN VIÊN LẬP TRONG NĂM “ +cmbNam.Text;
-                  rpt.lblHoTen.Text = cmbHoten.Text;*/
 
-           ReportPrintTool print = new ReportPrintTool(rpt);
+
+            rpt.lblTIEUDE.Text = "BANG DIEM HET MON " + (cmbKHOA.Text).ToUpper();
+            rpt.txtNienKhoa.Text = cmbNIENKHOA.Text;
+            rpt.txtHOCKY.Text = cmbHOCKY.Text;
+            rpt.txtNHOM.Text = cmbNHOM.Text;
+            rpt.txtMONHOC.Text = cmbTENMH.Text;
+            ReportPrintTool print = new ReportPrintTool(rpt);
            print.ShowPreviewDialog();
         }
 
@@ -148,6 +151,11 @@ namespace QLDSV_TC
             {
 
             }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

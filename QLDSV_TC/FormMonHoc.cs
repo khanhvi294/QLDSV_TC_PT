@@ -38,13 +38,9 @@ namespace QLDSV_TC
         private void FrmSubject_Load(object sender, EventArgs e)
         {
             dS.EnforceConstraints = false;
-            // TODO: This line of code loads data into the 'dS.MONHOC' table. You can move, or remove it, as needed.
-            //this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;//neu khong co lenh nay thi no se lay tk ta tao ban dau de ket noi neu sau do nguoi su dung tk doi mk thi se k xai duoc
             this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.MONHOCTableAdapter.Fill(this.dS.MONHOC);
 
-            // TODO: This line of code loads data into the 'dS.LOPTINCHI' table. You can move, or remove it, as needed.
-            //this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTINCHITableAdapter.Fill(this.dS.LOPTINCHI);
 
@@ -71,7 +67,7 @@ namespace QLDSV_TC
             {
                 dangthemmoi = false;
 
-                this.btnThem.Enabled = this.btnXoa.Enabled = this.btnGhi.Enabled = this.btnLamMoi.Enabled = this.btnThoat.Enabled = true;
+                this.btnThem.Enabled = this.btnXoa.Enabled = this.btnGhi.Enabled = this.btnLamMoi.Enabled = this.btnThoat.Enabled = btnSua.Enabled = btnHuy.Enabled = true;
                 this.btnPhucHoi.Enabled = false;
                 bdsMH.CancelEdit();
                 bdsMH.RemoveCurrent();
@@ -91,12 +87,8 @@ namespace QLDSV_TC
             }
             bdsMH.CancelEdit();
             String queryUndo = undoList.Pop().ToString();
-            Console.WriteLine(queryUndo);
             int n = Program.ExecSqlNonQuery(queryUndo);
             this.MONHOCTableAdapter.Fill(this.dS.MONHOC);
-          
-         /*   btnPhucHoi.Enabled = btnGhi.Enabled = btnLamMoi.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled  = btnPhucHoi.Enabled = false;*/
         }
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -195,7 +187,7 @@ namespace QLDSV_TC
                 txtTenMH.Focus();
                 return;
             }
-            if (Regex.IsMatch(txtTenMH.Text.Trim(), @"^[a-zA-Z0-9]+$") == false)
+            if (Regex.IsMatch(txtTenMH.Text.Trim(), @"^[\p{L}0-9\s]+$") == false)
             {
                 MessageBox.Show("Ten mon hoc chỉ có chữ cái và số", "Thông báo", MessageBoxButtons.OK);
                 txtTenMH.Focus();
@@ -212,6 +204,7 @@ namespace QLDSV_TC
             String maMH = txtMaMH.Text.Trim();
             DataRowView datarv = ((DataRowView)bdsMH[bdsMH.Position]);
             String tenMH = datarv["TENMH"].ToString();
+            String maMHOld = datarv["MAMH"].ToString();
             String soTietLT = datarv["SOTIET_LT"].ToString();
             String soTietTH = datarv["SOTIET_TH"].ToString();
             if (flagOption == "Update")
@@ -294,7 +287,9 @@ namespace QLDSV_TC
                     }
                     else
                     {
-                        queryUndo = "UPDATE DBO.MONHOC \n" + "SET " + "TENMH =N'" + tenMH + "'," +
+                        queryUndo = "UPDATE DBO.MONHOC \n" + "SET " +
+                                    "MAMH =N'" + maMHOld + "'," +
+                                    "TENMH =N'" + tenMH + "'," +
                                     "SOTIET_LT ='" + soTietLT + "'," +
                                     "SOTIET_TH =" + soTietTH + " " +
                                     "WHERE MAMH = '" + maMH + "'";
@@ -315,7 +310,7 @@ namespace QLDSV_TC
              
             gcMonHoc.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnLamMoi.Enabled = btnThoat.Enabled = btnPhucHoi.Enabled = true;
-            btnGhi.Enabled= false;
+            btnGhi.Enabled= true;
             groupBox1.Enabled = false;
         }
 
@@ -323,7 +318,7 @@ namespace QLDSV_TC
         {
             groupBox1.Enabled = false;
             gcMonHoc.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnGhi.Enabled = true;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnGhi.Enabled= btnThoat.Enabled = true;
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

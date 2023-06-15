@@ -43,7 +43,6 @@ namespace QLDSV_TC
             {
                 BtnHocPhi.Enabled = true;
                 BtnDiem.Enabled = BtnLopHoc.Enabled = BtnLopTC.Enabled = BtnMonHoc.Enabled = BtnSinhVien.Enabled = BtnDangKy.Enabled = false;
-                BaoCao.Visible = false;
             }
             if (Program.mGroup.Equals("PGV") || Program.mGroup.Equals("KHOA"))
             {
@@ -105,7 +104,7 @@ namespace QLDSV_TC
         private void BtnLopTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            Form frm = this.CheckExists(typeof(FormMonHoc));
+            Form frm = this.CheckExists(typeof(FormLopTinChi));
             if (frm != null) frm.Activate();
             else
             {
@@ -134,6 +133,30 @@ namespace QLDSV_TC
             else
             {
                 Frpt_BANGDIEMHETMONCUALOP1 f = new Frpt_BANGDIEMHETMONCUALOP1();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void BtnPhieuDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(Frpt_INPHIEUDIEMSV1));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Frpt_INPHIEUDIEMSV1 f = new Frpt_INPHIEUDIEMSV1();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void BtnHP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(Frpt_INDANHSACHDONGHOCPHI));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Frpt_INDANHSACHDONGHOCPHI f = new Frpt_INDANHSACHDONGHOCPHI();
                 f.MdiParent = this;
                 f.Show();
             }

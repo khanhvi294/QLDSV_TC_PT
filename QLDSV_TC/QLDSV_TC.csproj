@@ -145,11 +145,17 @@
     <Compile Include="FormSinhVien.Designer.cs">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frpt_BANGDIENMONHOCCUALTC.cs">
+    <Compile Include="Frpt_INDANHSACHDONGHOCPHI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frpt_BANGDIENMONHOCCUALTC.Designer.cs">
-      <DependentUpon>Frpt_BANGDIENMONHOCCUALTC.cs</DependentUpon>
+    <Compile Include="Frpt_INDANHSACHDONGHOCPHI.Designer.cs">
+      <DependentUpon>Frpt_INDANHSACHDONGHOCPHI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frpt_INPHIEUDIEMSV1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frpt_INPHIEUDIEMSV1.Designer.cs">
+      <DependentUpon>Frpt_INPHIEUDIEMSV1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,23 +165,29 @@
     <Compile Include="FormDangKy.Designer.cs">
       <DependentUpon>FormDangKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Xrpt_BANGDIEMHETMON.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Xrpt_BANGDIEMHETMON.Designer.cs">
-      <DependentUpon>Xrpt_BANGDIEMHETMON.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Xrpt_BANGDIENHEMONCUALOPTC1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Xrpt_BANGDIENHEMONCUALOPTC1.Designer.cs">
-      <DependentUpon>Xrpt_BANGDIENHEMONCUALOPTC1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frpt_BANGDIEMHETMONCUALOP1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frpt_BANGDIEMHETMONCUALOP1.Designer.cs">
       <DependentUpon>Frpt_BANGDIEMHETMONCUALOP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_BANGDIEMHETMONLTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_BANGDIEMHETMONLTC.Designer.cs">
+      <DependentUpon>Xrpt_BANGDIEMHETMONLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_INDANHSACHDONGHOCPHI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_INDANHSACHDONGHOCPHI.Designer.cs">
+      <DependentUpon>Xrpt_INDANHSACHDONGHOCPHI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_INPHIEUDIEMSV2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_INPHIEUDIEMSV2.Designer.cs">
+      <DependentUpon>Xrpt_INPHIEUDIEMSV2.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
@@ -198,8 +210,11 @@
     <EmbeddedResource Include="FormSinhVien.resx">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frpt_BANGDIENMONHOCCUALTC.resx">
-      <DependentUpon>Frpt_BANGDIENMONHOCCUALTC.cs</DependentUpon>
+    <EmbeddedResource Include="Frpt_INDANHSACHDONGHOCPHI.resx">
+      <DependentUpon>Frpt_INDANHSACHDONGHOCPHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frpt_INPHIEUDIEMSV1.resx">
+      <DependentUpon>Frpt_INPHIEUDIEMSV1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -215,14 +230,17 @@
     <EmbeddedResource Include="FormDangKy.resx">
       <DependentUpon>FormDangKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Xrpt_BANGDIEMHETMON.resx">
-      <DependentUpon>Xrpt_BANGDIEMHETMON.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Xrpt_BANGDIENHEMONCUALOPTC1.resx">
-      <DependentUpon>Xrpt_BANGDIENHEMONCUALOPTC1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frpt_BANGDIEMHETMONCUALOP1.resx">
       <DependentUpon>Frpt_BANGDIEMHETMONCUALOP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_BANGDIEMHETMONLTC.resx">
+      <DependentUpon>Xrpt_BANGDIEMHETMONLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_INDANHSACHDONGHOCPHI.resx">
+      <DependentUpon>Xrpt_INDANHSACHDONGHOCPHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_INPHIEUDIEMSV2.resx">
+      <DependentUpon>Xrpt_INPHIEUDIEMSV2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">
