@@ -234,7 +234,7 @@ namespace QLDSV_TC
             // 
             this.bar5.BarName = "Main menu";
             this.bar5.DockCol = 0;
-            this.bar5.DockRow = 1;
+            this.bar5.DockRow = 0;
             this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.BtnThemLH, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -500,6 +500,7 @@ namespace QLDSV_TC
             this.TxtMaLop.Name = "TxtMaLop";
             this.TxtMaLop.Size = new System.Drawing.Size(301, 33);
             this.TxtMaLop.TabIndex = 1;
+            this.TxtMaLop.TextChanged += new System.EventHandler(this.TxtMaLop_TextChanged);
             // 
             // lOPTableAdapter
             // 
@@ -620,7 +621,7 @@ namespace QLDSV_TC
             this.Font = new System.Drawing.Font("Times New Roman", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLopHoc";
-            this.Text = "FormLopHoc";
+            this.Text = "Lớp Học";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormLopHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();

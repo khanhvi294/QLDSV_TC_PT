@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,8 @@ namespace QLDSV_TC
     {
         int vitri = 0;
         string maLop = "";
+        string maSinhVienSua = "";
+        Boolean themSV = true;
         public FormSinhVien()
         {
             InitializeComponent();
@@ -62,6 +65,8 @@ namespace QLDSV_TC
                 CmbKhoa.Enabled = false;
             }
 
+            BtnGhi.Enabled = false;
+
         }
 
         private void lOPBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -92,15 +97,61 @@ namespace QLDSV_TC
                 TxtTenSV.Focus();
                 return false;
             }
-           // if((TxtTenLop.Text.Trim() == tenLopSua) && (chonThem == false)))
 
-            string query1 = " DECLARE @result INT " +
+            if (TxtMaSV.Text.Trim().Length  >  10)
+            {
+                MessageBox.Show("Mã sinh viên tối đa 10 kí tự!", "", MessageBoxButtons.OK);
+                TxtMaSV.Focus();
+                return false;
+            }
 
-                            " EXEC @result= KT_MASV " +
+            if (TxtHo.Text.Trim().Length > 50)
+            {
+                MessageBox.Show("Họ sinh viên tối đa 50 kí tự!", "", MessageBoxButtons.OK);
+                TxtHo.Focus();
+                return false;
+            }
 
-                            TxtMaSV.Text.Trim() +
+            if (TxtTenSV.Text.Trim().Length > 10)
+            {
+                MessageBox.Show("Tên sinh viên tối đa 50 kí tự!", "", MessageBoxButtons.OK);
+                TxtTenSV.Focus();
+                return false;
+            }
 
-                            " SELECT  @result AS Result";
+            bool match = Regex.IsMatch(TxtMaSV.Text.Trim().ToUpper(), "[NB][0-9][0-9][A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9]");
+            if (!match || TxtMaSV.Text.Trim().Length != 10)
+            {
+                MessageBox.Show("Mã sinh viên bạn nhập không đúng định dạng \n Ví dụ: N19DCCN001", "", MessageBoxButtons.OK);
+                TxtMaSV.Focus();
+                return false;
+            }
+
+            bool matchHo = Regex.IsMatch(TxtHo.Text.Trim(), "[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$");
+            if (!matchHo)
+            {
+                MessageBox.Show("Họ không được có kí tự đặc biệt", "", MessageBoxButtons.OK);
+                TxtHo.Focus();
+                return false;
+            }
+
+            bool matchTen = Regex.IsMatch(TxtTenSV.Text.Trim(), "[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+$");
+            if (!matchTen || TxtTenSV.Text.Trim().Contains(" "))
+            {
+                MessageBox.Show("Tên không được có kí tự đặc biệt", "", MessageBoxButtons.OK);
+                TxtTenSV.Focus();
+                return false;
+            }
+
+            if (((TxtMaSV.Text.Trim() != maSinhVienSua.Trim()) && (themSV == false)) || themSV == true)
+            {
+                string query1 = " DECLARE @result INT " +
+
+                           " EXEC @result= KT_MASV " +
+
+                           TxtMaSV.Text.Trim() +
+
+                           " SELECT  @result AS Result";
 
                 int result = Program.CheckDataHelper(query1);
                 if (result == -1)
@@ -115,53 +166,59 @@ namespace QLDSV_TC
                 }
                 if (result == 2)
                 {
-                   MessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
-            
-          /*  if (_flagOptionSinhVien == "UPDATE")
-            {
-                if (!this.tedMasv.Text.Trim().ToString().Equals(_oldMaSV))
-                {
-                    string query2 = " DECLARE @return_value INT " +
+            }
 
-                            " EXEC @return_value = [dbo].[SP_CHECKID] " +
+           
+           
 
-                            " @code = N'" + tedMasv.Text.Trim() + "',  " +
 
-                            " @Type = N'MASV' " +
+            /*  if (_flagOptionSinhVien == "UPDATE")
+              {
+                  if (!this.tedMasv.Text.Trim().ToString().Equals(_oldMaSV))
+                  {
+                      string query2 = " DECLARE @return_value INT " +
 
-                            " SELECT  'Return Value' = @return_value ";
+                              " EXEC @return_value = [dbo].[SP_CHECKID] " +
 
-                    int resultMa = Program.CheckDataHelper(query2);
-                    if (resultMa == -1)
-                    {
-                        XtraMessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
-                        this.Close();
-                    }
-                    if (resultMa == 1)
-                    {
-                        XtraMessageBox.Show("Mã Sinh Viên đã tồn tại. Mời bạn nhập mã khác !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return false;
-                    }
-                    if (resultMa == 2)
-                    {
-                        XtraMessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return false;
-                    }
-                }
+                              " @code = N'" + tedMasv.Text.Trim() + "',  " +
 
-            }*/
+                              " @Type = N'MASV' " +
+
+                              " SELECT  'Return Value' = @return_value ";
+
+                      int resultMa = Program.CheckDataHelper(query2);
+                      if (resultMa == -1)
+                      {
+                          XtraMessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                          this.Close();
+                      }
+                      if (resultMa == 1)
+                      {
+                          XtraMessageBox.Show("Mã Sinh Viên đã tồn tại. Mời bạn nhập mã khác !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                          return false;
+                      }
+                      if (resultMa == 2)
+                      {
+                          XtraMessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                          return false;
+                      }
+                  }
+
+              }*/
             return true;
         }
         private void BtnThemLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitri = BdsSv.Position;
+            themSV = true;
             panelControl2.Enabled = true;
             BdsSv.AddNew();
             TxtMaSV.Focus();
             TxtMaLop.Text = ((DataRowView)this.BdsLH[this.gridViewLH.FocusedRowHandle])["MALOP"].ToString();
-            CbPhai.Checked = true;
+            CbPhai.Checked = false;
             CbNghiHoc.Checked = false;
             BtnThem.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnSua.Enabled = false;
             BtnGhi.Enabled = BtnPhucHoi.Enabled = true;
@@ -243,8 +300,10 @@ namespace QLDSV_TC
         }
 
         private void BtnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
+        { 
             vitri = BdsLH.Position;
+            themSV = false;
+            maSinhVienSua = TxtMaSV.Text;
             BtnSua.Enabled = BtnThem.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnXoa.Enabled = false;
             panelControl2.Enabled = BtnPhucHoi.Enabled = BtnGhi.Enabled = true;
             GcLopHoc.Enabled = GcSinhVien.Enabled = false;
@@ -339,6 +398,12 @@ namespace QLDSV_TC
         private void panelControl2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void TxtMaSV_TextChanged(object sender, EventArgs e)
+        {
+            TxtMaSV.Text = TxtMaSV.Text.ToUpper();
+            TxtMaSV.SelectionStart = TxtMaSV.Text.Length;
         }
     }
 }

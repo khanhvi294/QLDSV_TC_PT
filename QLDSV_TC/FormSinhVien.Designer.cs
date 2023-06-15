@@ -637,6 +637,7 @@ namespace QLDSV_TC
             this.TxtMaSV.Name = "TxtMaSV";
             this.TxtMaSV.Size = new System.Drawing.Size(289, 33);
             this.TxtMaSV.TabIndex = 1;
+            this.TxtMaSV.TextChanged += new System.EventHandler(this.TxtMaSV_TextChanged);
             // 
             // GcSinhVien
             // 
@@ -773,6 +774,7 @@ namespace QLDSV_TC
             this.Controls.Add(this.barDockControl3);
             this.Controls.Add(this.barDockControl2);
             this.Name = "FormSinhVien";
+            this.Text = "Sinh Viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormSinhVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

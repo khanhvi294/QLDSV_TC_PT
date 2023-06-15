@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace QLDSV_TC
 {
@@ -73,19 +74,21 @@ namespace QLDSV_TC
             {
                 CmbKhoa.Enabled = false;
             }
+            BtnGhiLH.Enabled = false;
 
         }
 
         private void BtnThemLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitri = BdsLH.Position;
+            chonThem = true;
             panelControl2.Enabled = true;
             BdsLH.AddNew();
             TxtMaKhoa.Text = makhoa;
             TxtMaLop.Focus();
         
             BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled =false;
-            btnGhi.Enabled = btnPhucHoi.Enabled = true;
+            BtnGhiLH.Enabled = BtnPhucHoiLH.Enabled = true;
             GcLopHoc.Enabled = false;
          
         }
@@ -93,11 +96,14 @@ namespace QLDSV_TC
         private void BtnPhucHoiLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             BdsLH.CancelEdit();
+            this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.lOPTableAdapter.Fill(this.DS2.LOP);
+
             if (BtnThemLH.Enabled == false) BdsLH.Position = vitri;
             GcLopHoc.Enabled = true;
             panelControl2.Enabled = false;
             BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled = true;
-            btnGhi.Enabled = btnPhucHoi.Enabled = false;
+            BtnGhiLH.Enabled = BtnPhucHoiLH.Enabled = false;
         }
 
         private void BtnLamMoiLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -169,8 +175,30 @@ namespace QLDSV_TC
                 return false;
             }
 
+            if (TxtMaLop.Text.Trim().Length > 10)
+            {
+                MessageBox.Show("Mã lớp tối đa 10 kí tự!", "", MessageBoxButtons.OK);
+                TxtMaLop.Focus();
+                return false;
+            }
 
-            if (((TxtMaLop.Text.Trim() != maLopSua) && (chonThem == false)) || chonThem == true)
+
+            if (TxtTenLop.Text.Trim().Length > 50)
+            {
+                MessageBox.Show("Tên lớp tối đa 50 kí tự!", "", MessageBoxButtons.OK);
+                TxtTenLop.Focus();
+                return false;
+            }
+
+            bool match = Regex.IsMatch(TxtKhoaHoc.Text.Trim(), "[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]");
+            if (!match)
+            {
+                MessageBox.Show("Khóa học phải có dạng yyyy-yyyy", "", MessageBoxButtons.OK);
+                TxtKhoaHoc.Focus();
+                return false;
+            }
+
+            if (((TxtMaLop.Text.Trim() != maLopSua.Trim()) && (chonThem == false)) || chonThem == true)
             {
                 String query = "DECLARE @result INT;" +
            "EXEC @result = SP_KTMaLopHoc " + TxtMaLop.Text.Trim() + " SELECT @result AS Result;";
@@ -199,7 +227,7 @@ namespace QLDSV_TC
 
 
 
-            if (((TxtTenLop.Text.Trim() != tenLopSua)&&(chonThem == false))||chonThem == true)
+            if (((TxtTenLop.Text.Trim() != tenLopSua.Trim())&&(chonThem == false))||chonThem == true)
             {
                 String query2 = "DECLARE @result INT;" +
                "EXEC @result = SP_KTTenLop N'" + TxtTenLop.Text.Trim() + "' SELECT @result AS Result;";
@@ -226,7 +254,8 @@ namespace QLDSV_TC
                 }
             }
 
-          
+           
+
             return true;
         }
 
@@ -261,6 +290,7 @@ namespace QLDSV_TC
             maLopSua = TxtMaLop.Text;
             tenLopSua = TxtTenLop.Text;
             vitri = BdsLH.Position;
+            chonThem = false;
             BtnSuaLH.Enabled = BtnThemLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled= false;
             panelControl2.Enabled = BtnPhucHoiLH.Enabled = BtnGhiLH.Enabled = true;
             GcLopHoc.Enabled = false;
@@ -363,6 +393,12 @@ namespace QLDSV_TC
                 makhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
             }
 
+        }
+
+        private void TxtMaLop_TextChanged(object sender, EventArgs e)
+        {
+            TxtMaLop.Text = TxtMaLop.Text.ToUpper();
+            TxtMaLop.SelectionStart = TxtMaLop.Text.Length;
         }
     }
 }
