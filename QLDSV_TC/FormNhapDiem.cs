@@ -1,15 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Views.Grid;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDSV_TC
@@ -215,6 +208,34 @@ namespace QLDSV_TC
                 bdsDSSVDangKy.DataSource = tableDSSVDangKy;
                 gridControlDSSVDK.DataSource = tableDSSVDangKy;
             }
+        }
+
+        private void CmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
+                return;
+            Program.servername = CmbKhoa.SelectedValue.ToString();
+            if (CmbKhoa.SelectedIndex != Program.mKhoa)
+            {
+                Program.login = Program.remotelogin;
+                Program.password = Program.remotepassword;
+            }
+            else
+            {
+                Program.login = Program.mLogin;
+                Program.password = Program.mPassword;
+            }
+
+            if (Program.KetNoi() == 0)
+            {
+                MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
+            } else
+            {
+                LayDSNienKhoa();
+                CmbNienKhoa.SelectedIndex = 0;
+                LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+            }
+            
         }
     }
 }

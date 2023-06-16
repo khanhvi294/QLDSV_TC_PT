@@ -256,6 +256,7 @@ namespace QLDSV_TC
             this.CmbKhoa.Name = "CmbKhoa";
             this.CmbKhoa.Size = new System.Drawing.Size(305, 32);
             this.CmbKhoa.TabIndex = 1;
+            this.CmbKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbKhoa_SelectedIndexChanged);
             // 
             // label2
             // 

@@ -65,13 +65,34 @@ namespace QLDSV_TC
         private void BtnSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FormSinhVien f = new FormSinhVien();
+
             f.Show();
         }
 
         private void BtnDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FormNhapDiem f = new FormNhapDiem();
-            f.Show();
+           
+            this.ShowMdiChildren(typeof(FormNhapDiem));
+        }
+
+        private void BtnBangDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.ShowMdiChildren(typeof(FormReportBDTK));
+        }
+
+        private void ShowMdiChildren(Type fType)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == fType)
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form form = (Form)Activator.CreateInstance(fType);
+            form.MdiParent = this;
+            form.Show();
         }
     }
 }
