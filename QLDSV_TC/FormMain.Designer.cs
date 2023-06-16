@@ -88,14 +88,14 @@ namespace QLDSV_TC
             this.BtnDoiMK,
             this.BtnDangXuat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.HeThong,
             this.BaoCao,
             this.CauHinh});
-            this.ribbonControl1.Size = new System.Drawing.Size(1656, 315);
+            this.ribbonControl1.Size = new System.Drawing.Size(966, 209);
             // 
             // BtnSinhVien
             // 
@@ -105,6 +105,7 @@ namespace QLDSV_TC
             this.BtnSinhVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnSinhVien.ImageOptions.LargeImage")));
             this.BtnSinhVien.LargeWidth = 60;
             this.BtnSinhVien.Name = "BtnSinhVien";
+            this.BtnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSinhVien_ItemClick);
             // 
             // BtnMonHoc
             // 
@@ -142,6 +143,7 @@ namespace QLDSV_TC
             this.BtnDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDiem.ImageOptions.LargeImage")));
             this.BtnDiem.LargeWidth = 60;
             this.BtnDiem.Name = "BtnDiem";
+            this.BtnDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDiem_ItemClick);
             // 
             // BtnHocPhi
             // 
@@ -308,40 +310,40 @@ namespace QLDSV_TC
             this.MA,
             this.HOTEN,
             this.NHOM});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 650);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 417);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 14, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1656, 42);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 8, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(966, 26);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // MA
             // 
             this.MA.Name = "MA";
-            this.MA.Size = new System.Drawing.Size(52, 32);
+            this.MA.Size = new System.Drawing.Size(32, 20);
             this.MA.Text = "MA";
             // 
             // HOTEN
             // 
             this.HOTEN.Name = "HOTEN";
-            this.HOTEN.Size = new System.Drawing.Size(92, 32);
+            this.HOTEN.Size = new System.Drawing.Size(57, 20);
             this.HOTEN.Text = "HOTEN";
             // 
             // NHOM
             // 
             this.NHOM.Name = "NHOM";
-            this.NHOM.Size = new System.Drawing.Size(90, 32);
+            this.NHOM.Size = new System.Drawing.Size(55, 20);
             this.NHOM.Text = "NHOM";
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1656, 692);
+            this.ClientSize = new System.Drawing.Size(966, 443);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Quản lý điểm sinh viên tín chỉ";

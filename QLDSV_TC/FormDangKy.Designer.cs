@@ -94,8 +94,8 @@ namespace QLDSV_TC
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nhóm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelControl27 = new DevExpress.XtraEditors.PanelControl();
             this.label6 = new System.Windows.Forms.Label();
@@ -117,7 +117,8 @@ namespace QLDSV_TC
             this.txbMaLopTC = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panelControl22 = new DevExpress.XtraEditors.PanelControl();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lbDangKy = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.explicitUnitOfWork1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -817,6 +818,7 @@ namespace QLDSV_TC
             this.gridControlDSLTCHuy.TabIndex = 3;
             this.gridControlDSLTCHuy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControlDSLTCHuy.Click += new System.EventHandler(this.gridControlDSLTCHuy_Click);
             // 
             // gridView1
             // 
@@ -826,8 +828,8 @@ namespace QLDSV_TC
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn12,
-            this.gridColumn13,
-            this.gridColumn14});
+            this.Nhóm,
+            this.gridColumn13});
             this.gridView1.DetailHeight = 852;
             this.gridView1.GridControl = this.gridControlDSLTCHuy;
             this.gridView1.Name = "gridView1";
@@ -901,6 +903,16 @@ namespace QLDSV_TC
             this.gridColumn12.VisibleIndex = 4;
             this.gridColumn12.Width = 227;
             // 
+            // Nhóm
+            // 
+            this.Nhóm.Caption = "Nhóm";
+            this.Nhóm.FieldName = "NHOM";
+            this.Nhóm.MinWidth = 25;
+            this.Nhóm.Name = "Nhóm";
+            this.Nhóm.Visible = true;
+            this.Nhóm.VisibleIndex = 5;
+            this.Nhóm.Width = 94;
+            // 
             // gridColumn13
             // 
             this.gridColumn13.Caption = "Họ và tên giảng viên";
@@ -909,18 +921,8 @@ namespace QLDSV_TC
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 5;
+            this.gridColumn13.VisibleIndex = 6;
             this.gridColumn13.Width = 227;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.Caption = "đăng ký";
-            this.gridColumn14.ColumnEdit = this.repositoryItemButtonEdit2;
-            this.gridColumn14.MinWidth = 61;
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 6;
-            this.gridColumn14.Width = 227;
             // 
             // repositoryItemButtonEdit2
             // 
@@ -1109,6 +1111,7 @@ namespace QLDSV_TC
             this.btnDangky.TabIndex = 3;
             this.btnDangky.Text = "Đăng ký";
             this.btnDangky.UseVisualStyleBackColor = true;
+            this.btnDangky.Click += new System.EventHandler(this.btnDangky_Click);
             // 
             // panelControl6
             // 
@@ -1144,24 +1147,30 @@ namespace QLDSV_TC
             // 
             // panelControl22
             // 
-            this.panelControl22.Controls.Add(this.label18);
+            this.panelControl22.Controls.Add(this.lbDangKy);
             this.panelControl22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl22.Location = new System.Drawing.Point(2, 2);
             this.panelControl22.Name = "panelControl22";
             this.panelControl22.Size = new System.Drawing.Size(564, 63);
             this.panelControl22.TabIndex = 0;
             // 
-            // label18
+            // lbDangKy
             // 
-            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.label18.Location = new System.Drawing.Point(2, 2);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(560, 59);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Thông tin đăng ký";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lbDangKy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbDangKy.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.lbDangKy.Location = new System.Drawing.Point(2, 2);
+            this.lbDangKy.Name = "lbDangKy";
+            this.lbDangKy.Size = new System.Drawing.Size(560, 59);
+            this.lbDangKy.TabIndex = 0;
+            this.lbDangKy.Text = "Thông tin đăng ký";
+            this.lbDangKy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // FormDangKy
             // 
@@ -1311,7 +1320,7 @@ namespace QLDSV_TC
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private System.Windows.Forms.Label label13;
         private DevExpress.XtraEditors.PanelControl panelControl22;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lbDangKy;
         private System.Windows.Forms.Button btnDangky;
         private System.Windows.Forms.TextBox txbMaLopTC;
         private DevExpress.XtraEditors.PanelControl panelControl4;
@@ -1324,7 +1333,6 @@ namespace QLDSV_TC
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
         private DevExpress.XtraEditors.PanelControl panelControl27;
         private System.Windows.Forms.Label label6;
@@ -1341,5 +1349,7 @@ namespace QLDSV_TC
         private DevExpress.XtraEditors.PanelControl panelControl7;
         private System.Windows.Forms.TextBox txbMaMH;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraGrid.Columns.GridColumn Nhóm;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

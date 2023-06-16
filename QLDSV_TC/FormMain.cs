@@ -61,5 +61,17 @@ namespace QLDSV_TC
             FormLopHoc f = new FormLopHoc();
             f.Show();
         }
+
+        private void BtnSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormSinhVien f = new FormSinhVien();
+            f.Show();
+        }
+
+        private void BtnDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormNhapDiem f = new FormNhapDiem();
+            f.Show();
+        }
     }
 }
