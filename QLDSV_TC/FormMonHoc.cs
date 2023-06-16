@@ -53,6 +53,7 @@ namespace QLDSV_TC
             groupBox1.Enabled = true;
             flagOption = "Add";
             dangthemmoi = true;
+            txtMaMH.Enabled = true;
             bdsMH.AddNew();
 
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = false;
@@ -98,6 +99,7 @@ namespace QLDSV_TC
             groupBox1.Enabled = true;
             flagOption = "Update";
             dangthemmoi = false;
+            txtMaMH.Enabled = false;
             oldMaMonHoc = txtMaMH.Text.Trim();
             oldTenMonHoc = txtTenMH.Text.Trim();
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = false;
@@ -209,7 +211,7 @@ namespace QLDSV_TC
             String soTietTH = datarv["SOTIET_TH"].ToString();
             if (flagOption == "Update")
             {
-                if (!string.Equals(this.txtMaMH.Text.Trim(), oldMaMonHoc, StringComparison.OrdinalIgnoreCase))
+              /*  if (!string.Equals(this.txtMaMH.Text.Trim(), oldMaMonHoc, StringComparison.OrdinalIgnoreCase))
 
                 {
                     string query1 = "DECLARE  @return_value int \n"
@@ -225,7 +227,7 @@ namespace QLDSV_TC
                         return;
                     }
 
-                }
+                }*/
 
                 if (!string.Equals(this.txtTenMH.Text.Trim(), oldTenMonHoc, StringComparison.OrdinalIgnoreCase))
                 {
@@ -288,7 +290,6 @@ namespace QLDSV_TC
                     else
                     {
                         queryUndo = "UPDATE DBO.MONHOC \n" + "SET " +
-                                    "MAMH =N'" + maMHOld + "'," +
                                     "TENMH =N'" + tenMH + "'," +
                                     "SOTIET_LT ='" + soTietLT + "'," +
                                     "SOTIET_TH =" + soTietTH + " " +
