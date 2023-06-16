@@ -23,7 +23,7 @@ namespace QLDSV_TC
         void LayDSHocKy(string nienkhoa)
         {
             DataTable dt = new DataTable();
-            string cmd = "EXEC SP_LayDSHocKy '" + nienkhoa + "'";
+            string cmd = "EXEC SP_LayDSHocKy '" + nienkhoa + "','"  + maKhoa.Trim() + "'" ;
             dt = Program.ExecSqlDataTable(cmd);
 
             BindingSource bdsHocKi = new BindingSource();
@@ -34,30 +34,37 @@ namespace QLDSV_TC
         }
         void LayDSNienKhoa()
         {
-            string cmd = "SELECT * FROM [dbo].[LayDSNienKhoa]";
+            string cmd = "EXEC [dbo].[SP_LayNienKhoa] '" + maKhoa.Trim() + "'";
             DataTable dt = Program.ExecSqlDataTable(cmd);
             BindingSource bdsNienKhoa = new BindingSource();
             bdsNienKhoa.DataSource = dt;
             CmbNienKhoa.DataSource = bdsNienKhoa;
-            CmbNienKhoa.DisplayMember = "NIENKHOA";
+           CmbNienKhoa.DisplayMember = "NIENKHOA";
             CmbNienKhoa.ValueMember = "NIENKHOA";
+            //CmbNienKhoa.SelectedIndex = 0;
         }
 
         private void Frpt_DANHSACHLOPTINCHI_Load(object sender, EventArgs e)
         {
-            LayDSNienKhoa();
-            CmbNienKhoa.SelectedIndex = 0;
-            LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+           
             CmbKhoa.DataSource = Program.bds_dspm;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
             CmbKhoa.SelectedIndex = Program.mKhoa;
+
+            
+
+
 
             DataTable dt = new DataTable();
             dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
             BindingSource bdsCN = new BindingSource();
             bdsCN.DataSource = dt;
             maKhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
+
+            LayDSNienKhoa();
+            CmbNienKhoa.SelectedIndex = 0;
+            LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
 
             if (Program.mGroup == "PGV")
                 CmbKhoa.Enabled = true;
@@ -86,9 +93,7 @@ namespace QLDSV_TC
                 MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
             else
             {
-                LayDSNienKhoa();
-                CmbNienKhoa.SelectedIndex = 0;
-                LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+                
 
 
                 DataTable dt = new DataTable();
@@ -96,18 +101,21 @@ namespace QLDSV_TC
                 BindingSource bdsCN = new BindingSource();
                 bdsCN.DataSource = dt;
                 maKhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
-               
+
+                LayDSNienKhoa();
+                CmbNienKhoa.SelectedIndex = 0;
+                LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+
             }
         }
 
         private void CmbNienKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            LayDSHocKy(CmbNienKhoa.Text);
             try
             {
                 CmbHocKy.SelectedIndex = 0;
                 LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+
             }
             catch
             {

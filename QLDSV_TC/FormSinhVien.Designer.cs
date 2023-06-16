@@ -208,7 +208,7 @@ namespace QLDSV_TC
             // 
             // CmbKhoa
             // 
-            this.CmbKhoa.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.CmbKhoa.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbKhoa.FormattingEnabled = true;
             this.CmbKhoa.Location = new System.Drawing.Point(139, 21);
             this.CmbKhoa.Name = "CmbKhoa";
@@ -264,7 +264,7 @@ namespace QLDSV_TC
             this.GcLopHoc.MainView = this.gridViewLH;
             this.GcLopHoc.MenuManager = this.barManager2;
             this.GcLopHoc.Name = "GcLopHoc";
-            this.GcLopHoc.Size = new System.Drawing.Size(1848, 483);
+            this.GcLopHoc.Size = new System.Drawing.Size(1848, 369);
             this.GcLopHoc.TabIndex = 16;
             this.GcLopHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLH});
@@ -542,9 +542,9 @@ namespace QLDSV_TC
             this.panelControl2.Controls.Add(this.mASVLabel);
             this.panelControl2.Controls.Add(this.TxtMaSV);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl2.Location = new System.Drawing.Point(0, 617);
+            this.panelControl2.Location = new System.Drawing.Point(0, 503);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(871, 363);
+            this.panelControl2.Size = new System.Drawing.Size(871, 477);
             this.panelControl2.TabIndex = 17;
             this.panelControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl2_Paint);
             // 
@@ -643,11 +643,11 @@ namespace QLDSV_TC
             // 
             this.GcSinhVien.DataSource = this.BdsSv;
             this.GcSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GcSinhVien.Location = new System.Drawing.Point(871, 617);
+            this.GcSinhVien.Location = new System.Drawing.Point(871, 503);
             this.GcSinhVien.MainView = this.gridViewSV;
             this.GcSinhVien.MenuManager = this.barManager2;
             this.GcSinhVien.Name = "GcSinhVien";
-            this.GcSinhVien.Size = new System.Drawing.Size(977, 363);
+            this.GcSinhVien.Size = new System.Drawing.Size(977, 477);
             this.GcSinhVien.TabIndex = 17;
             this.GcSinhVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSV});
@@ -752,7 +752,7 @@ namespace QLDSV_TC
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(871, 617);
+            this.label3.Location = new System.Drawing.Point(871, 503);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(977, 67);
             this.label3.TabIndex = 27;

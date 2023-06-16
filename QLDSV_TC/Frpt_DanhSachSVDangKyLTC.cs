@@ -22,7 +22,7 @@ namespace QLDSV_TC
         void LayDSHocKy(string nienkhoa)
         {
             DataTable dt = new DataTable();
-            string cmd = "EXEC SP_LayDSHocKy '" + nienkhoa + "'";
+            string cmd = "EXEC SP_LayDSHocKy '" + nienkhoa.Trim() + "','" + maKhoa.Trim() + "'";
             dt = Program.ExecSqlDataTable(cmd);
 
             BindingSource bdsHocKi = new BindingSource();
@@ -33,7 +33,7 @@ namespace QLDSV_TC
         }
         void LayDSNienKhoa()
         {
-            string cmd = "SELECT * FROM [dbo].[LayDSNienKhoa]";
+            string cmd = "EXEC [dbo].[SP_LayNienKhoa] '" + maKhoa.Trim() + "'";
             DataTable dt = Program.ExecSqlDataTable(cmd);
             BindingSource bdsNienKhoa = new BindingSource();
             bdsNienKhoa.DataSource = dt;
@@ -42,9 +42,10 @@ namespace QLDSV_TC
             CmbNienKhoa.ValueMember = "NIENKHOA";
         }
 
-        void LayDSMonHoc()
+        void LayDSMonHoc(string nienkhoa, int hocky)
         {
-            string cmd = "EXEC [dbo].[SP_LayDSMonHoc] '"  + maKhoa + "'";
+            string cmd = "EXEC [dbo].[SP_LayDSMonHoc] '"  +  maKhoa.Trim() + "','" + nienkhoa + "'," + hocky;
+
             DataTable dt = Program.ExecSqlDataTable(cmd);
             BindingSource bdsMonHoc = new BindingSource();
             bdsMonHoc.DataSource = dt;
@@ -52,9 +53,9 @@ namespace QLDSV_TC
             CmbMonHoc.DisplayMember = "TENMH";
             CmbMonHoc.ValueMember = "MAMH";
         }
-        void LayDSNhom()
+        void LayDSNhom(string nienkhoa, int hocky, string mamh)
         {
-            string cmd = "EXEC [dbo].[SP_LayDSNhom] '" + maKhoa + "'";
+            string cmd = "EXEC [dbo].[SP_LayDSNhom] '" + maKhoa.Trim() + "','" + nienkhoa + "'," + hocky + ",'" + mamh + "'";
             DataTable dt = Program.ExecSqlDataTable(cmd);
             BindingSource bdsNhom = new BindingSource();
             bdsNhom.DataSource = dt;
@@ -64,9 +65,7 @@ namespace QLDSV_TC
         }
         private void Frpt_DanhSachSVDangKyLTC_Load(object sender, EventArgs e)
         {
-            LayDSNienKhoa();
-            CmbNienKhoa.SelectedIndex = 0;
-            LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+           
             CmbKhoa.DataSource = Program.bds_dspm;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
@@ -77,13 +76,21 @@ namespace QLDSV_TC
             BindingSource bdsCN = new BindingSource();
             bdsCN.DataSource = dt;
             maKhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
-            LayDSMonHoc();
-            LayDSNhom();
+
+            LayDSNienKhoa();
+            CmbNienKhoa.SelectedIndex = 0;
+            LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+            LayDSMonHoc(CmbNienKhoa.SelectedValue.ToString(), Int32.Parse(CmbHocKy.SelectedValue.ToString()));
+            CmbMonHoc.SelectedIndex = 0;
+            LayDSNhom(CmbNienKhoa.SelectedValue.ToString(), Int32.Parse(CmbHocKy.SelectedValue.ToString()), CmbMonHoc.SelectedValue.ToString());
+
+
             if (Program.mGroup == "PGV")
                 CmbKhoa.Enabled = true;
             else
                 CmbKhoa.Enabled = false;
 
+           
 
 
         }
@@ -108,9 +115,7 @@ namespace QLDSV_TC
                 MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
             else
             {
-                LayDSNienKhoa();
-                CmbNienKhoa.SelectedIndex = 0;
-                LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+               
               
 
 
@@ -119,8 +124,12 @@ namespace QLDSV_TC
                 BindingSource bdsCN = new BindingSource();
                 bdsCN.DataSource = dt;
                 maKhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
-                LayDSMonHoc();
-                LayDSNhom();
+                LayDSNienKhoa();
+                CmbNienKhoa.SelectedIndex = 0;
+                LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+                LayDSMonHoc(CmbNienKhoa.SelectedValue.ToString(), Int32.Parse(CmbHocKy.SelectedValue.ToString()));
+                CmbMonHoc.SelectedIndex = 0;
+                LayDSNhom(CmbNienKhoa.SelectedValue.ToString(), Int32.Parse(CmbHocKy.SelectedValue.ToString()), CmbMonHoc.SelectedValue.ToString());
             }
         }
         private void BtnIn_Click(object sender, EventArgs e)
@@ -146,7 +155,13 @@ namespace QLDSV_TC
 
         private void CmbMonHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                LayDSNhom(CmbNienKhoa.SelectedValue.ToString(), Int32.Parse(CmbHocKy.SelectedValue.ToString()), CmbMonHoc.SelectedValue.ToString());
+            }
+            catch
+            {
+            }
 
         }
 
@@ -172,11 +187,27 @@ namespace QLDSV_TC
 
         private void CmbNienKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LayDSHocKy(CmbNienKhoa.Text);
+            //LayDSHocKy(CmbNienKhoa.Text);
             try
             {
                 CmbHocKy.SelectedIndex = 0;
                 LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+                LayDSMonHoc(CmbNienKhoa.SelectedValue.ToString(), Int32.Parse(CmbHocKy.SelectedValue.ToString()));
+                CmbMonHoc.SelectedIndex = 0;
+                LayDSNhom(CmbNienKhoa.SelectedValue.ToString(), Int32.Parse(CmbHocKy.SelectedValue.ToString()), CmbMonHoc.SelectedValue.ToString());
+            }
+            catch
+            {
+            }
+        }
+
+        private void CmbHocKy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LayDSMonHoc(CmbNienKhoa.SelectedValue.ToString(), Int32.Parse(CmbHocKy.SelectedValue.ToString()));
+                CmbMonHoc.SelectedIndex = 0;
+                LayDSNhom(CmbNienKhoa.SelectedValue.ToString(), Int32.Parse(CmbHocKy.SelectedValue.ToString()), CmbMonHoc.SelectedValue.ToString());
             }
             catch
             {

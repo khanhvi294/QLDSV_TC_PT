@@ -95,15 +95,20 @@ namespace QLDSV_TC
 
         private void BtnPhucHoiLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            BdsLH.CancelEdit();
-            this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.lOPTableAdapter.Fill(this.DS2.LOP);
+            if (MessageBox.Show("Bạn muốn hủy bỏ tất cả thao tác?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                BdsLH.CancelEdit();
+                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lOPTableAdapter.Fill(this.DS2.LOP);
 
-            if (BtnThemLH.Enabled == false) BdsLH.Position = vitri;
-            GcLopHoc.Enabled = true;
-            panelControl2.Enabled = false;
-            BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled = true;
-            BtnGhiLH.Enabled = BtnPhucHoiLH.Enabled = false;
+                if (BtnThemLH.Enabled == false) BdsLH.Position = vitri;
+                GcLopHoc.Enabled = true;
+                panelControl2.Enabled = false;
+                BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled = true;
+                BtnGhiLH.Enabled = BtnPhucHoiLH.Enabled = false;
+            }
+
+           
         }
 
         private void BtnLamMoiLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

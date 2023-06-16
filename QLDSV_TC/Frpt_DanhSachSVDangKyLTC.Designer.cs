@@ -79,16 +79,17 @@ namespace QLDSV_TC
             // CmbHocKy
             // 
             this.CmbHocKy.FormattingEnabled = true;
-            this.CmbHocKy.Location = new System.Drawing.Point(629, 363);
+            this.CmbHocKy.Location = new System.Drawing.Point(629, 306);
             this.CmbHocKy.Name = "CmbHocKy";
             this.CmbHocKy.Size = new System.Drawing.Size(504, 33);
             this.CmbHocKy.TabIndex = 17;
+            this.CmbHocKy.SelectedIndexChanged += new System.EventHandler(this.CmbHocKy_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(481, 367);
+            this.label3.Location = new System.Drawing.Point(481, 310);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 29);
             this.label3.TabIndex = 16;
@@ -100,7 +101,7 @@ namespace QLDSV_TC
             this.CmbNienKhoa.FormattingEnabled = true;
             this.CmbNienKhoa.IntegralHeight = false;
             this.CmbNienKhoa.ItemHeight = 25;
-            this.CmbNienKhoa.Location = new System.Drawing.Point(629, 305);
+            this.CmbNienKhoa.Location = new System.Drawing.Point(629, 244);
             this.CmbNienKhoa.Name = "CmbNienKhoa";
             this.CmbNienKhoa.Size = new System.Drawing.Size(504, 33);
             this.CmbNienKhoa.TabIndex = 15;
@@ -110,7 +111,7 @@ namespace QLDSV_TC
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(481, 309);
+            this.label2.Location = new System.Drawing.Point(481, 248);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 29);
             this.label2.TabIndex = 14;
@@ -137,7 +138,7 @@ namespace QLDSV_TC
             // CmbMonHoc
             // 
             this.CmbMonHoc.FormattingEnabled = true;
-            this.CmbMonHoc.Location = new System.Drawing.Point(629, 243);
+            this.CmbMonHoc.Location = new System.Drawing.Point(629, 366);
             this.CmbMonHoc.Name = "CmbMonHoc";
             this.CmbMonHoc.Size = new System.Drawing.Size(504, 33);
             this.CmbMonHoc.TabIndex = 24;
@@ -147,7 +148,7 @@ namespace QLDSV_TC
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(481, 247);
+            this.label6.Location = new System.Drawing.Point(481, 370);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 29);
             this.label6.TabIndex = 23;
