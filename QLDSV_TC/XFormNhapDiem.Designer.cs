@@ -55,12 +55,6 @@ namespace QLDSV_TC
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
             this.label5 = new System.Windows.Forms.Label();
             this.panelLop = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
-            this.lbLop = new System.Windows.Forms.Label();
-            this.BtnGhi = new DevExpress.XtraEditors.SimpleButton();
-            this.BtnRedo = new DevExpress.XtraEditors.SimpleButton();
-            this.BtnUndo = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
             this.gridControlDSSVDK = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,6 +67,12 @@ namespace QLDSV_TC
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.repositoryItemSpinEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
+            this.BtnUndo = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnRedo = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnGhi = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
+            this.lbLop = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbar)).BeginInit();
             this.toolbar.SuspendLayout();
@@ -93,16 +93,16 @@ namespace QLDSV_TC
             this.panelControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelLop)).BeginInit();
             this.panelLop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
-            this.panelControl10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
-            this.panelControl11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDSSVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
+            this.panelControl11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
+            this.panelControl10.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridView3
@@ -425,73 +425,6 @@ namespace QLDSV_TC
             this.panelLop.TabIndex = 4;
             this.panelLop.Visible = false;
             // 
-            // panelControl10
-            // 
-            this.panelControl10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panelControl10.Appearance.Options.UseBackColor = true;
-            this.panelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl10.Controls.Add(this.lbLop);
-            this.panelControl10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl10.Location = new System.Drawing.Point(0, 0);
-            this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(1068, 48);
-            this.panelControl10.TabIndex = 1;
-            // 
-            // lbLop
-            // 
-            this.lbLop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbLop.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lbLop.Location = new System.Drawing.Point(0, 0);
-            this.lbLop.Name = "lbLop";
-            this.lbLop.Size = new System.Drawing.Size(1068, 48);
-            this.lbLop.TabIndex = 0;
-            this.lbLop.Text = "Lớp";
-            this.lbLop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // BtnGhi
-            // 
-            this.BtnGhi.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGhi.ImageOptions.Image")));
-            this.BtnGhi.Location = new System.Drawing.Point(1024, 2);
-            this.BtnGhi.Name = "BtnGhi";
-            this.BtnGhi.Size = new System.Drawing.Size(42, 39);
-            this.BtnGhi.TabIndex = 0;
-            this.BtnGhi.Click += new System.EventHandler(this.BtnGhi_Click);
-            // 
-            // BtnRedo
-            // 
-            this.BtnRedo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnRedo.Enabled = false;
-            this.BtnRedo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnRedo.ImageOptions.Image")));
-            this.BtnRedo.Location = new System.Drawing.Point(987, 2);
-            this.BtnRedo.Name = "BtnRedo";
-            this.BtnRedo.Size = new System.Drawing.Size(37, 39);
-            this.BtnRedo.TabIndex = 1;
-            this.BtnRedo.Click += new System.EventHandler(this.BtnRedo_Click);
-            // 
-            // BtnUndo
-            // 
-            this.BtnUndo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnUndo.Enabled = false;
-            this.BtnUndo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnUndo.ImageOptions.Image")));
-            this.BtnUndo.Location = new System.Drawing.Point(950, 2);
-            this.BtnUndo.Margin = new System.Windows.Forms.Padding(3, 16, 3, 3);
-            this.BtnUndo.Name = "BtnUndo";
-            this.BtnUndo.Size = new System.Drawing.Size(37, 39);
-            this.BtnUndo.TabIndex = 2;
-            this.BtnUndo.Click += new System.EventHandler(this.BtnUndo_Click);
-            // 
-            // panelControl11
-            // 
-            this.panelControl11.Controls.Add(this.BtnUndo);
-            this.panelControl11.Controls.Add(this.BtnRedo);
-            this.panelControl11.Controls.Add(this.BtnGhi);
-            this.panelControl11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl11.Location = new System.Drawing.Point(0, 48);
-            this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(1068, 43);
-            this.panelControl11.TabIndex = 6;
-            // 
             // gridControlDSSVDK
             // 
             this.gridControlDSSVDK.Dock = System.Windows.Forms.DockStyle.Top;
@@ -671,6 +604,73 @@ namespace QLDSV_TC
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemSpinEdit3.Name = "repositoryItemSpinEdit3";
             // 
+            // panelControl11
+            // 
+            this.panelControl11.Controls.Add(this.BtnUndo);
+            this.panelControl11.Controls.Add(this.BtnRedo);
+            this.panelControl11.Controls.Add(this.BtnGhi);
+            this.panelControl11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl11.Location = new System.Drawing.Point(0, 48);
+            this.panelControl11.Name = "panelControl11";
+            this.panelControl11.Size = new System.Drawing.Size(1068, 43);
+            this.panelControl11.TabIndex = 6;
+            // 
+            // BtnUndo
+            // 
+            this.BtnUndo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnUndo.Enabled = false;
+            this.BtnUndo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnUndo.ImageOptions.Image")));
+            this.BtnUndo.Location = new System.Drawing.Point(950, 2);
+            this.BtnUndo.Margin = new System.Windows.Forms.Padding(3, 16, 3, 3);
+            this.BtnUndo.Name = "BtnUndo";
+            this.BtnUndo.Size = new System.Drawing.Size(37, 39);
+            this.BtnUndo.TabIndex = 2;
+            this.BtnUndo.Click += new System.EventHandler(this.BtnUndo_Click);
+            // 
+            // BtnRedo
+            // 
+            this.BtnRedo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnRedo.Enabled = false;
+            this.BtnRedo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnRedo.ImageOptions.Image")));
+            this.BtnRedo.Location = new System.Drawing.Point(987, 2);
+            this.BtnRedo.Name = "BtnRedo";
+            this.BtnRedo.Size = new System.Drawing.Size(37, 39);
+            this.BtnRedo.TabIndex = 1;
+            this.BtnRedo.Click += new System.EventHandler(this.BtnRedo_Click);
+            // 
+            // BtnGhi
+            // 
+            this.BtnGhi.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGhi.ImageOptions.Image")));
+            this.BtnGhi.Location = new System.Drawing.Point(1024, 2);
+            this.BtnGhi.Name = "BtnGhi";
+            this.BtnGhi.Size = new System.Drawing.Size(42, 39);
+            this.BtnGhi.TabIndex = 0;
+            this.BtnGhi.Click += new System.EventHandler(this.BtnGhi_Click);
+            // 
+            // panelControl10
+            // 
+            this.panelControl10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panelControl10.Appearance.Options.UseBackColor = true;
+            this.panelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl10.Controls.Add(this.lbLop);
+            this.panelControl10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl10.Location = new System.Drawing.Point(0, 0);
+            this.panelControl10.Name = "panelControl10";
+            this.panelControl10.Size = new System.Drawing.Size(1068, 48);
+            this.panelControl10.TabIndex = 1;
+            // 
+            // lbLop
+            // 
+            this.lbLop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbLop.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbLop.Location = new System.Drawing.Point(0, 0);
+            this.lbLop.Name = "lbLop";
+            this.lbLop.Size = new System.Drawing.Size(1068, 48);
+            this.lbLop.TabIndex = 0;
+            this.lbLop.Text = "Lớp";
+            this.lbLop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // XFormNhapDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -705,16 +705,16 @@ namespace QLDSV_TC
             this.panelControl8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelLop)).EndInit();
             this.panelLop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
-            this.panelControl10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
-            this.panelControl11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDSSVDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
+            this.panelControl11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
+            this.panelControl10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

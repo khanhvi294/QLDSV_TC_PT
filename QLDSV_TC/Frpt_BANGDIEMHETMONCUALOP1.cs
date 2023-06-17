@@ -30,9 +30,13 @@ namespace QLDSV_TC
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
             //dS.EnforceConstraints = false;
-          
-            Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
-            cmbKHOA.DataSource = Program.bds_dspm.DataSource;
+
+            var dataSource = Program.bds_dspm;
+
+            var filteredDataSource = dataSource.Cast<DataRowView>()
+                .Where(row => row["TENKHOA"].ToString() != "Học Phí")
+                .ToList();
+            cmbKHOA.DataSource = filteredDataSource;
             cmbKHOA.DisplayMember = "TENKHOA";
             cmbKHOA.ValueMember = "TENSERVER";
             cmbKHOA.SelectedIndex = Program.mKhoa;
@@ -143,9 +147,10 @@ namespace QLDSV_TC
         {
             try
             {
-                cmbTENMH.DataSource = bdsMONHOC;
+                cmbTENMH.DataSource = this.dS.MONHOC;
                 cmbTENMH.DisplayMember = "TENMH";
                 cmbTENMH.ValueMember = "MAMH";
+
                 maMH = cmbTENMH.SelectedValue.ToString();
             }
             catch (Exception ex)

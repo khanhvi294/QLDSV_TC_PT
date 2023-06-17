@@ -215,6 +215,7 @@ namespace QLDSV_TC
                 
                 this.lOPTableAdapter.Fill(this.DS2.LOP);
                 this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
+                MessageBox.Show("Làm mới thành công!");
             }
             catch (Exception ex)
             {
@@ -308,6 +309,7 @@ namespace QLDSV_TC
                     BdsSv.RemoveCurrent();
                     this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.sINHVIENTableAdapter.Update(this.DS2.SINHVIEN);
+                    MessageBox.Show("Xoá thành công!");
                 }
                 catch (Exception ex)
                 {
@@ -333,6 +335,7 @@ namespace QLDSV_TC
                     BdsSv.ResetCurrentItem(); //đưa thông tin lên lưới
                     this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.sINHVIENTableAdapter.Update(this.DS2.SINHVIEN);
+                    MessageBox.Show("Đã thành công!");
 
                 }
                 catch (Exception ex)

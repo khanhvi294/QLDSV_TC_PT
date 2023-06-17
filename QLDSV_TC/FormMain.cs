@@ -34,6 +34,7 @@ namespace QLDSV_TC
             {
                 BtnHocPhi.Enabled = true;
                 BtnDiem.Enabled = BtnLopHoc.Enabled = BtnLopTC.Enabled = BtnMonHoc.Enabled = BtnSinhVien.Enabled = BtnDangKy.Enabled = false;
+                BtnBDHM.Enabled = BtnDSLTC.Enabled = BtnDKLTC.Enabled = BtnPhieuDiem.Enabled = BtnBangDiem.Enabled = false;
             }
             if (Program.mGroup.Equals("PGV") || Program.mGroup.Equals("KHOA"))
             {

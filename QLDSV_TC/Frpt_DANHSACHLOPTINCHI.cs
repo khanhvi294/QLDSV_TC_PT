@@ -128,7 +128,7 @@ namespace QLDSV_TC
      
             Xrpt_DANHSACHLOPTINCHI rpt = new Xrpt_DANHSACHLOPTINCHI(CmbNienKhoa.Text, int.Parse(CmbHocKy.Text));
 
-           // rpt.LbKhoa.Text = CmbKhoa.Text;
+            rpt.LbKhoa.Text = CmbKhoa.Text;
             rpt.LbNienKhoa.Text = CmbNienKhoa.Text;
             rpt.LbHocKy.Text = CmbHocKy.Text;
 
