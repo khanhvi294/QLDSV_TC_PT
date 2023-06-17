@@ -5,6 +5,7 @@ namespace QLDSV_TC
 {
     public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        bool dangxuat = false;
         public FormMain()
         {
             InitializeComponent();
@@ -26,9 +27,31 @@ namespace QLDSV_TC
                 }
                 else
                 {
-                    Application.Exit();
+                    if (dangxuat == true)
+                    {
+                        Program.formDangNhap.Show();
+                        dangxuat = false;
+                    }else
+                    {
+                        
+                      Application.Exit();
+                    }
                 }
             }
+        }
+        private void ShowMdiChildren(Type fType)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == fType)
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form form = (Form)Activator.CreateInstance(fType);
+            form.MdiParent = this;
+            form.Show();
         }
 
         private void BtnDangKy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -39,13 +62,38 @@ namespace QLDSV_TC
 
         private void BtnLopHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
-            this.ShowMdiChildren(typeof(FormLopHoc));
+            ShowMdiChildren(typeof(FormLopHoc)); 
+       
         }
 
         private void BtnSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.ShowMdiChildren(typeof(FormSinhVien));
+           // if (!(Program.MGroup == Program.NhomQuyen[2]))
+            //{
+                ShowMdiChildren(typeof(FormSinhVien));
+            //}
+        }
+
+        private void BtnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                f.Close();
+            }
+            dangxuat = true;
+            this.Close();
+           
+
+        }
+
+        private void BtnDSLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(Frpt_DANHSACHLOPTINCHI));
+        }
+
+        private void BtnDKLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(Frpt_DanhSachSVDangKyLTC));
         }
 
         private void BtnDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

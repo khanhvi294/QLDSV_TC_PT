@@ -172,6 +172,7 @@ namespace QLDSV_TC
             this.BtnDSLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDSLTC.ImageOptions.LargeImage")));
             this.BtnDSLTC.LargeWidth = 60;
             this.BtnDSLTC.Name = "BtnDSLTC";
+            this.BtnDSLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDSLTC_ItemClick);
             // 
             // BtnDKLTC
             // 
@@ -181,6 +182,7 @@ namespace QLDSV_TC
             this.BtnDKLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDKLTC.ImageOptions.LargeImage")));
             this.BtnDKLTC.LargeWidth = 60;
             this.BtnDKLTC.Name = "BtnDKLTC";
+            this.BtnDKLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDKLTC_ItemClick);
             // 
             // BtnBDHM
             // 
@@ -246,6 +248,7 @@ namespace QLDSV_TC
             this.BtnDangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDangXuat.ImageOptions.LargeImage")));
             this.BtnDangXuat.LargeWidth = 70;
             this.BtnDangXuat.Name = "BtnDangXuat";
+            this.BtnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDangXuat_ItemClick);
             // 
             // HeThong
             // 

@@ -43,6 +43,8 @@ namespace QLDSV_TC
             if (Program.conn != null && Program.conn.State == ConnectionState.Open) Program.conn.Close();
             try
             {
+                Console.WriteLine(Program.password);
+                Console.WriteLine(Program.servername);
                 Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" + Program.database + ";User ID=" +
                       Program.login + ";Password=" + Program.password;
                 Program.conn.ConnectionString = Program.connstr;
