@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -11,6 +11,7 @@
     <AssemblyName>QLDSV_TC</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v19.2" />
@@ -59,6 +62,9 @@
     <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -79,6 +85,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS.cs">
+      <DependentUpon>DS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,11 +103,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHocPhi.Designer.cs">
+      <DependentUpon>FormHocPhi.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLopHoc.cs">
       <SubType>Form</SubType>
@@ -106,11 +127,24 @@
     <Compile Include="FormLopHoc.Designer.cs">
       <DependentUpon>FormLopHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLopTinChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLopTinChi.designer.cs">
+      <DependentUpon>FormLopTinChi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+
+    <Compile Include="FormMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMonHoc.Designer.cs">
+      <DependentUpon>FormMonHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="FormNhapDiem.cs">
       <SubType>Form</SubType>
@@ -130,6 +164,18 @@
     <Compile Include="FormSinhVien.Designer.cs">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frpt_INDANHSACHDONGHOCPHI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frpt_INDANHSACHDONGHOCPHI.Designer.cs">
+      <DependentUpon>Frpt_INDANHSACHDONGHOCPHI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frpt_INPHIEUDIEMSV1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frpt_INPHIEUDIEMSV1.Designer.cs">
+      <DependentUpon>Frpt_INPHIEUDIEMSV1.cs</DependentUpon>
+     </Compile>
     <Compile Include="FormTaoTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +190,30 @@
     <Compile Include="FormDangKy.Designer.cs">
       <DependentUpon>FormDangKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frpt_BANGDIEMHETMONCUALOP1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frpt_BANGDIEMHETMONCUALOP1.Designer.cs">
+      <DependentUpon>Frpt_BANGDIEMHETMONCUALOP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_BANGDIEMHETMONLTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_BANGDIEMHETMONLTC.Designer.cs">
+      <DependentUpon>Xrpt_BANGDIEMHETMONLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_INDANHSACHDONGHOCPHI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_INDANHSACHDONGHOCPHI.Designer.cs">
+      <DependentUpon>Xrpt_INDANHSACHDONGHOCPHI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_INPHIEUDIEMSV2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_INPHIEUDIEMSV2.Designer.cs">
+      <DependentUpon>Xrpt_INPHIEUDIEMSV2.cs</DependentUpon>
+          </Compile>
     <Compile Include="ReportBDTK.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -165,12 +235,21 @@
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHocPhi.resx">
+      <DependentUpon>FormHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLopHoc.resx">
       <DependentUpon>FormLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLopTinChi.resx">
+      <DependentUpon>FormLopTinChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMonHoc.resx">
+      <DependentUpon>FormMonHoc.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="FormNhapDiem.resx">
       <DependentUpon>FormNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +259,12 @@
     <EmbeddedResource Include="FormSinhVien.resx">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frpt_INDANHSACHDONGHOCPHI.resx">
+      <DependentUpon>Frpt_INDANHSACHDONGHOCPHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frpt_INPHIEUDIEMSV1.resx">
+      <DependentUpon>Frpt_INPHIEUDIEMSV1.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="FormTaoTaiKhoan.resx">
       <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,9 +277,22 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="FormDangKy.resx">
       <DependentUpon>FormDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frpt_BANGDIEMHETMONCUALOP1.resx">
+      <DependentUpon>Frpt_BANGDIEMHETMONCUALOP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_BANGDIEMHETMONLTC.resx">
+      <DependentUpon>Xrpt_BANGDIEMHETMONLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_INDANHSACHDONGHOCPHI.resx">
+      <DependentUpon>Xrpt_INDANHSACHDONGHOCPHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_INPHIEUDIEMSV2.resx">
+      <DependentUpon>Xrpt_INPHIEUDIEMSV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportBDTK.resx">
       <DependentUpon>ReportBDTK.cs</DependentUpon>

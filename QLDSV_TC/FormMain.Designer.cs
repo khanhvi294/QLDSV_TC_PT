@@ -115,6 +115,7 @@ namespace QLDSV_TC
             this.BtnMonHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnMonHoc.ImageOptions.LargeImage")));
             this.BtnMonHoc.LargeWidth = 60;
             this.BtnMonHoc.Name = "BtnMonHoc";
+            this.BtnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnMonHoc_ItemClick);
             // 
             // BtnLopTC
             // 
@@ -124,6 +125,7 @@ namespace QLDSV_TC
             this.BtnLopTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnLopTC.ImageOptions.LargeImage")));
             this.BtnLopTC.LargeWidth = 60;
             this.BtnLopTC.Name = "BtnLopTC";
+            this.BtnLopTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLopTC_ItemClick);
             // 
             // BtnLopHoc
             // 
@@ -153,6 +155,7 @@ namespace QLDSV_TC
             this.BtnHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnHocPhi.ImageOptions.LargeImage")));
             this.BtnHocPhi.LargeWidth = 60;
             this.BtnHocPhi.Name = "BtnHocPhi";
+            this.BtnHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnHocPhi_ItemClick);
             // 
             // BtnDangKy
             // 
@@ -190,6 +193,7 @@ namespace QLDSV_TC
             this.BtnBDHM.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnBDHM.ImageOptions.LargeImage")));
             this.BtnBDHM.LargeWidth = 60;
             this.BtnBDHM.Name = "BtnBDHM";
+            this.BtnBDHM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnBDHM_ItemClick);
             // 
             // BtnPhieuDiem
             // 
@@ -199,6 +203,7 @@ namespace QLDSV_TC
             this.BtnPhieuDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnPhieuDiem.ImageOptions.LargeImage")));
             this.BtnPhieuDiem.LargeWidth = 60;
             this.BtnPhieuDiem.Name = "BtnPhieuDiem";
+            this.BtnPhieuDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPhieuDiem_ItemClick);
             // 
             // BtnHP
             // 
@@ -208,6 +213,7 @@ namespace QLDSV_TC
             this.BtnHP.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnHP.ImageOptions.LargeImage")));
             this.BtnHP.LargeWidth = 60;
             this.BtnHP.Name = "BtnHP";
+            this.BtnHP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnHP_ItemClick);
             // 
             // BtnBangDiem
             // 
@@ -349,6 +355,7 @@ namespace QLDSV_TC
             this.Name = "FormMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Quản lý điểm sinh viên tín chỉ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
