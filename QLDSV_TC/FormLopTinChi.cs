@@ -55,10 +55,13 @@ namespace QLDSV_TC
             this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.dANGKYTableAdapter.Fill(this.dS.DANGKY);
 
-            
-           
-            Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
-            cmbKHOA.DataSource = Program.bds_dspm;
+
+
+            var dataSource = Program.bds_dspm;
+            var filteredDataSource = dataSource.Cast<DataRowView>()
+                .Where(row => row["TENKHOA"].ToString() != "Học Phí")
+                .ToList();
+            cmbKHOA.DataSource = filteredDataSource;
             cmbKHOA.DisplayMember = "TENKHOA";
             cmbKHOA.ValueMember = "TENSERVER";
             cmbKHOA.SelectedIndex = Program.mKhoa;

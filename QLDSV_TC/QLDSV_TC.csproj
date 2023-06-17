@@ -39,6 +39,7 @@
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2" />
+
     <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Dialogs.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -164,6 +165,18 @@
     <Compile Include="FormSinhVien.Designer.cs">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frpt_DANHSACHLOPTINCHI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frpt_DANHSACHLOPTINCHI.Designer.cs">
+      <DependentUpon>Frpt_DANHSACHLOPTINCHI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frpt_DanhSachSVDangKyLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frpt_DanhSachSVDangKyLTC.Designer.cs">
+      <DependentUpon>Frpt_DanhSachSVDangKyLTC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frpt_INDANHSACHDONGHOCPHI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +203,18 @@
     <Compile Include="FormDangKy.Designer.cs">
       <DependentUpon>FormDangKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xrpt_DANHSACHLOPTINCHI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DANHSACHLOPTINCHI.Designer.cs">
+      <DependentUpon>Xrpt_DANHSACHLOPTINCHI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_DanhSachSVDangKyLTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DanhSachSVDangKyLTC.Designer.cs">
+      <DependentUpon>Xrpt_DanhSachSVDangKyLTC.cs</DependentUpon>
+   </Compile>
     <Compile Include="Frpt_BANGDIEMHETMONCUALOP1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,7 +238,7 @@
     </Compile>
     <Compile Include="Xrpt_INPHIEUDIEMSV2.Designer.cs">
       <DependentUpon>Xrpt_INPHIEUDIEMSV2.cs</DependentUpon>
-          </Compile>
+     </Compile>
     <Compile Include="ReportBDTK.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -259,6 +284,12 @@
     <EmbeddedResource Include="FormSinhVien.resx">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frpt_DANHSACHLOPTINCHI.resx">
+      <DependentUpon>Frpt_DANHSACHLOPTINCHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frpt_DanhSachSVDangKyLTC.resx">
+      <DependentUpon>Frpt_DanhSachSVDangKyLTC.cs</DependentUpon>
+</EmbeddedResource>
     <EmbeddedResource Include="Frpt_INDANHSACHDONGHOCPHI.resx">
       <DependentUpon>Frpt_INDANHSACHDONGHOCPHI.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +313,12 @@
     <EmbeddedResource Include="FormDangKy.resx">
       <DependentUpon>FormDangKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DANHSACHLOPTINCHI.resx">
+      <DependentUpon>Xrpt_DANHSACHLOPTINCHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DanhSachSVDangKyLTC.resx">
+      <DependentUpon>Xrpt_DanhSachSVDangKyLTC.cs</DependentUpon>
+ </EmbeddedResource>
     <EmbeddedResource Include="Frpt_BANGDIEMHETMONCUALOP1.resx">
       <DependentUpon>Frpt_BANGDIEMHETMONCUALOP1.cs</DependentUpon>
     </EmbeddedResource>
