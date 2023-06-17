@@ -22,6 +22,7 @@ namespace QLDSV_TC
 
         private void Frpt_BANGDIEMHETMONCUALOP1_Load(object sender, EventArgs e)
         {
+            dS.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'dS.NIENKHOA' table. You can move, or remove it, as needed.
             this.nIENKHOATableAdapter.Connection.ConnectionString = Program.connstr_publicsher;
             this.nIENKHOATableAdapter.Fill(this.dS.NIENKHOA);

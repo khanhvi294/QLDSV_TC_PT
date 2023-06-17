@@ -52,7 +52,21 @@ namespace QLDSV_TC
                 return;
             }
 
-            int type = 1;
+            int type = 2;
+            if (Program.mGroup.Equals("SV"))
+            {
+                if(Program.username == txtMASV.Text)
+                {
+                    type = 1;
+                }
+                else
+                {
+                    MessageBox.Show("Ban dang xem phieu diem khong phai cua minh", "", MessageBoxButtons.OK);
+                    txtMASV.Focus();
+                    return;
+                }
+            }
+
             if (Program.mGroup.Equals("KHOA"))
             {
                 type = 1;
