@@ -17,7 +17,6 @@ namespace QLDSV_TC
         public FormNhapDiem()
         {
             InitializeComponent();
-            WindowState = FormWindowState.Maximized;
 
         }
 
@@ -236,6 +235,16 @@ namespace QLDSV_TC
                 LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
             }
             
+        }
+
+        private void CmbNienKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CmbHocKy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

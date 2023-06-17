@@ -8,8 +8,7 @@ namespace QLDSV_TC
 {
     public partial class FormReportBDTK : DevExpress.XtraEditors.XtraForm
     {
-        string maLop;
-        string khoa;
+        private BindingSource bdsLop = new BindingSource();
         public FormReportBDTK()
         {
             InitializeComponent();
@@ -25,7 +24,6 @@ namespace QLDSV_TC
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
             CmbKhoa.SelectedIndex = Program.mKhoa;
-            khoa = CmbKhoa.SelectedText;
             if (Program.mGroup == "KHOA")
             {
                 CmbKhoa.Enabled = false;
@@ -37,13 +35,11 @@ namespace QLDSV_TC
         {
             string cmd = "SELECT * FROM [dbo].[LayDSMaLopHoc]";
             DataTable dt = Program.ExecSqlDataTable(cmd);
-            BindingSource bdsMaLop = new BindingSource();
-            bdsMaLop.DataSource = dt;
-            CmbMalop.DataSource = bdsMaLop;
+            bdsLop.DataSource = dt;
+            CmbMalop.DataSource = bdsLop;
             CmbMalop.DisplayMember = "MALOP";
             CmbMalop.ValueMember = "MALOP";
             CmbMalop.SelectedIndex = 0;
-            maLop = CmbMalop.SelectedValue.ToString();
         }
 
         private void CmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,7 +63,6 @@ namespace QLDSV_TC
                 MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
             } else
             {
-                khoa = CmbKhoa.SelectedText;
                 LayDSMaLop();
             }
             
@@ -75,8 +70,11 @@ namespace QLDSV_TC
 
         private void BtnPreview_Click(object sender, EventArgs e)
         {
+            string maLop = ((DataRowView)bdsLop[bdsLop.Position])["MALOP"].ToString();
+            string khoaHoc = ((DataRowView)bdsLop[bdsLop.Position])["KHOAHOC"].ToString();
+            string khoa = ((DataRowView)Program.bds_dspm[CmbKhoa.SelectedIndex])["TENKHOA"].ToString();
             ReportBDTK r = new ReportBDTK(maLop);
-            r.LbLopKhoaHoc.Text = "LỚP: " + maLop.ToUpper() + "   " + "KHOÁ HỌC: " + khoa.ToUpper();
+            r.LbLopKhoaHoc.Text = "LỚP: " + maLop.ToUpper() + "   " + "KHOÁ HỌC: " + khoaHoc.ToUpper();
             r.LbKhoa.Text = "KHOA: " + khoa.ToUpper();
 
             ReportPrintTool pt = new ReportPrintTool(r);
@@ -85,7 +83,6 @@ namespace QLDSV_TC
 
         private void CmbMalop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            maLop = CmbMalop.SelectedValue.ToString();
 
         }
     }

@@ -22,8 +22,8 @@ namespace QLDSV_TC
                 this.sqlDataSource2.Connection.ConnectionString = Program.connstr;
                 this.sqlDataSource2.Queries[0].Parameters[0].Value = maLop;
                 this.sqlDataSource2.Fill();
+                xrPivotGrid1.BeforePrint += xrPivotGrid1_BeforePrint;
 
-                this.BeforePrint += ReportBDTK_BeforePrint;
 
             }
             catch (Exception ex)
@@ -34,14 +34,10 @@ namespace QLDSV_TC
 
         }
 
-        private void ReportBDTK_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrPivotGrid1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            // Access the XRPivotGrid control and adjust column widths
-            XRPivotGrid pivotGrid = xrPivotGrid1;
-            foreach (XRPivotGridField field in pivotGrid.Fields)
-            {
-                field.BestFit();
-            }
+            // Adjust the width of the desired field to fit its content
+            this.fieldTENMH1.BestFit();
         }
 
     }

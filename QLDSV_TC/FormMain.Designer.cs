@@ -227,6 +227,7 @@ namespace QLDSV_TC
             this.BtnTaoTK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnTaoTK.ImageOptions.LargeImage")));
             this.BtnTaoTK.LargeWidth = 70;
             this.BtnTaoTK.Name = "BtnTaoTK";
+            this.BtnTaoTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTaoTK_ItemClick);
             // 
             // BtnDoiMK
             // 
