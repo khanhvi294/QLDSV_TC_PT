@@ -495,7 +495,7 @@ namespace QLDSV_TC
             // 
             // colMALTC
             // 
-            this.colMALTC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colMALTC.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colMALTC.AppearanceHeader.Options.UseBackColor = true;
             this.colMALTC.FieldName = "MALTC";
             this.colMALTC.MinWidth = 46;
@@ -506,7 +506,7 @@ namespace QLDSV_TC
             // 
             // colNIENKHOA
             // 
-            this.colNIENKHOA.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colNIENKHOA.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colNIENKHOA.AppearanceHeader.Options.UseBackColor = true;
             this.colNIENKHOA.FieldName = "NIENKHOA";
             this.colNIENKHOA.MinWidth = 46;
@@ -517,7 +517,7 @@ namespace QLDSV_TC
             // 
             // colHOCKY
             // 
-            this.colHOCKY.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colHOCKY.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colHOCKY.AppearanceHeader.Options.UseBackColor = true;
             this.colHOCKY.FieldName = "HOCKY";
             this.colHOCKY.MinWidth = 46;
@@ -528,7 +528,7 @@ namespace QLDSV_TC
             // 
             // colMAMH
             // 
-            this.colMAMH.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colMAMH.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colMAMH.AppearanceHeader.Options.UseBackColor = true;
             this.colMAMH.FieldName = "MAMH";
             this.colMAMH.MinWidth = 46;
@@ -539,7 +539,7 @@ namespace QLDSV_TC
             // 
             // colNHOM
             // 
-            this.colNHOM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colNHOM.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colNHOM.AppearanceHeader.Options.UseBackColor = true;
             this.colNHOM.FieldName = "NHOM";
             this.colNHOM.MinWidth = 46;
@@ -550,7 +550,7 @@ namespace QLDSV_TC
             // 
             // colMAGV
             // 
-            this.colMAGV.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colMAGV.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colMAGV.AppearanceHeader.Options.UseBackColor = true;
             this.colMAGV.FieldName = "MAGV";
             this.colMAGV.MinWidth = 46;
@@ -561,7 +561,7 @@ namespace QLDSV_TC
             // 
             // colMAKHOA
             // 
-            this.colMAKHOA.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colMAKHOA.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colMAKHOA.AppearanceHeader.Options.UseBackColor = true;
             this.colMAKHOA.FieldName = "MAKHOA";
             this.colMAKHOA.MinWidth = 46;
@@ -572,7 +572,7 @@ namespace QLDSV_TC
             // 
             // colSOSVTOITHIEU
             // 
-            this.colSOSVTOITHIEU.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colSOSVTOITHIEU.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colSOSVTOITHIEU.AppearanceHeader.Options.UseBackColor = true;
             this.colSOSVTOITHIEU.FieldName = "SOSVTOITHIEU";
             this.colSOSVTOITHIEU.MinWidth = 46;
@@ -583,7 +583,7 @@ namespace QLDSV_TC
             // 
             // colHUYLOP
             // 
-            this.colHUYLOP.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colHUYLOP.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colHUYLOP.AppearanceHeader.Options.UseBackColor = true;
             this.colHUYLOP.FieldName = "HUYLOP";
             this.colHUYLOP.MinWidth = 46;
@@ -791,7 +791,7 @@ namespace QLDSV_TC
             this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLopTinChi";
-            this.Text = "FormLopTinChi";
+            this.Text = "Lớp tín chỉ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormLopTinChi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

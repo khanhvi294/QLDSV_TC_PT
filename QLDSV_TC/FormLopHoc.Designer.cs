@@ -451,10 +451,10 @@ namespace QLDSV_TC
             // 
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(2, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1563, 65);
+            this.label3.Size = new System.Drawing.Size(1563, 48);
             this.label3.TabIndex = 8;
             this.label3.Text = "Thông tin lớp học";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -599,7 +599,7 @@ namespace QLDSV_TC
             // 
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(0, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(1567, 41);
