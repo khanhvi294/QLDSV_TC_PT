@@ -52,6 +52,7 @@ namespace QLDSV_TC
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             this.dS11 = new QLDSV_TC.DS1();
+            this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             ((System.ComponentModel.ISupportInitialize)(this.dS11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -71,14 +72,14 @@ namespace QLDSV_TC
             // 
             // xrPivotGrid1
             // 
-            this.xrPivotGrid1.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            this.xrPivotGrid1.Appearance.CustomTotalCell.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            this.xrPivotGrid1.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            this.xrPivotGrid1.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            this.xrPivotGrid1.Appearance.Cell.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.xrPivotGrid1.Appearance.CustomTotalCell.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.xrPivotGrid1.Appearance.FieldHeader.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.xrPivotGrid1.Appearance.FieldValue.Font = new System.Drawing.Font("Times New Roman", 10.2F);
             this.xrPivotGrid1.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Tahoma", 7.8F);
             this.xrPivotGrid1.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Tahoma", 7.8F);
             this.xrPivotGrid1.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            this.xrPivotGrid1.Appearance.Lines.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            this.xrPivotGrid1.Appearance.Lines.Font = new System.Drawing.Font("Times New Roman", 10.2F);
             this.xrPivotGrid1.Appearance.TotalCell.Font = new System.Drawing.Font("Tahoma", 7.8F);
             this.xrPivotGrid1.DataAdapter = this.lOPTableAdapter;
             this.xrPivotGrid1.DataMember = "SP_BanDiemTongKet";
@@ -136,7 +137,8 @@ namespace QLDSV_TC
             this.fieldTENMH1.FieldName = "TENMH";
             this.fieldTENMH1.MinWidth = 100;
             this.fieldTENMH1.Name = "fieldTENMH1";
-            this.fieldTENMH1.Width = 136;
+            this.fieldTENMH1.TotalsVisibility = DevExpress.XtraPivotGrid.PivotTotalsVisibility.None;
+            this.fieldTENMH1.Width = 148;
             // 
             // fieldDiemHocPhan1
             // 
@@ -172,7 +174,7 @@ namespace QLDSV_TC
             // LbKhoa
             // 
             this.LbKhoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbKhoa.LocationFloat = new DevExpress.Utils.PointFloat(10F, 63.50001F);
+            this.LbKhoa.LocationFloat = new DevExpress.Utils.PointFloat(10.00003F, 76.83334F);
             this.LbKhoa.Multiline = true;
             this.LbKhoa.Name = "LbKhoa";
             this.LbKhoa.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -185,7 +187,7 @@ namespace QLDSV_TC
             // LbLopKhoaHoc
             // 
             this.LbLopKhoaHoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbLopKhoaHoc.LocationFloat = new DevExpress.Utils.PointFloat(10F, 40.5F);
+            this.LbLopKhoaHoc.LocationFloat = new DevExpress.Utils.PointFloat(10.00003F, 53.83334F);
             this.LbLopKhoaHoc.Multiline = true;
             this.LbLopKhoaHoc.Name = "LbLopKhoaHoc";
             this.LbLopKhoaHoc.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -212,12 +214,21 @@ namespace QLDSV_TC
             // 
             // PageFooter
             // 
+            this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPageInfo1});
             this.PageFooter.Name = "PageFooter";
             // 
             // dS11
             // 
             this.dS11.DataSetName = "DS1";
             this.dS11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // xrPageInfo1
+            // 
+            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(598F, 46.16664F);
+            this.xrPageInfo1.Name = "xrPageInfo1";
+            this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrPageInfo1.SizeF = new System.Drawing.SizeF(100F, 23F);
             // 
             // ReportBDTK
             // 
@@ -258,5 +269,6 @@ namespace QLDSV_TC
         public DevExpress.XtraReports.UI.XRLabel LbLopKhoaHoc;
         public DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
         public DevExpress.XtraReports.UI.XRLabel LbKhoa;
+        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
     }
 }

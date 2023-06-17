@@ -130,6 +130,12 @@
     <Compile Include="FormSinhVien.Designer.cs">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoTaiKhoan.Designer.cs">
+      <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormDangKy.cs">
@@ -143,6 +149,18 @@
     </Compile>
     <Compile Include="ReportBDTK.Designer.cs">
       <DependentUpon>ReportBDTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XFormDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XFormDangKy.Designer.cs">
+      <DependentUpon>XFormDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XFormNhapDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XFormNhapDiem.Designer.cs">
+      <DependentUpon>XFormNhapDiem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
@@ -162,6 +180,9 @@
     <EmbeddedResource Include="FormSinhVien.resx">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoTaiKhoan.resx">
+      <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -177,6 +198,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportBDTK.resx">
       <DependentUpon>ReportBDTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XFormDangKy.resx">
+      <DependentUpon>XFormDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XFormNhapDiem.resx">
+      <DependentUpon>XFormNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">
