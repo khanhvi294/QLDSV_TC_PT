@@ -37,7 +37,10 @@ namespace QLDSV_TC
             {
                 BtnDangKy.Enabled = true;
                 BtnDiem.Enabled = BtnHocPhi.Enabled = BtnLopHoc.Enabled = BtnLopTC.Enabled = BtnMonHoc.Enabled = BtnSinhVien.Enabled  = false;
-                BaoCao.Visible = false;
+                BaoCao.Visible = true;
+                BtnPhieuDiem.Enabled = true;
+                BtnBDHM.Enabled = BtnDSLTC.Enabled = BtnDKLTC.Enabled = BtnHP.Enabled = BtnBangDiem.Enabled = false;
+
             }
             if (Program.mGroup.Equals("PKT"))
             {
