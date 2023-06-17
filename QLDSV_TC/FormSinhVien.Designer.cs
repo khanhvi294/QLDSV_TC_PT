@@ -571,6 +571,7 @@ namespace QLDSV_TC
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nGAYSINHDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nGAYSINHDateEdit.Properties.MaxValue = new System.DateTime(((long)(0)));
             this.nGAYSINHDateEdit.Size = new System.Drawing.Size(289, 40);
             this.nGAYSINHDateEdit.TabIndex = 17;
             // 

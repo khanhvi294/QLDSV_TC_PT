@@ -23,7 +23,7 @@ namespace QLDSV_TC
         void LayDSHocKy(string nienkhoa)
         {
             DataTable dt = new DataTable();
-            string cmd = "EXEC SP_LayDSHocKy '" + nienkhoa + "','"  + maKhoa.Trim() + "'" ;
+            string cmd = "EXEC SP_LayDSHocKy '" + nienkhoa + "'" ;
             dt = Program.ExecSqlDataTable(cmd);
 
             BindingSource bdsHocKi = new BindingSource();
@@ -34,25 +34,23 @@ namespace QLDSV_TC
         }
         void LayDSNienKhoa()
         {
-            string cmd = "EXEC [dbo].[SP_LayNienKhoa] '" + maKhoa.Trim() + "'";
+            string cmd = "SELECT * FROM [dbo].[LayDSNienKhoa]";
             DataTable dt = Program.ExecSqlDataTable(cmd);
             BindingSource bdsNienKhoa = new BindingSource();
             bdsNienKhoa.DataSource = dt;
             CmbNienKhoa.DataSource = bdsNienKhoa;
-           CmbNienKhoa.DisplayMember = "NIENKHOA";
+            CmbNienKhoa.DisplayMember = "NIENKHOA";
             CmbNienKhoa.ValueMember = "NIENKHOA";
             //CmbNienKhoa.SelectedIndex = 0;
         }
 
         private void Frpt_DANHSACHLOPTINCHI_Load(object sender, EventArgs e)
         {
-           
+            Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
             CmbKhoa.DataSource = Program.bds_dspm;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
             CmbKhoa.SelectedIndex = Program.mKhoa;
-
-            
 
 
 
@@ -125,9 +123,9 @@ namespace QLDSV_TC
         private void BtnIn_Click(object sender, EventArgs e)
         {
      
-            Xrpt_DANHSACHLOPTINCHI rpt = new Xrpt_DANHSACHLOPTINCHI(CmbNienKhoa.Text, int.Parse(CmbHocKy.Text), maKhoa);
+            Xrpt_DANHSACHLOPTINCHI rpt = new Xrpt_DANHSACHLOPTINCHI(CmbNienKhoa.Text, int.Parse(CmbHocKy.Text));
 
-            rpt.LbKhoa.Text = CmbKhoa.Text;
+           // rpt.LbKhoa.Text = CmbKhoa.Text;
             rpt.LbNienKhoa.Text = CmbNienKhoa.Text;
             rpt.LbHocKy.Text = CmbHocKy.Text;
 

@@ -90,12 +90,12 @@ namespace QLDSV_TC
             queryParameter2.Name = "@hocKy";
             queryParameter2.Type = typeof(int);
             queryParameter2.ValueInfo = "1";
-            queryParameter3.Name = "@maKhoa";
-            queryParameter3.Type = typeof(string);
-            queryParameter3.ValueInfo = "CNTT";
+            //queryParameter3.Name = "@maKhoa";
+            //queryParameter3.Type = typeof(string);
+            //queryParameter3.ValueInfo = "CNTT";
             storedProcQuery1.Parameters.Add(queryParameter1);
             storedProcQuery1.Parameters.Add(queryParameter2);
-            storedProcQuery1.Parameters.Add(queryParameter3);
+           // storedProcQuery1.Parameters.Add(queryParameter3);
             storedProcQuery1.StoredProcName = "SP_DANHSACHLOPTINCHIDAMO";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery1});

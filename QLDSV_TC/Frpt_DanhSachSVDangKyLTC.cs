@@ -22,7 +22,7 @@ namespace QLDSV_TC
         void LayDSHocKy(string nienkhoa)
         {
             DataTable dt = new DataTable();
-            string cmd = "EXEC SP_LayDSHocKy '" + nienkhoa.Trim() + "','" + maKhoa.Trim() + "'";
+            string cmd = "EXEC SP_LayDSHocKy '" + nienkhoa + "'";
             dt = Program.ExecSqlDataTable(cmd);
 
             BindingSource bdsHocKi = new BindingSource();
@@ -33,18 +33,19 @@ namespace QLDSV_TC
         }
         void LayDSNienKhoa()
         {
-            string cmd = "EXEC [dbo].[SP_LayNienKhoa] '" + maKhoa.Trim() + "'";
+            string cmd = "SELECT * FROM [dbo].[LayDSNienKhoa]";
             DataTable dt = Program.ExecSqlDataTable(cmd);
             BindingSource bdsNienKhoa = new BindingSource();
             bdsNienKhoa.DataSource = dt;
             CmbNienKhoa.DataSource = bdsNienKhoa;
             CmbNienKhoa.DisplayMember = "NIENKHOA";
             CmbNienKhoa.ValueMember = "NIENKHOA";
+            //CmbNienKhoa.SelectedIndex = 0;
         }
 
         void LayDSMonHoc(string nienkhoa, int hocky)
         {
-            string cmd = "EXEC [dbo].[SP_LayDSMonHoc] '"  +  maKhoa.Trim() + "','" + nienkhoa + "'," + hocky;
+            string cmd = "EXEC [dbo].[SP_LayDSMonHoc] '" + nienkhoa + "'," + hocky;
 
             DataTable dt = Program.ExecSqlDataTable(cmd);
             BindingSource bdsMonHoc = new BindingSource();
@@ -55,7 +56,7 @@ namespace QLDSV_TC
         }
         void LayDSNhom(string nienkhoa, int hocky, string mamh)
         {
-            string cmd = "EXEC [dbo].[SP_LayDSNhom] '" + maKhoa.Trim() + "','" + nienkhoa + "'," + hocky + ",'" + mamh + "'";
+            string cmd = "EXEC [dbo].[SP_LayDSNhom] '" + nienkhoa + "'," + hocky + ",'" + mamh + "'";
             DataTable dt = Program.ExecSqlDataTable(cmd);
             BindingSource bdsNhom = new BindingSource();
             bdsNhom.DataSource = dt;
@@ -65,7 +66,8 @@ namespace QLDSV_TC
         }
         private void Frpt_DanhSachSVDangKyLTC_Load(object sender, EventArgs e)
         {
-           
+
+            Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
             CmbKhoa.DataSource = Program.bds_dspm;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";

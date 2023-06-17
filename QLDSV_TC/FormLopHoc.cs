@@ -59,8 +59,7 @@ namespace QLDSV_TC
             bdsCN.DataSource = dt;
             makhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
 
-            //makhoa = ((DataRowView)BdsLH[0])["MAKHOA"].ToString(); //tiềm ẩn lỗi, cần xử lí
-           // Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
+            Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
             CmbKhoa.DataSource = Program.bds_dspm;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
@@ -87,7 +86,7 @@ namespace QLDSV_TC
             TxtMaKhoa.Text = makhoa;
             TxtMaLop.Focus();
         
-            BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled =false;
+           CmbKhoa.Enabled = BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled =false;
             BtnGhiLH.Enabled = BtnPhucHoiLH.Enabled = true;
             GcLopHoc.Enabled = false;
          
@@ -104,7 +103,7 @@ namespace QLDSV_TC
                 if (BtnThemLH.Enabled == false) BdsLH.Position = vitri;
                 GcLopHoc.Enabled = true;
                 panelControl2.Enabled = false;
-                BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled = true;
+                CmbKhoa.Enabled = BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled = true;
                 BtnGhiLH.Enabled = BtnPhucHoiLH.Enabled = false;
             }
 
@@ -195,11 +194,20 @@ namespace QLDSV_TC
                 return false;
             }
 
+
             bool match = Regex.IsMatch(TxtKhoaHoc.Text.Trim(), "[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]");
             if (!match)
             {
                 MessageBox.Show("Khóa học phải có dạng yyyy-yyyy", "", MessageBoxButtons.OK);
                 TxtKhoaHoc.Focus();
+                return false;
+            }
+
+            bool matchTen = Regex.IsMatch(TxtTenLop.Text.Trim(), "[0-9a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$");
+            if (!matchTen)
+            {
+                MessageBox.Show("Tên lớp không được có kí tự đặc biệt", "", MessageBoxButtons.OK);
+                TxtTenLop.Focus();
                 return false;
             }
 
@@ -286,7 +294,7 @@ namespace QLDSV_TC
             else return;
             GcLopHoc.Enabled = true;
             panelControl2.Enabled = false;
-            BtnThemLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnSuaLH.Enabled = true;
+            CmbKhoa.Enabled = BtnThemLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnSuaLH.Enabled = true;
             BtnGhiLH.Enabled = BtnPhucHoiLH.Enabled = false;
 
         }
@@ -296,7 +304,7 @@ namespace QLDSV_TC
             tenLopSua = TxtTenLop.Text;
             vitri = BdsLH.Position;
             chonThem = false;
-            BtnSuaLH.Enabled = BtnThemLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled= false;
+            CmbKhoa.Enabled = BtnSuaLH.Enabled = BtnThemLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled= false;
             panelControl2.Enabled = BtnPhucHoiLH.Enabled = BtnGhiLH.Enabled = true;
             GcLopHoc.Enabled = false;
         }

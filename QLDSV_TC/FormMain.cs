@@ -11,6 +11,7 @@ namespace QLDSV_TC
 {
     public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        bool dangxuat = false;
         public FormMain()
         {
             InitializeComponent();
@@ -39,7 +40,15 @@ namespace QLDSV_TC
                 }
                 else
                 {
-                    Application.Exit();
+                    if (dangxuat == true)
+                    {
+                        Program.formDangNhap.Show();
+                        dangxuat = false;
+                    }else
+                    {
+                        
+                      Application.Exit();
+                    }
                 }
             }
         }
@@ -84,16 +93,26 @@ namespace QLDSV_TC
             //}
         }
 
-        private void BtnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void BtnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frpt_DanhSachSVDangKyLTC F = new Frpt_DanhSachSVDangKyLTC();
-            F.Show();
+            foreach (Form f in this.MdiChildren)
+            {
+                f.Close();
+            }
+            dangxuat = true;
+            this.Close();
+           
+
         }
 
-        private void BtnLopTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void BtnDSLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frpt_DANHSACHLOPTINCHI f = new Frpt_DANHSACHLOPTINCHI();
-            f.Show();
+            ShowMdiChildren(typeof(Frpt_DANHSACHLOPTINCHI));
+        }
+
+        private void BtnDKLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(Frpt_DanhSachSVDangKyLTC));
         }
     }
 }

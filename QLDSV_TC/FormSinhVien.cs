@@ -51,6 +51,7 @@ namespace QLDSV_TC
             dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
             BindingSource bdsCN = new BindingSource();
             bdsCN.DataSource = dt;
+            Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
             CmbKhoa.DataSource = Program.bds_dspm;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
@@ -66,7 +67,7 @@ namespace QLDSV_TC
             }
 
             BtnGhi.Enabled = false;
-
+            nGAYSINHDateEdit.Properties.MaxValue = DateTime.Today;
         }
 
         private void lOPBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -171,43 +172,6 @@ namespace QLDSV_TC
                 }
             }
 
-           
-           
-
-
-            /*  if (_flagOptionSinhVien == "UPDATE")
-              {
-                  if (!this.tedMasv.Text.Trim().ToString().Equals(_oldMaSV))
-                  {
-                      string query2 = " DECLARE @return_value INT " +
-
-                              " EXEC @return_value = [dbo].[SP_CHECKID] " +
-
-                              " @code = N'" + tedMasv.Text.Trim() + "',  " +
-
-                              " @Type = N'MASV' " +
-
-                              " SELECT  'Return Value' = @return_value ";
-
-                      int resultMa = Program.CheckDataHelper(query2);
-                      if (resultMa == -1)
-                      {
-                          XtraMessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
-                          this.Close();
-                      }
-                      if (resultMa == 1)
-                      {
-                          XtraMessageBox.Show("Mã Sinh Viên đã tồn tại. Mời bạn nhập mã khác !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                          return false;
-                      }
-                      if (resultMa == 2)
-                      {
-                          XtraMessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                          return false;
-                      }
-                  }
-
-              }*/
             return true;
         }
         private void BtnThemLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -220,7 +184,7 @@ namespace QLDSV_TC
             TxtMaLop.Text = ((DataRowView)this.BdsLH[this.gridViewLH.FocusedRowHandle])["MALOP"].ToString();
             CbPhai.Checked = false;
             CbNghiHoc.Checked = false;
-            BtnThem.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnSua.Enabled = false;
+            CmbKhoa.Enabled = BtnThem.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnSua.Enabled = false;
             BtnGhi.Enabled = BtnPhucHoi.Enabled = true;
             GcLopHoc.Enabled = GcSinhVien.Enabled = false;
 
@@ -235,7 +199,7 @@ namespace QLDSV_TC
 
                 GcLopHoc.Enabled = GcSinhVien.Enabled= true;
                 panelControl2.Enabled = false;
-                BtnThem.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnSua.Enabled = true;
+                CmbKhoa.Enabled = BtnThem.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnSua.Enabled = true;
                 BtnGhi.Enabled = BtnPhucHoi.Enabled = false;
             }
 
@@ -245,8 +209,6 @@ namespace QLDSV_TC
         {
             try
             {
-
-                //check lại chỗ này coi - lỗi maybe
                 
                 this.lOPTableAdapter.Fill(this.DS2.LOP);
                 this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
@@ -300,35 +262,24 @@ namespace QLDSV_TC
         }
 
         private void BtnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        { 
+        {
+
+            if (BdsSv.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để sửa", "", MessageBoxButtons.OK);
+                
+                return;
+            }
+
             vitri = BdsLH.Position;
             themSV = false;
             maSinhVienSua = TxtMaSV.Text;
-            BtnSua.Enabled = BtnThem.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnXoa.Enabled = false;
+            CmbKhoa.Enabled = BtnSua.Enabled = BtnThem.Enabled = BtnLamMoi.Enabled = BtnThoat.Enabled = BtnXoa.Enabled = false;
             panelControl2.Enabled = BtnPhucHoi.Enabled = BtnGhi.Enabled = true;
             GcLopHoc.Enabled = GcSinhVien.Enabled = false;
+           
 
-            /* flag = false;//  Update 
-            oldMaLop = this.maLop.Text.Trim().ToString();
-            //oldTenLop = this.cbLop.Text.Trim().ToString();
-            oldMaSV = this.maSinhVien.Text.Trim().ToString();
-            if(viewDSSV.DataRowCount<=0)
-            {
-                MessageBox.Show("Không có dữ liệu để sửa", "", MessageBoxButtons.OK);
-                return;
-            }
-            saveBtn.Enabled 
-                = exitBtn.Enabled 
-                = maLop.Enabled
-                = groupEdit.Enabled = true;
-
-            addBtn.Enabled
-                = deleteBtn.Enabled
-                = adjustBtn.Enabled
-                = undoBtn.Enabled
-                = reloadBtn.Enabled
-                = cbKhoa.Enabled
-                = danhSachSV.Enabled = false;*/
+           
         }
 
         private void BtnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -391,7 +342,7 @@ namespace QLDSV_TC
          
             GcLopHoc.Enabled = GcSinhVien.Enabled = true;
             panelControl2.Enabled = false;
-            BtnThem.Enabled = BtnThoat.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnSua.Enabled = true;
+            CmbKhoa.Enabled = BtnThem.Enabled = BtnThoat.Enabled = BtnXoa.Enabled = BtnLamMoi.Enabled = BtnSua.Enabled = true;
             BtnGhi.Enabled = BtnPhucHoi.Enabled = false;
         }
 
