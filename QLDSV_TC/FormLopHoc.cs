@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace QLDSV_TC
 {
@@ -15,6 +16,9 @@ namespace QLDSV_TC
     {
         private string makhoa = "";
         int vitri = 0;
+        private string maLopSua = "";
+        private string tenLopSua = "";
+        private Boolean chonThem = true;
         public FormLopHoc()
         {
             InitializeComponent();
@@ -55,7 +59,6 @@ namespace QLDSV_TC
             bdsCN.DataSource = dt;
             makhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
 
-            // makhoa = ((DataRowView)BdsLH[0])["MAKHOA"].ToString(); //tiềm ẩn lỗi, cần xử lí
             Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
             CmbKhoa.DataSource = Program.bds_dspm;
             CmbKhoa.DisplayMember = "TENKHOA";
@@ -70,31 +73,41 @@ namespace QLDSV_TC
             {
                 CmbKhoa.Enabled = false;
             }
+            BtnGhiLH.Enabled = false;
 
         }
 
         private void BtnThemLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitri = BdsLH.Position;
+            chonThem = true;
             panelControl2.Enabled = true;
             BdsLH.AddNew();
             TxtMaKhoa.Text = makhoa;
             TxtMaLop.Focus();
-
-            BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled =false;
-            btnGhi.Enabled = btnPhucHoi.Enabled = true;
+        
+           CmbKhoa.Enabled = BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled =false;
+            BtnGhiLH.Enabled = BtnPhucHoiLH.Enabled = true;
             GcLopHoc.Enabled = false;
          
         }
 
         private void BtnPhucHoiLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            BdsLH.CancelEdit();
-            if (BtnThemLH.Enabled == false) BdsLH.Position = vitri;
-            GcLopHoc.Enabled = true;
-            panelControl2.Enabled = false;
-            BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled = true;
-            btnGhi.Enabled = btnPhucHoi.Enabled = false;
+            if (MessageBox.Show("Bạn muốn hủy bỏ tất cả thao tác?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                BdsLH.CancelEdit();
+                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lOPTableAdapter.Fill(this.DS2.LOP);
+
+                if (BtnThemLH.Enabled == false) BdsLH.Position = vitri;
+                GcLopHoc.Enabled = true;
+                panelControl2.Enabled = false;
+                CmbKhoa.Enabled = BtnThemLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnSuaLH.Enabled = true;
+                BtnGhiLH.Enabled = BtnPhucHoiLH.Enabled = false;
+            }
+
+           
         }
 
         private void BtnLamMoiLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -113,6 +126,13 @@ namespace QLDSV_TC
         private void BtnXoaLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string maLH = "";
+
+            if (BdsLH.Count == 0)
+            {
+                MessageBox.Show("Không có lớp", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+
             if (BdsSV.Count > 0)
             {
                 MessageBox.Show("Không thể xóa lớp học vì đã có sinh viên đăng kí", "", MessageBoxButtons.OK);
@@ -138,112 +158,153 @@ namespace QLDSV_TC
             if (BdsLH.Count == 0) BtnXoaLH.Enabled = false;
         }
 
-        private void BtnGhiLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private bool validatorLopHoc()
         {
             if (TxtMaLop.Text.Trim() == "")
             {
                 MessageBox.Show("Mã lớp không được để trống!", "", MessageBoxButtons.OK);
                 TxtMaLop.Focus();
-                return;
+                return false;
             }
             if (TxtTenLop.Text.Trim() == "")
             {
                 MessageBox.Show("Tên lớp không được để trống!", "", MessageBoxButtons.OK);
                 TxtTenLop.Focus();
-                return;
+                return false;
             }
             if (TxtKhoaHoc.Text.Trim() == "")
             {
                 MessageBox.Show("Khóa học không được để trống!", "", MessageBoxButtons.OK);
                 TxtKhoaHoc.Focus();
-                return;
+                return false;
             }
 
-            String query = "DECLARE @result INT;"+
-            "EXEC @result = SP_KTMaLopHoc "+TxtMaLop.Text.Trim()+ " SELECT @result AS Result;";
-    
-            int result = -1;
-            SqlDataReader dataReader = Program.ExecSqlDataReader(query);
-
-
-            if (dataReader == null)
+            if (TxtMaLop.Text.Trim().Length > 10)
             {
-                MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
-                this.Close();
-            }
-            dataReader.Read();
-            result = int.Parse(dataReader.GetValue(0).ToString());
-            dataReader.Close();
-
-            if (result == 1)
-            {
-                MessageBox.Show("Mã lớp đã tồn tại!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Mã lớp tối đa 10 kí tự!", "", MessageBoxButtons.OK);
                 TxtMaLop.Focus();
-                return;
+                return false;
+            }
+
+
+            if (TxtTenLop.Text.Trim().Length > 50)
+            {
+                MessageBox.Show("Tên lớp tối đa 50 kí tự!", "", MessageBoxButtons.OK);
+                TxtTenLop.Focus();
+                return false;
+            }
+
+
+            bool match = Regex.IsMatch(TxtKhoaHoc.Text.Trim(), "[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]");
+            if (!match)
+            {
+                MessageBox.Show("Khóa học phải có dạng yyyy-yyyy", "", MessageBoxButtons.OK);
+                TxtKhoaHoc.Focus();
+                return false;
+            }
+
+            bool matchTen = Regex.IsMatch(TxtTenLop.Text.Trim(), "[0-9a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$");
+            if (!matchTen)
+            {
+                MessageBox.Show("Tên lớp không được có kí tự đặc biệt", "", MessageBoxButtons.OK);
+                TxtTenLop.Focus();
+                return false;
+            }
+
+            if (((TxtMaLop.Text.Trim() != maLopSua.Trim()) && (chonThem == false)) || chonThem == true)
+            {
+                String query = "DECLARE @result INT;" +
+           "EXEC @result = SP_KTMaLopHoc " + TxtMaLop.Text.Trim() + " SELECT @result AS Result;";
+                int result = Program.CheckDataHelper(query);
+                if (result == -1)
+                {
+                    MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                    this.Close();
+                }
+
+                if (result == 1)
+                {
+                    MessageBox.Show("Mã lớp đã tồn tại!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
+
+                }
+                else if (result == 2)
+                {
+                    MessageBox.Show("Mã lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
+                }
+            }
+
+
+
+
+            if (((TxtTenLop.Text.Trim() != tenLopSua.Trim())&&(chonThem == false))||chonThem == true)
+            {
+                String query2 = "DECLARE @result INT;" +
+               "EXEC @result = SP_KTTenLop N'" + TxtTenLop.Text.Trim() + "' SELECT @result AS Result;";
+
+                int result2 = Program.CheckDataHelper(query2);
+                if (result2 == -1)
+                {
+                    MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                    this.Close();
+                }
+
+                if (result2 == 1)
+                {
+                    MessageBox.Show("Tên lớp đã tồn tại!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
+
+                }
+                else if (result2 == 2)
+                {
+                    MessageBox.Show("Tên lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
+                }
+            }
+
            
-            }
-            else if(result == 2)
+
+            return true;
+        }
+
+        private void BtnGhiLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (validatorLopHoc() == true)
             {
-                MessageBox.Show("Mã lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
-                TxtMaLop.Focus();
-                return;
+
+                try
+                {
+                    BdsLH.EndEdit(); //kt hiệu chỉnh ghi vào bds
+                    BdsLH.ResetCurrentItem(); //đưa thông tin lên lưới
+                    this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.lOPTableAdapter.Update(this.DS2.LOP);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi ghi lớp học.\n" + ex.Message, "", MessageBoxButtons.OK);
+                    return;
+                }
             }
-
-
-            String query2 = "DECLARE @result INT;" +
-          "EXEC @result = SP_KTTenLop N'" + TxtTenLop.Text.Trim() + "' SELECT @result AS Result;";
-
-            int result2 = -1;
-            SqlDataReader dataReader2 = Program.ExecSqlDataReader(query2);
-
-
-            if (dataReader2 == null)
-            {
-                MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
-                this.Close();
-            }
-            dataReader2.Read();
-            result2 = int.Parse(dataReader2.GetValue(0).ToString());
-            dataReader2.Close();
-        
-
-            if (result2 == 1)
-            {
-                MessageBox.Show("Tên lớp đã tồn tại!", "", MessageBoxButtons.OK);
-                TxtMaLop.Focus();
-                return;
-
-            }
-            else if (result2 == 2)
-            {
-                MessageBox.Show("Tên lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
-                TxtMaLop.Focus();
-                return;
-            }
-
-            try
-            {
-                BdsLH.EndEdit(); //kt hiệu chỉnh ghi vào bds
-                BdsLH.ResetCurrentItem(); //đưa thông tin lên lưới
-                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.lOPTableAdapter.Update(this.DS2.LOP);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi ghi lớp học.\n" + ex.Message, "", MessageBoxButtons.OK);
-                return;
-            }
+            else return;
             GcLopHoc.Enabled = true;
             panelControl2.Enabled = false;
-            BtnThemLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnSuaLH.Enabled = true;
+            CmbKhoa.Enabled = BtnThemLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled = BtnLamMoiLH.Enabled = BtnSuaLH.Enabled = true;
             BtnGhiLH.Enabled = BtnPhucHoiLH.Enabled = false;
 
         }
         private void BtnSuaLH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            maLopSua = TxtMaLop.Text;
+            tenLopSua = TxtTenLop.Text;
             vitri = BdsLH.Position;
-            BtnSuaLH.Enabled = BtnThemLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled= false;
+            chonThem = false;
+            CmbKhoa.Enabled = BtnSuaLH.Enabled = BtnThemLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled= false;
             panelControl2.Enabled = BtnPhucHoiLH.Enabled = BtnGhiLH.Enabled = true;
             GcLopHoc.Enabled = false;
         }
@@ -311,7 +372,46 @@ namespace QLDSV_TC
 
         private void CmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+            if (CmbKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
+                return;
+               
+            Program.servername = CmbKhoa.SelectedValue.ToString();
+            if (CmbKhoa.SelectedIndex != Program.mKhoa)
+            {
+                Program.login = Program.remotelogin;
+                Program.password = Program.remotepassword;
+            }
+            else
+            {
+                Program.login = Program.mLogin;
+                Program.password = Program.mPassword;
+            }
+            if (Program.KetNoi() == 0)
+                MessageBox.Show("Lỗi kết nối về chi nhánh mới","", MessageBoxButtons.OK);
+            else
+            {
+                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                // TODO: This line of code loads data into the 'dS2.LOP' table. You can move, or remove it, as needed.
+                this.lOPTableAdapter.Fill(this.DS2.LOP);
+                this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                // TODO: This line of code loads data into the 'dS2.SINHVIEN' table. You can move, or remove it, as needed.
+                this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
 
+
+                DataTable dt = new DataTable();
+                dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
+                BindingSource bdsCN = new BindingSource();
+                bdsCN.DataSource = dt;
+                makhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
+            }
+
+        }
+
+        private void TxtMaLop_TextChanged(object sender, EventArgs e)
+        {
+            TxtMaLop.Text = TxtMaLop.Text.ToUpper();
+            TxtMaLop.SelectionStart = TxtMaLop.Text.Length;
         }
     }
 }
