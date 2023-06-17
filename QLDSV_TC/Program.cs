@@ -14,7 +14,7 @@ namespace QLDSV_TC
     {
         public static SqlConnection conn = new SqlConnection("Data Source=DESKTOP-N44BQ15;Initial Catalog=QLDSV_TC;Persist Security Info=True;User ID=sa;Password=123456");
         public static String connstr;
-        public static String connstr_publicsher = "Data Source=DESKTOP-N44BQ15;Initial Catalog=QLDSV_TC;Persist Security Info=True;User ID=sa;Password=123456";
+        public static String connstr_publicsher = "Data Source=NOVEMBER;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456";
         public static SqlDataAdapter da;
         public static SqlDataReader myReader;
         public static String servername = "DESKTOP-N44BQ15";

@@ -88,7 +88,7 @@ namespace QLDSV_TC
             this.BtnDoiMK,
             this.BtnDangXuat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -145,6 +145,7 @@ namespace QLDSV_TC
             this.BtnDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDiem.ImageOptions.LargeImage")));
             this.BtnDiem.LargeWidth = 60;
             this.BtnDiem.Name = "BtnDiem";
+            this.BtnDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDiem_ItemClick);
             // 
             // BtnHocPhi
             // 
@@ -222,6 +223,7 @@ namespace QLDSV_TC
             this.BtnBangDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnBangDiem.ImageOptions.LargeImage")));
             this.BtnBangDiem.LargeWidth = 60;
             this.BtnBangDiem.Name = "BtnBangDiem";
+            this.BtnBangDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnBangDiem_ItemClick);
             // 
             // BtnTaoTK
             // 
@@ -231,6 +233,7 @@ namespace QLDSV_TC
             this.BtnTaoTK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnTaoTK.ImageOptions.LargeImage")));
             this.BtnTaoTK.LargeWidth = 70;
             this.BtnTaoTK.Name = "BtnTaoTK";
+            this.BtnTaoTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTaoTK_ItemClick);
             // 
             // BtnDoiMK
             // 
