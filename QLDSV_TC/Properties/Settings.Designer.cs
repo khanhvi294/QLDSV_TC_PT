@@ -26,7 +26,7 @@ namespace QLDSV_TC.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KHANHVI;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-N44BQ15;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456")]
         public string QLDSV_TCConnectionString {
             get {
                 return ((string)(this["QLDSV_TCConnectionString"]));
@@ -36,7 +36,7 @@ namespace QLDSV_TC.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KHANHVI\\SQLSV1;Initial Catalog=QLDSV_TC;User ID=sa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-N44BQ15\\SQLSV1;Initial Catalog=QLDSV_TC;User ID=sa")]
         public string QLDSV_TCConnectionString1 {
             get {
                 return ((string)(this["QLDSV_TCConnectionString1"]));

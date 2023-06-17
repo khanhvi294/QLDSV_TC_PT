@@ -341,7 +341,7 @@ namespace QLDSV_TC
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl4.Location = new System.Drawing.Point(0, 67);
+            this.barDockControl4.Location = new System.Drawing.Point(0, 51);
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Margin = new System.Windows.Forms.Padding(5);
             this.barDockControl4.Size = new System.Drawing.Size(0, 644);
@@ -404,7 +404,7 @@ namespace QLDSV_TC
             this.panelControl1.Controls.Add(this.CmbKhoa);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 67);
+            this.panelControl1.Location = new System.Drawing.Point(0, 51);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1567, 75);
             this.panelControl1.TabIndex = 8;
@@ -605,7 +605,7 @@ namespace QLDSV_TC
             // 
             // FormLopHoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1567, 733);
