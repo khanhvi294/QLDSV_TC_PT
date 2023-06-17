@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace QLDSV_TC
@@ -16,13 +10,6 @@ namespace QLDSV_TC
         {
             InitializeComponent();
 
-        }
-        private Form CheckExists(Type ftype)
-        {
-            foreach (Form f in this.MdiChildren)
-                if (f.GetType() == ftype)
-                    return f;
-            return null;
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -69,14 +56,8 @@ namespace QLDSV_TC
 
         private void BtnDangKy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(FormDangKy));
-            if (frm != null) frm.Activate();
-            else
-            {
-                FormDangKy f = new FormDangKy();
-                // f.MdiParent = this;
-                f.Show();
-            }
+
+            this.ShowMdiChildren(typeof(XFormDangKy));
         }
 
         private void BtnLopHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -113,6 +94,37 @@ namespace QLDSV_TC
         private void BtnDKLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowMdiChildren(typeof(Frpt_DanhSachSVDangKyLTC));
+        }
+
+        private void BtnDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            this.ShowMdiChildren(typeof(XFormNhapDiem));
+        }
+
+        private void BtnBangDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.ShowMdiChildren(typeof(FormReportBDTK));
+        }
+
+        private void ShowMdiChildren(Type fType)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == fType)
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form form = (Form)Activator.CreateInstance(fType);
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void BtnTaoTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.ShowMdiChildren(typeof(FormTaoTaiKhoan));
         }
     }
 }

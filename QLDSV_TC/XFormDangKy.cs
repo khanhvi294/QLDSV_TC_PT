@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace QLDSV_TC
 {
-    public partial class FormDangKy : DevExpress.XtraEditors.XtraForm
+    public partial class XFormDangKy : DevExpress.XtraEditors.XtraForm
     {
         private Color primaryColor = System.Drawing.ColorTranslator.FromHtml("#00c0c0");
-        private Color dangerColor = System.Drawing.ColorTranslator.FromHtml("#e41400");
+        private Color dangerColor = System.Drawing.ColorTranslator.FromHtml("#d03144");
 
         private int currentFromState = 1; // 0 = huy dk, 1  = dk
 
@@ -24,12 +24,19 @@ namespace QLDSV_TC
         private string maLop = "";
         private BindingSource bdsDSLopTC = new BindingSource();
         private BindingSource bdsDSLopTCHuy = new BindingSource();
-        public FormDangKy()
+        public XFormDangKy()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
         }
 
+        private void XFormDangKy_Load(object sender, EventArgs e)
+        {
+            LayThongTinSV();
+            LayDSNienKhoa();
+            CmbNienKhoa.SelectedIndex = 0;
+            LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
+            LayDSLopTCHuy();
+        }
         void LayThongTinSV()
         {
             string cmd = "EXEC dbo.SP_LayThongTinSVDangKy '" + Program.username + "'";
@@ -77,16 +84,9 @@ namespace QLDSV_TC
             string cmd = "EXEC [dbo].[SP_LayDSDangKyCoTheHuy] '" + this.maSV + "'";
             DataTable tableLopTC = Program.ExecSqlDataTable(cmd);
             this.bdsDSLopTCHuy.DataSource = tableLopTC;
-            this.gridControlDSLTCHuy.DataSource = this.bdsDSLopTCHuy;
+            this.gridControlDSLTCHuy.DataSource = bdsDSLopTCHuy;
         }
-        private void FormDangKy_Load(object sender, EventArgs e)
-        {
-            LayThongTinSV();
-            LayDSNienKhoa();
-            CmbNienKhoa.SelectedIndex = 0;
-            LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
-            LayDSLopTCHuy();
-        }
+     
 
         private void CmbNienKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -119,7 +119,7 @@ namespace QLDSV_TC
                 this.btnDangky.BackColor = primaryColor;
                 this.txbMaLopTC.Text = ((DataRowView)bdsDSLopTC[bdsDSLopTC.Position])["MALTC"].ToString();
                 this.txbMaMH.Text = ((DataRowView)bdsDSLopTC[bdsDSLopTC.Position])["MAMH"].ToString();
-                this.txbTenMH.Text =((DataRowView)bdsDSLopTC[bdsDSLopTC.Position])["TENMH"].ToString();
+                this.txbTenMH.Text = ((DataRowView)bdsDSLopTC[bdsDSLopTC.Position])["TENMH"].ToString();
                 this.txbNhom.Text = ((DataRowView)bdsDSLopTC[bdsDSLopTC.Position])["NHOM"].ToString();
                 this.txbGV.Text = ((DataRowView)bdsDSLopTC[bdsDSLopTC.Position])["HOTENGV"].ToString();
                 this.btnDangky.Enabled = true;
@@ -180,3 +180,4 @@ namespace QLDSV_TC
         }
     }
 }
+
