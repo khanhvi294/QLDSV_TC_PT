@@ -127,21 +127,6 @@ namespace QLDSV_TC
             this.ShowMdiChildren(typeof(FormReportBDTK));
         }
 
-        private void ShowMdiChildren(Type fType)
-        {
-            foreach (Form f in this.MdiChildren)
-            {
-                if (f.GetType() == fType)
-                {
-                    f.Activate();
-                    return;
-                }
-            }
-            Form form = (Form)Activator.CreateInstance(fType);
-            form.MdiParent = this;
-            form.Show();
-        }
-
         private void BtnTaoTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.ShowMdiChildren(typeof(FormTaoTaiKhoan));
@@ -149,76 +134,37 @@ namespace QLDSV_TC
 
         private void BtnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(FormMonHoc));
-   
-            if (frm != null) frm.Activate();
-            else
-            {
-                Form f = new FormMonHoc();
-                f.MdiParent = this;
-                f.Show();
-            }
+            
+            this.ShowMdiChildren(typeof(FormMonHoc));
         }
 
         private void BtnLopTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            Form frm = this.CheckExists(typeof(FormLopTinChi));
-            if (frm != null) frm.Activate();
-            else
-            {
-                Form f = new FormLopTinChi();
-                f.MdiParent = this;
-                f.Show();
-            }
+           
+            this.ShowMdiChildren(typeof(FormLopTinChi));
         }
 
         private void BtnHocPhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(FormHocPhi));
-            if (frm != null) frm.Activate();
-            else
-            {
-                Form f = new FormHocPhi();
-                f.MdiParent = this;
-                f.Show();
-            }
+            this.ShowMdiChildren(typeof(FormHocPhi));
         }
 
         private void BtnBDHM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(Frpt_BANGDIEMHETMONCUALOP1));
-            if (frm != null) frm.Activate();
-            else
-            {
-                Frpt_BANGDIEMHETMONCUALOP1 f = new Frpt_BANGDIEMHETMONCUALOP1();
-                f.MdiParent = this;
-                f.Show();
-            }
+           
+            this.ShowMdiChildren(typeof(Frpt_BANGDIEMHETMONCUALOP1));
         }
 
         private void BtnPhieuDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(Frpt_INPHIEUDIEMSV1));
-            if (frm != null) frm.Activate();
-            else
-            {
-                Frpt_INPHIEUDIEMSV1 f = new Frpt_INPHIEUDIEMSV1();
-                f.MdiParent = this;
-                f.Show();
-            }
+           
+            this.ShowMdiChildren(typeof(Frpt_INPHIEUDIEMSV1));
         }
 
         private void BtnHP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(Frpt_INDANHSACHDONGHOCPHI));
-            if (frm != null) frm.Activate();
-            else
-            {
-                Frpt_INDANHSACHDONGHOCPHI f = new Frpt_INDANHSACHDONGHOCPHI();
-                f.MdiParent = this;
-                f.Show();
-            }
+            this.ShowMdiChildren(typeof(Frpt_INDANHSACHDONGHOCPHI));
         }
     }
 }

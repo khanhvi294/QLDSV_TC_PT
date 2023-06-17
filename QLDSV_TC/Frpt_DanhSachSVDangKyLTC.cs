@@ -67,8 +67,11 @@ namespace QLDSV_TC
         private void Frpt_DanhSachSVDangKyLTC_Load(object sender, EventArgs e)
         {
 
-            Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
-            CmbKhoa.DataSource = Program.bds_dspm;
+            var dataSource = Program.bds_dspm;
+            var filteredDataSource = dataSource.Cast<DataRowView>()
+                .Where(row => row["TENKHOA"].ToString() != "Học Phí")
+                .ToList();
+            CmbKhoa.DataSource = filteredDataSource;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
             CmbKhoa.SelectedIndex = Program.mKhoa;

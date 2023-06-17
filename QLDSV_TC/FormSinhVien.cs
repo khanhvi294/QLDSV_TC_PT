@@ -51,8 +51,11 @@ namespace QLDSV_TC
             dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
             BindingSource bdsCN = new BindingSource();
             bdsCN.DataSource = dt;
-            Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
-            CmbKhoa.DataSource = Program.bds_dspm;
+            var dataSource = Program.bds_dspm;
+            var filteredDataSource = dataSource.Cast<DataRowView>()
+                .Where(row => row["TENKHOA"].ToString() != "Học Phí")
+                .ToList();
+            CmbKhoa.DataSource = filteredDataSource;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
             CmbKhoa.SelectedIndex = Program.mKhoa;

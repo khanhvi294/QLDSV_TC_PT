@@ -141,6 +141,8 @@ namespace QLDSV_TC
         {
             try
             {
+                if (CmbKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
+                    return;
                 Program.servername = CmbKhoa.SelectedValue.ToString();
             }
             catch (Exception) { }

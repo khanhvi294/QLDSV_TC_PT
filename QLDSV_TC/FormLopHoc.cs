@@ -59,8 +59,11 @@ namespace QLDSV_TC
             bdsCN.DataSource = dt;
             makhoa = ((DataRowView)bdsCN[0])["MAKHOA"].ToString();
 
-            Program.bds_dspm.Filter = "TENKHOA LIKE 'KHOA%'";
-            CmbKhoa.DataSource = Program.bds_dspm;
+            var dataSource = Program.bds_dspm;
+            var filteredDataSource = dataSource.Cast<DataRowView>()
+                .Where(row => row["TENKHOA"].ToString() != "Học Phí")
+                .ToList();
+            CmbKhoa.DataSource = filteredDataSource;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
             CmbKhoa.SelectedIndex = Program.mKhoa;
