@@ -19,7 +19,7 @@ namespace QLDSV_TC
             this.sqlDataSource1.Queries[0].Parameters[0].Value = nienkhoa;
             this.sqlDataSource1.Queries[0].Parameters[1].Value = hocky;
             this.sqlDataSource1.Queries[0].Parameters[2].Value = malop;
-
+            this.sqlDataSource1.Fill();
         }
 
     }
