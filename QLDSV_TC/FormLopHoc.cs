@@ -208,7 +208,15 @@ namespace QLDSV_TC
                 return false;
             }
 
-            bool matchTen = Regex.IsMatch(TxtTenLop.Text.Trim(), "[0-9a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$");
+            bool matchMa = Regex.IsMatch(TxtMaLop.Text.Trim(), "^[0-9a-zA-Z-]+$");
+            if (!matchMa)
+            {
+                MessageBox.Show("Mã lớp không được có kí tự đặc biệt", "", MessageBoxButtons.OK);
+                TxtMaLop.Focus();
+                return false;
+            }
+
+            bool matchTen = Regex.IsMatch(TxtTenLop.Text.Trim(), "^[0-9a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$");
             if (!matchTen)
             {
                 MessageBox.Show("Tên lớp không được có kí tự đặc biệt", "", MessageBoxButtons.OK);

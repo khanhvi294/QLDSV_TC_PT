@@ -131,18 +131,18 @@ namespace QLDSV_TC
                 return false;
             }
 
-            bool matchHo = Regex.IsMatch(TxtHo.Text.Trim(), "[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$");
+            bool matchHo = Regex.IsMatch(TxtHo.Text.Trim(), "^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$");
             if (!matchHo)
             {
-                MessageBox.Show("Họ không được có kí tự đặc biệt", "", MessageBoxButtons.OK);
+                MessageBox.Show("Họ không được có số và kí tự đặc biệt", "", MessageBoxButtons.OK);
                 TxtHo.Focus();
                 return false;
             }
 
-            bool matchTen = Regex.IsMatch(TxtTenSV.Text.Trim(), "[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+$");
+            bool matchTen = Regex.IsMatch(TxtTenSV.Text.Trim(), "^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+$");
             if (!matchTen || TxtTenSV.Text.Trim().Contains(" "))
             {
-                MessageBox.Show("Tên không được có kí tự đặc biệt", "", MessageBoxButtons.OK);
+                MessageBox.Show("Tên không được có số, kí tự đặc biệt và khoảng trắng", "", MessageBoxButtons.OK);
                 TxtTenSV.Focus();
                 return false;
             }

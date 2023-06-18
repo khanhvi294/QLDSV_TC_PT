@@ -31,10 +31,18 @@ namespace QLDSV_TC
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XFormNhapDiem));
             this.left = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.BtnTaiLTC = new System.Windows.Forms.Button();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.CmbHocKy = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.CmbNienKhoa = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.CmbKhoa = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
-            this.lbLop = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panelLop = new DevExpress.XtraEditors.PanelControl();
             this.gridControlDSSVDK = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -52,8 +60,9 @@ namespace QLDSV_TC
             this.BtnUndo = new DevExpress.XtraEditors.SimpleButton();
             this.BtnRedo = new DevExpress.XtraEditors.SimpleButton();
             this.BtnGhi = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
+            this.lbLop = new System.Windows.Forms.Label();
+            this.DSLTC = new DevExpress.XtraEditors.PanelControl();
             this.gridControlDSLTC = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,25 +70,22 @@ namespace QLDSV_TC
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
+            this.label5 = new System.Windows.Forms.Label();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.DSLTC = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.CmbKhoa = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.CmbNienKhoa = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.CmbHocKy = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.BtnTaiLTC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.left)).BeginInit();
             this.left.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
+            this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
-            this.panelControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelLop)).BeginInit();
             this.panelLop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDSSVDK)).BeginInit();
@@ -90,22 +96,16 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
             this.panelControl11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
-            this.panelControl8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlDSLTC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
+            this.panelControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DSLTC)).BeginInit();
             this.DSLTC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
-            this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDSLTC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
+            this.panelControl8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // left
@@ -120,6 +120,134 @@ namespace QLDSV_TC
             this.left.Size = new System.Drawing.Size(332, 778);
             this.left.TabIndex = 0;
             // 
+            // panelControl6
+            // 
+            this.panelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl6.Controls.Add(this.BtnTaiLTC);
+            this.panelControl6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl6.Location = new System.Drawing.Point(2, 230);
+            this.panelControl6.Name = "panelControl6";
+            this.panelControl6.Padding = new System.Windows.Forms.Padding(4);
+            this.panelControl6.Size = new System.Drawing.Size(328, 50);
+            this.panelControl6.TabIndex = 4;
+            // 
+            // BtnTaiLTC
+            // 
+            this.BtnTaiLTC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnTaiLTC.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTaiLTC.Location = new System.Drawing.Point(4, 4);
+            this.BtnTaiLTC.Name = "BtnTaiLTC";
+            this.BtnTaiLTC.Size = new System.Drawing.Size(320, 42);
+            this.BtnTaiLTC.TabIndex = 0;
+            this.BtnTaiLTC.Text = "Tải lớp tín chỉ";
+            this.BtnTaiLTC.UseVisualStyleBackColor = true;
+            this.BtnTaiLTC.Click += new System.EventHandler(this.BtnTaiLTC_Click);
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl5.Controls.Add(this.CmbHocKy);
+            this.panelControl5.Controls.Add(this.label4);
+            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl5.Location = new System.Drawing.Point(2, 154);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Padding = new System.Windows.Forms.Padding(8);
+            this.panelControl5.Size = new System.Drawing.Size(328, 76);
+            this.panelControl5.TabIndex = 3;
+            // 
+            // CmbHocKy
+            // 
+            this.CmbHocKy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CmbHocKy.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.CmbHocKy.FormattingEnabled = true;
+            this.CmbHocKy.Location = new System.Drawing.Point(8, 29);
+            this.CmbHocKy.Name = "CmbHocKy";
+            this.CmbHocKy.Size = new System.Drawing.Size(312, 32);
+            this.CmbHocKy.TabIndex = 1;
+            this.CmbHocKy.SelectedIndexChanged += new System.EventHandler(this.CmbHocKy_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label4.Location = new System.Drawing.Point(8, 8);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 21);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Học kỳ";
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl4.Controls.Add(this.CmbNienKhoa);
+            this.panelControl4.Controls.Add(this.label3);
+            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl4.Location = new System.Drawing.Point(2, 78);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Padding = new System.Windows.Forms.Padding(8);
+            this.panelControl4.Size = new System.Drawing.Size(328, 76);
+            this.panelControl4.TabIndex = 2;
+            // 
+            // CmbNienKhoa
+            // 
+            this.CmbNienKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CmbNienKhoa.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.CmbNienKhoa.FormattingEnabled = true;
+            this.CmbNienKhoa.Location = new System.Drawing.Point(8, 29);
+            this.CmbNienKhoa.Name = "CmbNienKhoa";
+            this.CmbNienKhoa.Size = new System.Drawing.Size(312, 32);
+            this.CmbNienKhoa.TabIndex = 1;
+            this.CmbNienKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbNienKhoa_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label3.Location = new System.Drawing.Point(8, 8);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 21);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Niên Khoá";
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Controls.Add(this.CmbKhoa);
+            this.panelControl3.Controls.Add(this.label2);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl3.Location = new System.Drawing.Point(2, 2);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Padding = new System.Windows.Forms.Padding(8);
+            this.panelControl3.Size = new System.Drawing.Size(328, 76);
+            this.panelControl3.TabIndex = 1;
+            // 
+            // CmbKhoa
+            // 
+            this.CmbKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CmbKhoa.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.CmbKhoa.FormattingEnabled = true;
+            this.CmbKhoa.Location = new System.Drawing.Point(8, 29);
+            this.CmbKhoa.Name = "CmbKhoa";
+            this.CmbKhoa.Size = new System.Drawing.Size(312, 32);
+            this.CmbKhoa.TabIndex = 1;
+            this.CmbKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbKhoa_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label2.Location = new System.Drawing.Point(8, 8);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 21);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Khoa";
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.panelLop);
@@ -129,41 +257,6 @@ namespace QLDSV_TC
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(736, 778);
             this.panelControl1.TabIndex = 1;
-            // 
-            // panelControl10
-            // 
-            this.panelControl10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panelControl10.Appearance.Options.UseBackColor = true;
-            this.panelControl10.Controls.Add(this.lbLop);
-            this.panelControl10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl10.Location = new System.Drawing.Point(0, 0);
-            this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(732, 48);
-            this.panelControl10.TabIndex = 1;
-            // 
-            // lbLop
-            // 
-            this.lbLop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbLop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbLop.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.lbLop.Location = new System.Drawing.Point(2, 2);
-            this.lbLop.Name = "lbLop";
-            this.lbLop.Size = new System.Drawing.Size(728, 44);
-            this.lbLop.TabIndex = 0;
-            this.lbLop.Text = "Lớp";
-            this.lbLop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(2, 2);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(728, 44);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Danh sách lớp tín chỉ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelLop
             // 
@@ -401,23 +494,39 @@ namespace QLDSV_TC
             this.BtnGhi.TabIndex = 0;
             this.BtnGhi.Click += new System.EventHandler(this.BtnGhi_Click);
             // 
-            // panelControl8
+            // panelControl10
             // 
-            this.panelControl8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panelControl8.Appearance.Options.UseBackColor = true;
-            this.panelControl8.Controls.Add(this.label5);
-            this.panelControl8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl8.Location = new System.Drawing.Point(0, 0);
-            this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(732, 48);
-            this.panelControl8.TabIndex = 0;
+            this.panelControl10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panelControl10.Appearance.Options.UseBackColor = true;
+            this.panelControl10.Controls.Add(this.lbLop);
+            this.panelControl10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl10.Location = new System.Drawing.Point(0, 0);
+            this.panelControl10.Name = "panelControl10";
+            this.panelControl10.Size = new System.Drawing.Size(732, 48);
+            this.panelControl10.TabIndex = 1;
             // 
-            // repositoryItemButtonEdit1
+            // lbLop
             // 
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.lbLop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbLop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbLop.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lbLop.Location = new System.Drawing.Point(2, 2);
+            this.lbLop.Name = "lbLop";
+            this.lbLop.Size = new System.Drawing.Size(728, 44);
+            this.lbLop.TabIndex = 0;
+            this.lbLop.Text = "Lớp";
+            this.lbLop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DSLTC
+            // 
+            this.DSLTC.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.DSLTC.Controls.Add(this.gridControlDSLTC);
+            this.DSLTC.Controls.Add(this.panelControl8);
+            this.DSLTC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DSLTC.Location = new System.Drawing.Point(2, 2);
+            this.DSLTC.Name = "DSLTC";
+            this.DSLTC.Size = new System.Drawing.Size(732, 338);
+            this.DSLTC.TabIndex = 6;
             // 
             // gridControlDSLTC
             // 
@@ -541,148 +650,39 @@ namespace QLDSV_TC
             this.gridColumn7.VisibleIndex = 4;
             this.gridColumn7.Width = 227;
             // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            // 
+            // panelControl8
+            // 
+            this.panelControl8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panelControl8.Appearance.Options.UseBackColor = true;
+            this.panelControl8.Controls.Add(this.label5);
+            this.panelControl8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl8.Location = new System.Drawing.Point(0, 0);
+            this.panelControl8.Name = "panelControl8";
+            this.panelControl8.Size = new System.Drawing.Size(732, 48);
+            this.panelControl8.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(2, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(728, 44);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Danh sách lớp tín chỉ";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // gridView3
             // 
             this.gridView3.Name = "gridView3";
-            // 
-            // DSLTC
-            // 
-            this.DSLTC.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.DSLTC.Controls.Add(this.gridControlDSLTC);
-            this.DSLTC.Controls.Add(this.panelControl8);
-            this.DSLTC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DSLTC.Location = new System.Drawing.Point(2, 2);
-            this.DSLTC.Name = "DSLTC";
-            this.DSLTC.Size = new System.Drawing.Size(732, 338);
-            this.DSLTC.TabIndex = 6;
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl3.Controls.Add(this.CmbKhoa);
-            this.panelControl3.Controls.Add(this.label2);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(2, 2);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Padding = new System.Windows.Forms.Padding(8);
-            this.panelControl3.Size = new System.Drawing.Size(328, 76);
-            this.panelControl3.TabIndex = 1;
-            // 
-            // CmbKhoa
-            // 
-            this.CmbKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CmbKhoa.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.CmbKhoa.FormattingEnabled = true;
-            this.CmbKhoa.Location = new System.Drawing.Point(8, 29);
-            this.CmbKhoa.Name = "CmbKhoa";
-            this.CmbKhoa.Size = new System.Drawing.Size(312, 32);
-            this.CmbKhoa.TabIndex = 1;
-            this.CmbKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbKhoa_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label2.Location = new System.Drawing.Point(8, 8);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Khoa";
-            // 
-            // panelControl4
-            // 
-            this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl4.Controls.Add(this.CmbNienKhoa);
-            this.panelControl4.Controls.Add(this.label3);
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(2, 78);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Padding = new System.Windows.Forms.Padding(8);
-            this.panelControl4.Size = new System.Drawing.Size(328, 76);
-            this.panelControl4.TabIndex = 2;
-            // 
-            // CmbNienKhoa
-            // 
-            this.CmbNienKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CmbNienKhoa.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.CmbNienKhoa.FormattingEnabled = true;
-            this.CmbNienKhoa.Location = new System.Drawing.Point(8, 29);
-            this.CmbNienKhoa.Name = "CmbNienKhoa";
-            this.CmbNienKhoa.Size = new System.Drawing.Size(312, 32);
-            this.CmbNienKhoa.TabIndex = 1;
-            this.CmbNienKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbNienKhoa_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label3.Location = new System.Drawing.Point(8, 8);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 21);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Niên Khoá";
-            // 
-            // panelControl5
-            // 
-            this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl5.Controls.Add(this.CmbHocKy);
-            this.panelControl5.Controls.Add(this.label4);
-            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl5.Location = new System.Drawing.Point(2, 154);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Padding = new System.Windows.Forms.Padding(8);
-            this.panelControl5.Size = new System.Drawing.Size(328, 76);
-            this.panelControl5.TabIndex = 3;
-            // 
-            // CmbHocKy
-            // 
-            this.CmbHocKy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CmbHocKy.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.CmbHocKy.FormattingEnabled = true;
-            this.CmbHocKy.Location = new System.Drawing.Point(8, 29);
-            this.CmbHocKy.Name = "CmbHocKy";
-            this.CmbHocKy.Size = new System.Drawing.Size(312, 32);
-            this.CmbHocKy.TabIndex = 1;
-            this.CmbHocKy.SelectedIndexChanged += new System.EventHandler(this.CmbHocKy_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label4.Location = new System.Drawing.Point(8, 8);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 21);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Học kỳ";
-            // 
-            // panelControl6
-            // 
-            this.panelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl6.Controls.Add(this.BtnTaiLTC);
-            this.panelControl6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl6.Location = new System.Drawing.Point(2, 230);
-            this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Padding = new System.Windows.Forms.Padding(4);
-            this.panelControl6.Size = new System.Drawing.Size(328, 50);
-            this.panelControl6.TabIndex = 4;
-            // 
-            // BtnTaiLTC
-            // 
-            this.BtnTaiLTC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnTaiLTC.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnTaiLTC.Location = new System.Drawing.Point(4, 4);
-            this.BtnTaiLTC.Name = "BtnTaiLTC";
-            this.BtnTaiLTC.Size = new System.Drawing.Size(320, 42);
-            this.BtnTaiLTC.TabIndex = 0;
-            this.BtnTaiLTC.Text = "Tải lớp tín chỉ";
-            this.BtnTaiLTC.UseVisualStyleBackColor = true;
-            this.BtnTaiLTC.Click += new System.EventHandler(this.BtnTaiLTC_Click);
             // 
             // XFormNhapDiem
             // 
@@ -696,10 +696,19 @@ namespace QLDSV_TC
             this.Load += new System.EventHandler(this.XFormNhapDiem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.left)).EndInit();
             this.left.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
+            this.panelControl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
-            this.panelControl10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelLop)).EndInit();
             this.panelLop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDSSVDK)).EndInit();
@@ -710,25 +719,16 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
             this.panelControl11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
-            this.panelControl8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlDSLTC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
+            this.panelControl10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DSLTC)).EndInit();
             this.DSLTC.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            this.panelControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
-            this.panelControl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDSLTC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
+            this.panelControl8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
 
         }

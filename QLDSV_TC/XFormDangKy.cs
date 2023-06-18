@@ -13,7 +13,7 @@ namespace QLDSV_TC
 {
     public partial class XFormDangKy : DevExpress.XtraEditors.XtraForm
     {
-        private Color primaryColor = System.Drawing.ColorTranslator.FromHtml("#00c0c0");
+        private Color primaryColor = System.Drawing.ColorTranslator.FromHtml("#87ceeb");
         private Color dangerColor = System.Drawing.ColorTranslator.FromHtml("#d03144");
 
         private int currentFromState = 1; // 0 = huy dk, 1  = dk
@@ -69,6 +69,7 @@ namespace QLDSV_TC
 
         void LayDSHocKy(string nienkhoa)
         {
+
             DataTable dt = new DataTable();
             string cmd = "EXEC SP_LayDSHocKy '" + nienkhoa + "'";
             dt = Program.ExecSqlDataTable(cmd);
@@ -90,15 +91,12 @@ namespace QLDSV_TC
 
         private void CmbNienKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LayDSHocKy(CmbNienKhoa.Text);
             try
             {
-                CmbHocKy.SelectedIndex = 0;
                 LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
-            }
-            catch
-            {
-            }
+                CmbHocKy.SelectedIndex = 0;
+            }catch { }
+           
 
         }
 

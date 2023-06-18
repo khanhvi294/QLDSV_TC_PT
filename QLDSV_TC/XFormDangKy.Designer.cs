@@ -1083,7 +1083,7 @@ namespace QLDSV_TC
             this.CmbNienKhoa.Name = "CmbNienKhoa";
             this.CmbNienKhoa.Size = new System.Drawing.Size(280, 32);
             this.CmbNienKhoa.TabIndex = 7;
-            this.CmbNienKhoa.Click += new System.EventHandler(this.CmbNienKhoa_SelectedIndexChanged);
+            this.CmbNienKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbNienKhoa_SelectedIndexChanged);
             // 
             // label4
             // 
