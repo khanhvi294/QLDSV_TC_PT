@@ -108,7 +108,7 @@ namespace QLDSV_TC
             mALOPLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             mALOPLabel.Location = new System.Drawing.Point(58, 96);
             mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(100, 27);
+            mALOPLabel.Size = new System.Drawing.Size(63, 17);
             mALOPLabel.TabIndex = 0;
             mALOPLabel.Text = "Mã Lớp:";
             // 
@@ -118,7 +118,7 @@ namespace QLDSV_TC
             tENLOPLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             tENLOPLabel.Location = new System.Drawing.Point(58, 144);
             tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(107, 27);
+            tENLOPLabel.Size = new System.Drawing.Size(69, 17);
             tENLOPLabel.TabIndex = 2;
             tENLOPLabel.Text = "Tên Lớp:";
             // 
@@ -128,7 +128,7 @@ namespace QLDSV_TC
             kHOAHOCLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             kHOAHOCLabel.Location = new System.Drawing.Point(58, 197);
             kHOAHOCLabel.Name = "kHOAHOCLabel";
-            kHOAHOCLabel.Size = new System.Drawing.Size(125, 27);
+            kHOAHOCLabel.Size = new System.Drawing.Size(80, 17);
             kHOAHOCLabel.TabIndex = 4;
             kHOAHOCLabel.Text = "Khóa Học:";
             // 
@@ -138,7 +138,7 @@ namespace QLDSV_TC
             mAKHOALabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             mAKHOALabel.Location = new System.Drawing.Point(58, 256);
             mAKHOALabel.Name = "mAKHOALabel";
-            mAKHOALabel.Size = new System.Drawing.Size(115, 27);
+            mAKHOALabel.Size = new System.Drawing.Size(73, 17);
             mAKHOALabel.TabIndex = 6;
             mAKHOALabel.Text = "Mã Khoa:";
             // 
@@ -188,10 +188,10 @@ namespace QLDSV_TC
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1567, 67);
+            this.barDockControlRight.Location = new System.Drawing.Point(1567, 51);
             this.barDockControlRight.Manager = null;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 644);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 662);
             // 
             // barManager2
             // 
@@ -326,16 +326,16 @@ namespace QLDSV_TC
             this.barDockControl2.Location = new System.Drawing.Point(0, 0);
             this.barDockControl2.Manager = this.barManager2;
             this.barDockControl2.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControl2.Size = new System.Drawing.Size(1567, 67);
+            this.barDockControl2.Size = new System.Drawing.Size(1567, 51);
             // 
             // barDockControl3
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 711);
+            this.barDockControl3.Location = new System.Drawing.Point(0, 713);
             this.barDockControl3.Manager = this.barManager2;
             this.barDockControl3.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControl3.Size = new System.Drawing.Size(1567, 22);
+            this.barDockControl3.Size = new System.Drawing.Size(1567, 20);
             // 
             // barDockControl4
             // 
@@ -344,16 +344,16 @@ namespace QLDSV_TC
             this.barDockControl4.Location = new System.Drawing.Point(0, 51);
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControl4.Size = new System.Drawing.Size(0, 644);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 662);
             // 
             // barDockControl5
             // 
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl5.Location = new System.Drawing.Point(1567, 67);
+            this.barDockControl5.Location = new System.Drawing.Point(1567, 51);
             this.barDockControl5.Manager = this.barManager2;
             this.barDockControl5.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControl5.Size = new System.Drawing.Size(0, 644);
+            this.barDockControl5.Size = new System.Drawing.Size(0, 662);
             // 
             // themCTHPBarbutton
             // 
@@ -411,10 +411,11 @@ namespace QLDSV_TC
             // 
             // CmbKhoa
             // 
+            this.CmbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbKhoa.FormattingEnabled = true;
             this.CmbKhoa.Location = new System.Drawing.Point(132, 18);
             this.CmbKhoa.Name = "CmbKhoa";
-            this.CmbKhoa.Size = new System.Drawing.Size(319, 33);
+            this.CmbKhoa.Size = new System.Drawing.Size(319, 24);
             this.CmbKhoa.TabIndex = 1;
             this.CmbKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbKhoa_SelectedIndexChanged);
             // 
@@ -424,7 +425,7 @@ namespace QLDSV_TC
             this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(42, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 33);
+            this.label1.Size = new System.Drawing.Size(60, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Khoa:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -441,7 +442,7 @@ namespace QLDSV_TC
             this.panelControl2.Controls.Add(mALOPLabel);
             this.panelControl2.Controls.Add(this.TxtMaLop);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 411);
+            this.panelControl2.Location = new System.Drawing.Point(0, 413);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1567, 300);
             this.panelControl2.TabIndex = 11;
@@ -450,10 +451,10 @@ namespace QLDSV_TC
             // 
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 13F);
-            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(2, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1561, 65);
+            this.label3.Size = new System.Drawing.Size(1563, 48);
             this.label3.TabIndex = 8;
             this.label3.Text = "Thông tin lớp học";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -464,7 +465,7 @@ namespace QLDSV_TC
             this.TxtMaKhoa.Enabled = false;
             this.TxtMaKhoa.Location = new System.Drawing.Point(192, 256);
             this.TxtMaKhoa.Name = "TxtMaKhoa";
-            this.TxtMaKhoa.Size = new System.Drawing.Size(301, 33);
+            this.TxtMaKhoa.Size = new System.Drawing.Size(301, 23);
             this.TxtMaKhoa.TabIndex = 7;
             // 
             // BdsLH
@@ -482,7 +483,7 @@ namespace QLDSV_TC
             this.TxtKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "KHOAHOC", true));
             this.TxtKhoaHoc.Location = new System.Drawing.Point(192, 197);
             this.TxtKhoaHoc.Name = "TxtKhoaHoc";
-            this.TxtKhoaHoc.Size = new System.Drawing.Size(301, 33);
+            this.TxtKhoaHoc.Size = new System.Drawing.Size(301, 23);
             this.TxtKhoaHoc.TabIndex = 5;
             // 
             // TxtTenLop
@@ -490,7 +491,7 @@ namespace QLDSV_TC
             this.TxtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "TENLOP", true));
             this.TxtTenLop.Location = new System.Drawing.Point(192, 144);
             this.TxtTenLop.Name = "TxtTenLop";
-            this.TxtTenLop.Size = new System.Drawing.Size(301, 33);
+            this.TxtTenLop.Size = new System.Drawing.Size(301, 23);
             this.TxtTenLop.TabIndex = 3;
             // 
             // TxtMaLop
@@ -498,7 +499,7 @@ namespace QLDSV_TC
             this.TxtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "MALOP", true));
             this.TxtMaLop.Location = new System.Drawing.Point(192, 88);
             this.TxtMaLop.Name = "TxtMaLop";
-            this.TxtMaLop.Size = new System.Drawing.Size(301, 33);
+            this.TxtMaLop.Size = new System.Drawing.Size(301, 23);
             this.TxtMaLop.TabIndex = 1;
             this.TxtMaLop.TextChanged += new System.EventHandler(this.TxtMaLop_TextChanged);
             // 
@@ -526,11 +527,11 @@ namespace QLDSV_TC
             // 
             this.GcLopHoc.DataSource = this.BdsLH;
             this.GcLopHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GcLopHoc.Location = new System.Drawing.Point(0, 142);
+            this.GcLopHoc.Location = new System.Drawing.Point(0, 126);
             this.GcLopHoc.MainView = this.gridView1;
             this.GcLopHoc.MenuManager = this.barManager2;
             this.GcLopHoc.Name = "GcLopHoc";
-            this.GcLopHoc.Size = new System.Drawing.Size(1567, 269);
+            this.GcLopHoc.Size = new System.Drawing.Size(1567, 287);
             this.GcLopHoc.TabIndex = 23;
             this.GcLopHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -547,36 +548,44 @@ namespace QLDSV_TC
             // 
             // colMALOP
             // 
+            this.colMALOP.Caption = "Mã Lớp";
             this.colMALOP.FieldName = "MALOP";
             this.colMALOP.MinWidth = 40;
             this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.AllowEdit = false;
             this.colMALOP.Visible = true;
             this.colMALOP.VisibleIndex = 0;
             this.colMALOP.Width = 150;
             // 
             // colTENLOP
             // 
+            this.colTENLOP.Caption = "Tên Lớp";
             this.colTENLOP.FieldName = "TENLOP";
             this.colTENLOP.MinWidth = 40;
             this.colTENLOP.Name = "colTENLOP";
+            this.colTENLOP.OptionsColumn.AllowEdit = false;
             this.colTENLOP.Visible = true;
             this.colTENLOP.VisibleIndex = 1;
             this.colTENLOP.Width = 150;
             // 
             // colKHOAHOC
             // 
+            this.colKHOAHOC.Caption = "Khoá Học";
             this.colKHOAHOC.FieldName = "KHOAHOC";
             this.colKHOAHOC.MinWidth = 40;
             this.colKHOAHOC.Name = "colKHOAHOC";
+            this.colKHOAHOC.OptionsColumn.AllowEdit = false;
             this.colKHOAHOC.Visible = true;
             this.colKHOAHOC.VisibleIndex = 2;
             this.colKHOAHOC.Width = 150;
             // 
             // colMAKHOA
             // 
+            this.colMAKHOA.Caption = "Mã Khoa";
             this.colMAKHOA.FieldName = "MAKHOA";
             this.colMAKHOA.MinWidth = 40;
             this.colMAKHOA.Name = "colMAKHOA";
+            this.colMAKHOA.OptionsColumn.AllowEdit = false;
             this.colMAKHOA.Visible = true;
             this.colMAKHOA.VisibleIndex = 3;
             this.colMAKHOA.Width = 150;
@@ -590,10 +599,10 @@ namespace QLDSV_TC
             // 
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 142);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(0, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1567, 65);
+            this.label2.Size = new System.Drawing.Size(1567, 41);
             this.label2.TabIndex = 35;
             this.label2.Text = "Danh sách lớp học";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

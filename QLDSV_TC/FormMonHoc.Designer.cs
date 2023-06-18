@@ -355,7 +355,7 @@ namespace QLDSV_TC
             this.colMAMH.AppearanceCell.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.colMAMH.AppearanceCell.Options.UseBackColor = true;
             this.colMAMH.AppearanceCell.Options.UseBorderColor = true;
-            this.colMAMH.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colMAMH.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colMAMH.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
             this.colMAMH.AppearanceHeader.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             this.colMAMH.AppearanceHeader.Options.UseBackColor = true;
@@ -369,7 +369,7 @@ namespace QLDSV_TC
             // 
             // colTENMH
             // 
-            this.colTENMH.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colTENMH.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colTENMH.AppearanceHeader.Options.UseBackColor = true;
             this.colTENMH.FieldName = "TENMH";
             this.colTENMH.MinWidth = 25;
@@ -380,7 +380,7 @@ namespace QLDSV_TC
             // 
             // colSOTIET_LT
             // 
-            this.colSOTIET_LT.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colSOTIET_LT.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colSOTIET_LT.AppearanceHeader.Options.UseBackColor = true;
             this.colSOTIET_LT.FieldName = "SOTIET_LT";
             this.colSOTIET_LT.MinWidth = 25;
@@ -391,7 +391,7 @@ namespace QLDSV_TC
             // 
             // colSOTIET_TH
             // 
-            this.colSOTIET_TH.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colSOTIET_TH.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colSOTIET_TH.AppearanceHeader.Options.UseBackColor = true;
             this.colSOTIET_TH.FieldName = "SOTIET_TH";
             this.colSOTIET_TH.MinWidth = 25;

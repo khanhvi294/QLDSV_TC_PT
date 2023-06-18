@@ -130,6 +130,7 @@ namespace QLDSV_TC
             vitri1 = bdsHocPhi.Position;
             dangthemmoi = true;
             bdsHocPhi.AddNew();
+
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -301,6 +302,8 @@ namespace QLDSV_TC
         {
             vitri = bdsCTHP.Position;
             bdsCTHP.AddNew();
+            btnThem.Enabled = btnGhi.Enabled = btnHuy.Enabled = btnLamMoi.Enabled = btnPhucHoi.Enabled = false;
+
         }
 
         private void ghiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -328,6 +331,8 @@ namespace QLDSV_TC
             {
                 MessageBox.Show(ex.Message);
             }
+
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled= true;
 
 
             string nienkhoa = ((DataRowView)bdsHocPhi[bdsHocPhi.Position])["NIENKHOA"].ToString();
@@ -391,11 +396,18 @@ namespace QLDSV_TC
             {
                 bdsCTHP.Position = vitri;
             }
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnGhi.Enabled= btnPhucHoi.Enabled = true;
+
         }
 
         private void btnLamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             loadHOCPHI();
+        }
+
+        private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

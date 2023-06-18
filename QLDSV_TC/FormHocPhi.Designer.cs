@@ -501,7 +501,7 @@ namespace QLDSV_TC
             // 
             // colNIENKHOA
             // 
-            this.colNIENKHOA.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colNIENKHOA.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colNIENKHOA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colNIENKHOA.AppearanceHeader.Options.UseBackColor = true;
             this.colNIENKHOA.AppearanceHeader.Options.UseBorderColor = true;
@@ -516,7 +516,7 @@ namespace QLDSV_TC
             // 
             // colHOCKY
             // 
-            this.colHOCKY.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colHOCKY.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colHOCKY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colHOCKY.AppearanceHeader.Options.UseBackColor = true;
             this.colHOCKY.AppearanceHeader.Options.UseFont = true;
@@ -530,7 +530,7 @@ namespace QLDSV_TC
             // 
             // colHOCPHI
             // 
-            this.colHOCPHI.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colHOCPHI.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colHOCPHI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colHOCPHI.AppearanceHeader.Options.UseBackColor = true;
             this.colHOCPHI.AppearanceHeader.Options.UseFont = true;
@@ -546,7 +546,7 @@ namespace QLDSV_TC
             // 
             // colSOTIENDADONG
             // 
-            this.colSOTIENDADONG.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colSOTIENDADONG.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colSOTIENDADONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTIENDADONG.AppearanceHeader.Options.UseBackColor = true;
             this.colSOTIENDADONG.AppearanceHeader.Options.UseFont = true;
@@ -563,7 +563,7 @@ namespace QLDSV_TC
             // 
             // colSOTIENCANDONG
             // 
-            this.colSOTIENCANDONG.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.colSOTIENCANDONG.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colSOTIENCANDONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTIENCANDONG.AppearanceHeader.Options.UseBackColor = true;
             this.colSOTIENCANDONG.AppearanceHeader.Options.UseFont = true;
@@ -609,26 +609,27 @@ namespace QLDSV_TC
             this.ghiToolStripMenuItem,
             this.phụcHồiToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(135, 76);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(211, 104);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
             // 
             // thêmToolStripMenuItem
             // 
             this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.thêmToolStripMenuItem.Text = "Thêm";
             this.thêmToolStripMenuItem.Click += new System.EventHandler(this.thêmToolStripMenuItem_Click);
             // 
             // ghiToolStripMenuItem
             // 
             this.ghiToolStripMenuItem.Name = "ghiToolStripMenuItem";
-            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.ghiToolStripMenuItem.Text = "Ghi";
             this.ghiToolStripMenuItem.Click += new System.EventHandler(this.ghiToolStripMenuItem_Click);
             // 
             // phụcHồiToolStripMenuItem
             // 
             this.phụcHồiToolStripMenuItem.Name = "phụcHồiToolStripMenuItem";
-            this.phụcHồiToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.phụcHồiToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.phụcHồiToolStripMenuItem.Text = "Phục hồi";
             this.phụcHồiToolStripMenuItem.Click += new System.EventHandler(this.phụcHồiToolStripMenuItem_Click);
             // 
@@ -642,7 +643,7 @@ namespace QLDSV_TC
             // 
             // colNGAYDONG
             // 
-            this.colNGAYDONG.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.colNGAYDONG.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colNGAYDONG.AppearanceHeader.Options.UseBackColor = true;
             this.colNGAYDONG.Caption = "Ngày đóng";
             this.colNGAYDONG.DisplayFormat.FormatString = "d";
@@ -656,7 +657,7 @@ namespace QLDSV_TC
             // 
             // colSOTIENDONG
             // 
-            this.colSOTIENDONG.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.colSOTIENDONG.AppearanceHeader.BackColor = System.Drawing.Color.SkyBlue;
             this.colSOTIENDONG.AppearanceHeader.Options.UseBackColor = true;
             this.colSOTIENDONG.Caption = "Số tiền đóng";
             this.colSOTIENDONG.DisplayFormat.FormatString = "n0";

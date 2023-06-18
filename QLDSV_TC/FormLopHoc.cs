@@ -118,6 +118,7 @@ namespace QLDSV_TC
             try
             {
                 this.lOPTableAdapter.Fill(this.DS2.LOP);
+                MessageBox.Show("Làm mới thành công!");
             }
             catch (Exception ex)
             {
@@ -138,10 +139,10 @@ namespace QLDSV_TC
 
             if (BdsSV.Count > 0)
             {
-                MessageBox.Show("Không thể xóa lớp học vì đã có sinh viên đăng kí", "", MessageBoxButtons.OK);
+                MessageBox.Show("Không thể xóa lớp học vì đã có sinh viên", "", MessageBoxButtons.OK);
                 return;
             }
-            if (MessageBox.Show("Bạn có thực sự muốn xóa nhân viên này??", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) // hiện dialog 2 button ok / cancel check ngdung chọn 0k
+            if (MessageBox.Show("Bạn có thực sự muốn xóa lớp học này??", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) // hiện dialog 2 button ok / cancel check ngdung chọn 0k
             {
                 try
                 {
@@ -149,6 +150,7 @@ namespace QLDSV_TC
                     BdsLH.RemoveCurrent(); //xóa trên máy hiện tại
                     this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.lOPTableAdapter.Update(this.DS2.LOP); // xóa trên csdl
+                    MessageBox.Show("Xoá thành công!");
                 }
                 catch (Exception ex)
                 {
@@ -206,7 +208,15 @@ namespace QLDSV_TC
                 return false;
             }
 
-            bool matchTen = Regex.IsMatch(TxtTenLop.Text.Trim(), "[0-9a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$");
+            bool matchMa = Regex.IsMatch(TxtMaLop.Text.Trim(), "^[0-9a-zA-Z-]+$");
+            if (!matchMa)
+            {
+                MessageBox.Show("Mã lớp không được có kí tự đặc biệt", "", MessageBoxButtons.OK);
+                TxtMaLop.Focus();
+                return false;
+            }
+
+            bool matchTen = Regex.IsMatch(TxtTenLop.Text.Trim(), "^[0-9a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$");
             if (!matchTen)
             {
                 MessageBox.Show("Tên lớp không được có kí tự đặc biệt", "", MessageBoxButtons.OK);
@@ -286,7 +296,7 @@ namespace QLDSV_TC
                     BdsLH.ResetCurrentItem(); //đưa thông tin lên lưới
                     this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.lOPTableAdapter.Update(this.DS2.LOP);
-
+                    MessageBox.Show("Đã thành công!");
                 }
                 catch (Exception ex)
                 {

@@ -91,14 +91,14 @@ namespace QLDSV_TC
             if (Program.mGroup == "KHOA")
             {
                 cmbKHOA.Enabled = false;
-                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnGhi.Enabled = false;
 
             }
             if (Program.mGroup == "PGV")
             {
                 cmbKHOA.Enabled = true;
-                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnGhi.Enabled = true;
             }
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnGhi.Enabled = true;
+
 
         }
 
@@ -407,19 +407,7 @@ namespace QLDSV_TC
                 txtNIENKHOA.Focus();
                 return;
             }
-            //Buoc 1
-            //Lay Du Lieu Tu Form De phuc vu cho qua trinh hoan toan
-            DataRowView drv = ((DataRowView)bdsLTC[bdsLTC.Position]);
-            //string maLTC = drv["MALTC"].ToString();
-            string nienKhoa = drv["NIENKHOA"].ToString();
-            int hocKy = (int)drv["HOCKY"];
-            string maMH = drv["MAMH"].ToString();
-            int nhom = (int)drv["NHOM"];
-            string maGV = drv["MAGV"].ToString();
-            string maKhoa = drv["MAKHOA"].ToString();
-            int soSVMIN = (int)drv["SOSVTOITHIEU"];
-            string trangThai = drv["HUYLOP"].ToString();
-
+           
             /*Bat Rang Buoc Nien Khoa*/
             string[] nienKhoaParts = txtNIENKHOA.Text.Split('-');
             if (nienKhoaParts.Length == 2)
@@ -510,6 +498,21 @@ namespace QLDSV_TC
 
                 }
             }
+
+            //Buoc 1
+            //Lay Du Lieu Tu Form De phuc vu cho qua trinh hoan toan
+            DataRowView drv = ((DataRowView)bdsLTC[bdsLTC.Position]);
+            //string maLTC = drv["MALTC"].ToString();
+            string nienKhoa = drv["NIENKHOA"].ToString();
+            int hocKy = (int)drv["HOCKY"];
+            string maMH = drv["MAMH"].ToString();
+            int nhom = (int)drv["NHOM"];
+            string maGV = drv["MAGV"].ToString();
+            string maKhoa = drv["MAKHOA"].ToString();
+            int soSVMIN = (int)drv["SOSVTOITHIEU"];
+            string trangThai = drv["HUYLOP"].ToString();
+
+
             if (MessageBox.Show("Bạn có chắc chắn muốn thực hiện thao tác này không ?", "Thông báo",
                     MessageBoxButtons.OKCancel) == DialogResult.OK)
             {

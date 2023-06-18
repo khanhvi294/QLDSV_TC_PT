@@ -46,11 +46,6 @@ namespace QLDSV_TC
             this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.dANGKYTableAdapter.Fill(this.DS2.DANGKY);
 
-
-            DataTable dt = new DataTable();
-            dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
-            BindingSource bdsCN = new BindingSource();
-            bdsCN.DataSource = dt;
             var dataSource = Program.bds_dspm;
             var filteredDataSource = dataSource.Cast<DataRowView>()
                 .Where(row => row["TENKHOA"].ToString() != "Học Phí")
@@ -131,18 +126,18 @@ namespace QLDSV_TC
                 return false;
             }
 
-            bool matchHo = Regex.IsMatch(TxtHo.Text.Trim(), "[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$");
+            bool matchHo = Regex.IsMatch(TxtHo.Text.Trim(), "^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$");
             if (!matchHo)
             {
-                MessageBox.Show("Họ không được có kí tự đặc biệt", "", MessageBoxButtons.OK);
+                MessageBox.Show("Họ không được có số và kí tự đặc biệt", "", MessageBoxButtons.OK);
                 TxtHo.Focus();
                 return false;
             }
 
-            bool matchTen = Regex.IsMatch(TxtTenSV.Text.Trim(), "[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+$");
+            bool matchTen = Regex.IsMatch(TxtTenSV.Text.Trim(), "^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+$");
             if (!matchTen || TxtTenSV.Text.Trim().Contains(" "))
             {
-                MessageBox.Show("Tên không được có kí tự đặc biệt", "", MessageBoxButtons.OK);
+                MessageBox.Show("Tên không được có số, kí tự đặc biệt và khoảng trắng", "", MessageBoxButtons.OK);
                 TxtTenSV.Focus();
                 return false;
             }
@@ -215,6 +210,7 @@ namespace QLDSV_TC
                 
                 this.lOPTableAdapter.Fill(this.DS2.LOP);
                 this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
+                MessageBox.Show("Làm mới thành công!");
             }
             catch (Exception ex)
             {
@@ -250,11 +246,11 @@ namespace QLDSV_TC
                 // TODO: This line of code loads data into the 'dS2.SINHVIEN' table. You can move, or remove it, as needed.
                 this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
 
+                // TODO: This line of code loads data into the 'DS2.DANGKY' table. You can move, or remove it, as needed.
+                this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.dANGKYTableAdapter.Fill(this.DS2.DANGKY);
 
-                DataTable dt = new DataTable();
-                dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
-                BindingSource bdsCN = new BindingSource();
-                bdsCN.DataSource = dt;
+       
             }
 
         }
@@ -308,6 +304,7 @@ namespace QLDSV_TC
                     BdsSv.RemoveCurrent();
                     this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.sINHVIENTableAdapter.Update(this.DS2.SINHVIEN);
+                    MessageBox.Show("Xoá thành công!");
                 }
                 catch (Exception ex)
                 {
@@ -333,6 +330,7 @@ namespace QLDSV_TC
                     BdsSv.ResetCurrentItem(); //đưa thông tin lên lưới
                     this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.sINHVIENTableAdapter.Update(this.DS2.SINHVIEN);
+                    MessageBox.Show("Đã thành công!");
 
                 }
                 catch (Exception ex)

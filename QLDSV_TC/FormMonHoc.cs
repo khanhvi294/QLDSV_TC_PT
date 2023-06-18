@@ -202,32 +202,9 @@ namespace QLDSV_TC
                 return;
             }
 
-            //buoc 1: Lay DL
-            String maMH = txtMaMH.Text.Trim();
-            DataRowView datarv = ((DataRowView)bdsMH[bdsMH.Position]);
-            String tenMH = datarv["TENMH"].ToString();
-            String maMHOld = datarv["MAMH"].ToString();
-            String soTietLT = datarv["SOTIET_LT"].ToString();
-            String soTietTH = datarv["SOTIET_TH"].ToString();
+            
             if (flagOption == "Update")
             {
-              /*  if (!string.Equals(this.txtMaMH.Text.Trim(), oldMaMonHoc, StringComparison.OrdinalIgnoreCase))
-
-                {
-                    string query1 = "DECLARE  @return_value int \n"
-                                + "EXEC @return_value = SP_CHECKMONHOC_ID_NAME \n"
-                                + "@MAMH = N'" + txtMaMH.Text + "',@TENMH ='' \n"
-                                + "SELECT 'Return Value' = @return_value";
-
-                    int resultMa = Program.CheckDataHelper(query1);
-                    if (resultMa == 2)
-                    {
-                        MessageBox.Show("Mã môn học đã tồn tại1 !", "", MessageBoxButtons.OK);
-                        txtMaMH.Focus();
-                        return;
-                    }
-
-                }*/
 
                 if (!string.Equals(this.txtTenMH.Text.Trim(), oldTenMonHoc, StringComparison.OrdinalIgnoreCase))
                 {
@@ -276,6 +253,13 @@ namespace QLDSV_TC
             }
             }
 
+            //buoc 1: Lay DL
+            String maMH = txtMaMH.Text.Trim();
+            DataRowView datarv = ((DataRowView)bdsMH[bdsMH.Position]);
+            String tenMH = datarv["TENMH"].ToString();
+            String maMHOld = datarv["MAMH"].ToString();
+            String soTietLT = datarv["SOTIET_LT"].ToString();
+            String soTietTH = datarv["SOTIET_TH"].ToString();
 
             if (MessageBox.Show("Bạn có chắc chắn muốn thực hiện thao tác này không ?", "Thông báo",
                     MessageBoxButtons.OKCancel) == DialogResult.OK)

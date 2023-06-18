@@ -30,22 +30,22 @@ namespace QLDSV_TC
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl20 = new DevExpress.XtraEditors.PanelControl();
+            this.BtnPreview = new System.Windows.Forms.Button();
             this.panelControl18 = new DevExpress.XtraEditors.PanelControl();
             this.CmbMalop = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.CmbKhoa = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panelControl20 = new DevExpress.XtraEditors.PanelControl();
-            this.BtnPreview = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl20)).BeginInit();
+            this.panelControl20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl18)).BeginInit();
             this.panelControl18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl20)).BeginInit();
-            this.panelControl20.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -58,79 +58,6 @@ namespace QLDSV_TC
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1589, 76);
             this.panelControl1.TabIndex = 0;
-            // 
-            // panelControl18
-            // 
-            this.panelControl18.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl18.Controls.Add(this.CmbMalop);
-            this.panelControl18.Controls.Add(this.label4);
-            this.panelControl18.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl18.Location = new System.Drawing.Point(331, 2);
-            this.panelControl18.Name = "panelControl18";
-            this.panelControl18.Padding = new System.Windows.Forms.Padding(4, 0, 16, 0);
-            this.panelControl18.Size = new System.Drawing.Size(300, 72);
-            this.panelControl18.TabIndex = 2;
-            // 
-            // CmbMalop
-            // 
-            this.CmbMalop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CmbMalop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbMalop.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CmbMalop.FormattingEnabled = true;
-            this.CmbMalop.Location = new System.Drawing.Point(4, 29);
-            this.CmbMalop.Margin = new System.Windows.Forms.Padding(4);
-            this.CmbMalop.Name = "CmbMalop";
-            this.CmbMalop.Size = new System.Drawing.Size(280, 32);
-            this.CmbMalop.TabIndex = 7;
-            this.CmbMalop.SelectedIndexChanged += new System.EventHandler(this.CmbMalop_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label4.Location = new System.Drawing.Point(4, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(0, 4, 4, 4);
-            this.label4.Size = new System.Drawing.Size(40, 29);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Lớp";
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.Controls.Add(this.CmbKhoa);
-            this.panelControl3.Controls.Add(this.label2);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl3.Location = new System.Drawing.Point(2, 2);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Padding = new System.Windows.Forms.Padding(4, 0, 16, 0);
-            this.panelControl3.Size = new System.Drawing.Size(329, 72);
-            this.panelControl3.TabIndex = 1;
-            // 
-            // CmbKhoa
-            // 
-            this.CmbKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CmbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbKhoa.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.CmbKhoa.FormattingEnabled = true;
-            this.CmbKhoa.Location = new System.Drawing.Point(6, 23);
-            this.CmbKhoa.Name = "CmbKhoa";
-            this.CmbKhoa.Size = new System.Drawing.Size(305, 32);
-            this.CmbKhoa.TabIndex = 1;
-            this.CmbKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbKhoa_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label2.Location = new System.Drawing.Point(6, 2);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Khoa";
             // 
             // panelControl20
             // 
@@ -152,9 +79,82 @@ namespace QLDSV_TC
             this.BtnPreview.Name = "BtnPreview";
             this.BtnPreview.Size = new System.Drawing.Size(118, 34);
             this.BtnPreview.TabIndex = 3;
-            this.BtnPreview.Text = "Preview";
+            this.BtnPreview.Text = "In";
             this.BtnPreview.UseVisualStyleBackColor = true;
             this.BtnPreview.Click += new System.EventHandler(this.BtnPreview_Click);
+            // 
+            // panelControl18
+            // 
+            this.panelControl18.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl18.Controls.Add(this.CmbMalop);
+            this.panelControl18.Controls.Add(this.label4);
+            this.panelControl18.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl18.Location = new System.Drawing.Point(331, 2);
+            this.panelControl18.Name = "panelControl18";
+            this.panelControl18.Padding = new System.Windows.Forms.Padding(4, 8, 16, 0);
+            this.panelControl18.Size = new System.Drawing.Size(300, 72);
+            this.panelControl18.TabIndex = 2;
+            // 
+            // CmbMalop
+            // 
+            this.CmbMalop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CmbMalop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbMalop.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CmbMalop.FormattingEnabled = true;
+            this.CmbMalop.Location = new System.Drawing.Point(4, 29);
+            this.CmbMalop.Margin = new System.Windows.Forms.Padding(4);
+            this.CmbMalop.Name = "CmbMalop";
+            this.CmbMalop.Size = new System.Drawing.Size(280, 32);
+            this.CmbMalop.TabIndex = 7;
+            this.CmbMalop.SelectedIndexChanged += new System.EventHandler(this.CmbMalop_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label4.Location = new System.Drawing.Point(4, 8);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 21);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Lớp";
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Controls.Add(this.CmbKhoa);
+            this.panelControl3.Controls.Add(this.label2);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl3.Location = new System.Drawing.Point(2, 2);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Padding = new System.Windows.Forms.Padding(4, 8, 16, 0);
+            this.panelControl3.Size = new System.Drawing.Size(329, 72);
+            this.panelControl3.TabIndex = 1;
+            // 
+            // CmbKhoa
+            // 
+            this.CmbKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CmbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbKhoa.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.CmbKhoa.FormattingEnabled = true;
+            this.CmbKhoa.Location = new System.Drawing.Point(4, 29);
+            this.CmbKhoa.Name = "CmbKhoa";
+            this.CmbKhoa.Size = new System.Drawing.Size(309, 32);
+            this.CmbKhoa.TabIndex = 1;
+            this.CmbKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbKhoa_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label2.Location = new System.Drawing.Point(4, 8);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 21);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Khoa";
             // 
             // FormReportBDTK
             // 
@@ -166,18 +166,18 @@ namespace QLDSV_TC
             this.Font = new System.Drawing.Font("Tahoma", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormReportBDTK";
-            this.Text = "FormReportBDTK";
+            this.Text = "Báo cáo bảng điểm tống kết";
             this.Load += new System.EventHandler(this.FormReportBDTK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl20)).EndInit();
+            this.panelControl20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl18)).EndInit();
             this.panelControl18.ResumeLayout(false);
             this.panelControl18.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl20)).EndInit();
-            this.panelControl20.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

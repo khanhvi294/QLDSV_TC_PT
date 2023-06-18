@@ -168,7 +168,7 @@ namespace QLDSV_TC
 
             if (Program.mGroup.Equals("PGV") || Program.mGroup.Equals("KHOA"))
             {
-                if (KetNoiSql("DESKTOP-N44BQ15\\SERVER3", Program.remotelogin, Program.remotepassword) == 0)
+                if (KetNoiSql("NOVEMBER\\SERVER3", Program.remotelogin, Program.remotepassword) == 0)
                 {
                     MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
                 }
@@ -178,7 +178,7 @@ namespace QLDSV_TC
 
             if (Program.mGroup.Equals("PKT"))
             {
-                KetNoiSql("DESKTOP-N44BQ15\\SERVER3", "HP", "123456");
+                KetNoiSql("NOVEMBER\\SERVER3", "HP", "123456");
                     
             }
             if (type == 1)

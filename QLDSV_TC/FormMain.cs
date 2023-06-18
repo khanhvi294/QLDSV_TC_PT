@@ -25,12 +25,16 @@ namespace QLDSV_TC
             {
                 BtnDangKy.Enabled = true;
                 BtnDiem.Enabled = BtnHocPhi.Enabled = BtnLopHoc.Enabled = BtnLopTC.Enabled = BtnMonHoc.Enabled = BtnSinhVien.Enabled  = false;
-                BaoCao.Visible = false;
+                BaoCao.Visible = true;
+                BtnPhieuDiem.Enabled = true;
+                BtnBDHM.Enabled = BtnDSLTC.Enabled = BtnDKLTC.Enabled = BtnHP.Enabled = BtnBangDiem.Enabled = false;
+
             }
             if (Program.mGroup.Equals("PKT"))
             {
                 BtnHocPhi.Enabled = true;
                 BtnDiem.Enabled = BtnLopHoc.Enabled = BtnLopTC.Enabled = BtnMonHoc.Enabled = BtnSinhVien.Enabled = BtnDangKy.Enabled = false;
+                BtnBDHM.Enabled = BtnDSLTC.Enabled = BtnDKLTC.Enabled = BtnPhieuDiem.Enabled = BtnBangDiem.Enabled = false;
             }
             if (Program.mGroup.Equals("PGV") || Program.mGroup.Equals("KHOA"))
             {

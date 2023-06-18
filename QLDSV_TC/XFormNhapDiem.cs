@@ -114,12 +114,12 @@ namespace QLDSV_TC
             {
                 LayDSNienKhoa();
                 CmbNienKhoa.SelectedIndex = 0;
-                LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
             }
         }
 
         private void CmbNienKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LayDSHocKy(CmbNienKhoa.SelectedValue.ToString());
 
         }
 

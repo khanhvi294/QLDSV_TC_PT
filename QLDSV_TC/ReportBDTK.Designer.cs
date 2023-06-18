@@ -51,8 +51,8 @@ namespace QLDSV_TC
             this.LbLopKhoaHoc = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
-            this.dS11 = new QLDSV_TC.DS1();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.dS11 = new QLDSV_TC.DS1();
             ((System.ComponentModel.ISupportInitialize)(this.dS11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -147,6 +147,7 @@ namespace QLDSV_TC
             this.fieldDiemHocPhan1.FieldName = "DiemHocPhan";
             this.fieldDiemHocPhan1.Name = "fieldDiemHocPhan1";
             this.fieldDiemHocPhan1.Options.ShowGrandTotal = false;
+            this.fieldDiemHocPhan1.Options.ShowInExpressionEditor = false;
             // 
             // sqlDataSource1
             // 
@@ -218,17 +219,17 @@ namespace QLDSV_TC
             this.xrPageInfo1});
             this.PageFooter.Name = "PageFooter";
             // 
-            // dS11
-            // 
-            this.dS11.DataSetName = "DS1";
-            this.dS11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // xrPageInfo1
             // 
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(598F, 46.16664F);
             this.xrPageInfo1.Name = "xrPageInfo1";
-            this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrPageInfo1.SizeF = new System.Drawing.SizeF(100F, 23F);
+            // 
+            // dS11
+            // 
+            this.dS11.DataSetName = "DS1";
+            this.dS11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ReportBDTK
             // 
