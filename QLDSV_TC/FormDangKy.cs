@@ -140,7 +140,8 @@ namespace QLDSV_TC
             }
             if (MessageBox.Show(messageBoxText, "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string cmd = "EXEC [dbo].[SP_XuLy_LTC] '" + maSV + "' , '" + txbMaLopTC.Text + "', " + currentFromState;
+                string cmd = "EXEC [dbo].[SP_XuLy_LTC] '" + maSV + "' , '" + txbMaLopTC.Text + "' , '" + CmbNienKhoa.SelectedValue.ToString() + "' , '" + CmbHocKy.SelectedValue.ToString() + "', " + currentFromState;
+                MessageBox.Show(cmd);
                 if (Program.ExecSqlNonQuery(cmd) == 0)
                 {
                     MessageBox.Show(messageBoxTextSuccess);

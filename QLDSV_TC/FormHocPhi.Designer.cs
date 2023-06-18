@@ -609,26 +609,27 @@ namespace QLDSV_TC
             this.ghiToolStripMenuItem,
             this.phụcHồiToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(135, 76);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(211, 104);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
             // 
             // thêmToolStripMenuItem
             // 
             this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.thêmToolStripMenuItem.Text = "Thêm";
             this.thêmToolStripMenuItem.Click += new System.EventHandler(this.thêmToolStripMenuItem_Click);
             // 
             // ghiToolStripMenuItem
             // 
             this.ghiToolStripMenuItem.Name = "ghiToolStripMenuItem";
-            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.ghiToolStripMenuItem.Text = "Ghi";
             this.ghiToolStripMenuItem.Click += new System.EventHandler(this.ghiToolStripMenuItem_Click);
             // 
             // phụcHồiToolStripMenuItem
             // 
             this.phụcHồiToolStripMenuItem.Name = "phụcHồiToolStripMenuItem";
-            this.phụcHồiToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.phụcHồiToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.phụcHồiToolStripMenuItem.Text = "Phục hồi";
             this.phụcHồiToolStripMenuItem.Click += new System.EventHandler(this.phụcHồiToolStripMenuItem_Click);
             // 

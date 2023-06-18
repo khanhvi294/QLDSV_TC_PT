@@ -139,7 +139,7 @@ namespace QLDSV_TC
 
             if (BdsSV.Count > 0)
             {
-                MessageBox.Show("Không thể xóa lớp học vì đã có sinh viên đăng kí", "", MessageBoxButtons.OK);
+                MessageBox.Show("Không thể xóa lớp học vì đã có sinh viên", "", MessageBoxButtons.OK);
                 return;
             }
             if (MessageBox.Show("Bạn có thực sự muốn xóa lớp học này??", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) // hiện dialog 2 button ok / cancel check ngdung chọn 0k

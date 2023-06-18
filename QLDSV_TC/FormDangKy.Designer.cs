@@ -203,16 +203,17 @@ namespace QLDSV_TC
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-
-            this.barDockControlTop.Size = new System.Drawing.Size(1598, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(990, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 939);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 474);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1598, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(990, 0);
             // 
             // barDockControlLeft
             // 
@@ -220,15 +221,17 @@ namespace QLDSV_TC
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 939);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 474);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1598, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(990, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 939);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 474);
             // 
             // barButtonItem1
             // 
@@ -257,9 +260,9 @@ namespace QLDSV_TC
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(8);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1698, 202);
+            this.panelControl1.Size = new System.Drawing.Size(990, 129);
             this.panelControl1.TabIndex = 5;
             // 
             // label1
@@ -267,10 +270,10 @@ namespace QLDSV_TC
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(28, 0, 28, 0);
+            this.label1.Location = new System.Drawing.Point(2, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1692, 196);
+            this.label1.Size = new System.Drawing.Size(986, 125);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng ký Lớp Tín Chỉ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -281,9 +284,10 @@ namespace QLDSV_TC
             this.section1.Controls.Add(this.panelControl10);
             this.section1.Controls.Add(this.panelControl9);
             this.section1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.section1.Location = new System.Drawing.Point(0, 67);
+            this.section1.Location = new System.Drawing.Point(0, 129);
+            this.section1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.section1.Name = "section1";
-            this.section1.Size = new System.Drawing.Size(1598, 300);
+            this.section1.Size = new System.Drawing.Size(990, 192);
             this.section1.TabIndex = 12;
             // 
             // panelControl10
@@ -293,9 +297,10 @@ namespace QLDSV_TC
             this.panelControl10.Controls.Add(this.panelControl17);
             this.panelControl10.Controls.Add(this.panelControl16);
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl10.Location = new System.Drawing.Point(568, 0);
+            this.panelControl10.Location = new System.Drawing.Point(331, 0);
+            this.panelControl10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(1030, 300);
+            this.panelControl10.Size = new System.Drawing.Size(659, 192);
             this.panelControl10.TabIndex = 1;
             // 
             // panelControl21
@@ -303,24 +308,25 @@ namespace QLDSV_TC
             this.panelControl21.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl21.Controls.Add(this.gridControlDSLTC);
             this.panelControl21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl21.Location = new System.Drawing.Point(0, 143);
+            this.panelControl21.Location = new System.Drawing.Point(0, 91);
+            this.panelControl21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl21.Name = "panelControl21";
-            this.panelControl21.Size = new System.Drawing.Size(1030, 157);
+            this.panelControl21.Size = new System.Drawing.Size(659, 101);
             this.panelControl21.TabIndex = 2;
             // 
             // gridControlDSLTC
             // 
             this.gridControlDSLTC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlDSLTC.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(28, 23, 28, 23);
+            this.gridControlDSLTC.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(16, 15, 16, 15);
             this.gridControlDSLTC.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridControlDSLTC.Location = new System.Drawing.Point(0, 0);
             this.gridControlDSLTC.MainView = this.gridView2;
-            this.gridControlDSLTC.Margin = new System.Windows.Forms.Padding(28, 23, 28, 23);
+            this.gridControlDSLTC.Margin = new System.Windows.Forms.Padding(16, 15, 16, 15);
             this.gridControlDSLTC.MenuManager = this.barManager1;
             this.gridControlDSLTC.Name = "gridControlDSLTC";
             this.gridControlDSLTC.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.gridControlDSLTC.Size = new System.Drawing.Size(1030, 157);
+            this.gridControlDSLTC.Size = new System.Drawing.Size(659, 101);
             this.gridControlDSLTC.TabIndex = 3;
             this.gridControlDSLTC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -336,8 +342,8 @@ namespace QLDSV_TC
             this.gridColumn7,
             this.gridColumn8,
             this.gridColumn9});
-            this.gridView2.DetailHeight = 2662;
-            this.gridView2.FixedLineWidth = 6;
+            this.gridView2.DetailHeight = 1704;
+            this.gridView2.FixedLineWidth = 4;
             this.gridView2.GridControl = this.gridControlDSLTC;
             this.gridView2.LevelIndent = 0;
             this.gridView2.Name = "gridView2";
@@ -351,12 +357,12 @@ namespace QLDSV_TC
             this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn5.Caption = "Mã lớp tín chỉ";
             this.gridColumn5.FieldName = "MALTC";
-            this.gridColumn5.MinWidth = 210;
+            this.gridColumn5.MinWidth = 122;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 0;
-            this.gridColumn5.Width = 778;
+            this.gridColumn5.Width = 454;
             // 
             // gridColumn15
             // 
@@ -366,11 +372,11 @@ namespace QLDSV_TC
             this.gridColumn15.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn15.Caption = "Mã môn học";
             this.gridColumn15.FieldName = "MAMH";
-            this.gridColumn15.MinWidth = 86;
+            this.gridColumn15.MinWidth = 50;
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 1;
-            this.gridColumn15.Width = 322;
+            this.gridColumn15.Width = 188;
             // 
             // gridColumn6
             // 
@@ -380,12 +386,12 @@ namespace QLDSV_TC
             this.gridColumn6.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn6.Caption = "Tên môn học";
             this.gridColumn6.FieldName = "TENMH";
-            this.gridColumn6.MinWidth = 210;
+            this.gridColumn6.MinWidth = 122;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
-            this.gridColumn6.Width = 778;
+            this.gridColumn6.Width = 454;
             // 
             // gridColumn10
             // 
@@ -395,12 +401,12 @@ namespace QLDSV_TC
             this.gridColumn10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn10.Caption = "Nhóm";
             this.gridColumn10.FieldName = "NHOM";
-            this.gridColumn10.MinWidth = 210;
+            this.gridColumn10.MinWidth = 122;
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 3;
-            this.gridColumn10.Width = 778;
+            this.gridColumn10.Width = 454;
             // 
             // gridColumn7
             // 
@@ -408,12 +414,12 @@ namespace QLDSV_TC
             this.gridColumn7.AppearanceCell.Options.UseFont = true;
             this.gridColumn7.Caption = "Họ và Tên Giảng Viên";
             this.gridColumn7.FieldName = "HOTENGV";
-            this.gridColumn7.MinWidth = 210;
+            this.gridColumn7.MinWidth = 122;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 4;
-            this.gridColumn7.Width = 778;
+            this.gridColumn7.Width = 454;
             // 
             // gridColumn8
             // 
@@ -423,12 +429,12 @@ namespace QLDSV_TC
             this.gridColumn8.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn8.Caption = "Số sinh viên tối thiểu";
             this.gridColumn8.FieldName = "SOSVTOITHIEU";
-            this.gridColumn8.MinWidth = 210;
+            this.gridColumn8.MinWidth = 122;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 5;
-            this.gridColumn8.Width = 778;
+            this.gridColumn8.Width = 454;
             // 
             // gridColumn9
             // 
@@ -438,12 +444,12 @@ namespace QLDSV_TC
             this.gridColumn9.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn9.Caption = "Số sinh viên đăng ký";
             this.gridColumn9.FieldName = "SOSVDANGKY";
-            this.gridColumn9.MinWidth = 210;
+            this.gridColumn9.MinWidth = 122;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 6;
-            this.gridColumn9.Width = 778;
+            this.gridColumn9.Width = 454;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -459,9 +465,10 @@ namespace QLDSV_TC
             this.panelControl17.Controls.Add(this.panelControl19);
             this.panelControl17.Controls.Add(this.panelControl18);
             this.panelControl17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl17.Location = new System.Drawing.Point(0, 63);
+            this.panelControl17.Location = new System.Drawing.Point(0, 40);
+            this.panelControl17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl17.Name = "panelControl17";
-            this.panelControl17.Size = new System.Drawing.Size(1030, 80);
+            this.panelControl17.Size = new System.Drawing.Size(659, 51);
             this.panelControl17.TabIndex = 1;
             // 
             // panelControl20
@@ -469,9 +476,10 @@ namespace QLDSV_TC
             this.panelControl20.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl20.Controls.Add(this.BtnTimDSLTC);
             this.panelControl20.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl20.Location = new System.Drawing.Point(600, 0);
+            this.panelControl20.Location = new System.Drawing.Point(350, 0);
+            this.panelControl20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl20.Name = "panelControl20";
-            this.panelControl20.Size = new System.Drawing.Size(200, 80);
+            this.panelControl20.Size = new System.Drawing.Size(117, 51);
             this.panelControl20.TabIndex = 2;
             // 
             // BtnTimDSLTC
@@ -479,10 +487,10 @@ namespace QLDSV_TC
             this.BtnTimDSLTC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnTimDSLTC.Location = new System.Drawing.Point(144, 90);
-            this.BtnTimDSLTC.Margin = new System.Windows.Forms.Padding(18, 15, 18, 15);
+            this.BtnTimDSLTC.Location = new System.Drawing.Point(84, 58);
+            this.BtnTimDSLTC.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.BtnTimDSLTC.Name = "BtnTimDSLTC";
-            this.BtnTimDSLTC.Size = new System.Drawing.Size(118, 36);
+            this.BtnTimDSLTC.Size = new System.Drawing.Size(69, 23);
             this.BtnTimDSLTC.TabIndex = 3;
             this.BtnTimDSLTC.Text = "Tìm";
             this.BtnTimDSLTC.UseVisualStyleBackColor = true;
@@ -494,10 +502,11 @@ namespace QLDSV_TC
             this.panelControl19.Controls.Add(this.CmbHocKy);
             this.panelControl19.Controls.Add(this.label5);
             this.panelControl19.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl19.Location = new System.Drawing.Point(300, 0);
+            this.panelControl19.Location = new System.Drawing.Point(175, 0);
+            this.panelControl19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl19.Name = "panelControl19";
-            this.panelControl19.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
-            this.panelControl19.Size = new System.Drawing.Size(300, 80);
+            this.panelControl19.Padding = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.panelControl19.Size = new System.Drawing.Size(175, 51);
             this.panelControl19.TabIndex = 1;
             // 
             // CmbHocKy
@@ -505,10 +514,10 @@ namespace QLDSV_TC
             this.CmbHocKy.Dock = System.Windows.Forms.DockStyle.Top;
             this.CmbHocKy.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbHocKy.FormattingEnabled = true;
-            this.CmbHocKy.Location = new System.Drawing.Point(54, 57);
-            this.CmbHocKy.Margin = new System.Windows.Forms.Padding(14, 12, 14, 12);
+            this.CmbHocKy.Location = new System.Drawing.Point(9, 37);
+            this.CmbHocKy.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.CmbHocKy.Name = "CmbHocKy";
-            this.CmbHocKy.Size = new System.Drawing.Size(920, 47);
+            this.CmbHocKy.Size = new System.Drawing.Size(157, 32);
             this.CmbHocKy.TabIndex = 9;
             // 
             // label5
@@ -516,11 +525,11 @@ namespace QLDSV_TC
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label5.Location = new System.Drawing.Point(54, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(18, 0, 18, 0);
+            this.label5.Location = new System.Drawing.Point(9, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 12, 14, 12);
-            this.label5.Size = new System.Drawing.Size(108, 57);
+            this.label5.Padding = new System.Windows.Forms.Padding(0, 8, 8, 8);
+            this.label5.Size = new System.Drawing.Size(67, 37);
             this.label5.TabIndex = 8;
             this.label5.Text = "Học kỳ";
             // 
@@ -531,9 +540,10 @@ namespace QLDSV_TC
             this.panelControl18.Controls.Add(this.label4);
             this.panelControl18.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl18.Location = new System.Drawing.Point(0, 0);
+            this.panelControl18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl18.Name = "panelControl18";
-            this.panelControl18.Padding = new System.Windows.Forms.Padding(4, 0, 16, 0);
-            this.panelControl18.Size = new System.Drawing.Size(300, 80);
+            this.panelControl18.Padding = new System.Windows.Forms.Padding(2, 0, 9, 0);
+            this.panelControl18.Size = new System.Drawing.Size(175, 51);
             this.panelControl18.TabIndex = 0;
             // 
             // CmbNienKhoa
@@ -541,10 +551,10 @@ namespace QLDSV_TC
             this.CmbNienKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CmbNienKhoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbNienKhoa.FormattingEnabled = true;
-            this.CmbNienKhoa.Location = new System.Drawing.Point(14, 57);
-            this.CmbNienKhoa.Margin = new System.Windows.Forms.Padding(14, 12, 14, 12);
+            this.CmbNienKhoa.Location = new System.Drawing.Point(2, 37);
+            this.CmbNienKhoa.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.CmbNienKhoa.Name = "CmbNienKhoa";
-            this.CmbNienKhoa.Size = new System.Drawing.Size(960, 47);
+            this.CmbNienKhoa.Size = new System.Drawing.Size(164, 32);
             this.CmbNienKhoa.TabIndex = 7;
             // 
             // label4
@@ -552,11 +562,11 @@ namespace QLDSV_TC
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label4.Location = new System.Drawing.Point(14, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(18, 0, 18, 0);
+            this.label4.Location = new System.Drawing.Point(2, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(0, 12, 14, 12);
-            this.label4.Size = new System.Drawing.Size(147, 57);
+            this.label4.Padding = new System.Windows.Forms.Padding(0, 8, 8, 8);
+            this.label4.Size = new System.Drawing.Size(91, 37);
             this.label4.TabIndex = 6;
             this.label4.Text = "Niên khoá";
             // 
@@ -566,8 +576,9 @@ namespace QLDSV_TC
             this.panelControl16.Controls.Add(this.label15);
             this.panelControl16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl16.Location = new System.Drawing.Point(0, 0);
+            this.panelControl16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl16.Name = "panelControl16";
-            this.panelControl16.Size = new System.Drawing.Size(1030, 63);
+            this.panelControl16.Size = new System.Drawing.Size(659, 40);
             this.panelControl16.TabIndex = 0;
             // 
             // label15
@@ -576,8 +587,9 @@ namespace QLDSV_TC
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(0, 0);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(1030, 63);
+            this.label15.Size = new System.Drawing.Size(659, 40);
             this.label15.TabIndex = 1;
             this.label15.Text = "Danh sách lớp tín chỉ";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -594,8 +606,9 @@ namespace QLDSV_TC
             this.panelControl9.Controls.Add(this.panelControl11);
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl9.Location = new System.Drawing.Point(0, 0);
+            this.panelControl9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(568, 300);
+            this.panelControl9.Size = new System.Drawing.Size(331, 192);
             this.panelControl9.TabIndex = 0;
             // 
             // panelControl15
@@ -604,19 +617,20 @@ namespace QLDSV_TC
             this.panelControl15.Controls.Add(this.lbDataMaLop);
             this.panelControl15.Controls.Add(this.label14);
             this.panelControl15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl15.Location = new System.Drawing.Point(0, 183);
+            this.panelControl15.Location = new System.Drawing.Point(0, 118);
+            this.panelControl15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(568, 40);
+            this.panelControl15.Size = new System.Drawing.Size(331, 26);
             this.panelControl15.TabIndex = 4;
             // 
             // lbDataMaLop
             // 
             this.lbDataMaLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbDataMaLop.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDataMaLop.Location = new System.Drawing.Point(456, 0);
-            this.lbDataMaLop.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.lbDataMaLop.Location = new System.Drawing.Point(266, 0);
+            this.lbDataMaLop.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbDataMaLop.Name = "lbDataMaLop";
-            this.lbDataMaLop.Size = new System.Drawing.Size(435, 40);
+            this.lbDataMaLop.Size = new System.Drawing.Size(65, 26);
             this.lbDataMaLop.TabIndex = 1;
             this.lbDataMaLop.Text = "N19DCCN129";
             this.lbDataMaLop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -626,9 +640,9 @@ namespace QLDSV_TC
             this.label14.Dock = System.Windows.Forms.DockStyle.Left;
             this.label14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(0, 0);
-            this.label14.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(456, 123);
+            this.label14.Size = new System.Drawing.Size(266, 26);
             this.label14.TabIndex = 0;
             this.label14.Text = "Mã Lớp:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -639,19 +653,20 @@ namespace QLDSV_TC
             this.panelControl14.Controls.Add(this.lbDataTen);
             this.panelControl14.Controls.Add(this.label12);
             this.panelControl14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl14.Location = new System.Drawing.Point(0, 143);
+            this.panelControl14.Location = new System.Drawing.Point(0, 92);
+            this.panelControl14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl14.Name = "panelControl14";
-            this.panelControl14.Size = new System.Drawing.Size(568, 40);
+            this.panelControl14.Size = new System.Drawing.Size(331, 26);
             this.panelControl14.TabIndex = 3;
             // 
             // lbDataTen
             // 
             this.lbDataTen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbDataTen.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDataTen.Location = new System.Drawing.Point(456, 0);
-            this.lbDataTen.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.lbDataTen.Location = new System.Drawing.Point(266, 0);
+            this.lbDataTen.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbDataTen.Name = "lbDataTen";
-            this.lbDataTen.Size = new System.Drawing.Size(435, 40);
+            this.lbDataTen.Size = new System.Drawing.Size(65, 26);
             this.lbDataTen.TabIndex = 1;
             this.lbDataTen.Text = "Minh Nhật";
             this.lbDataTen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -661,9 +676,9 @@ namespace QLDSV_TC
             this.label12.Dock = System.Windows.Forms.DockStyle.Left;
             this.label12.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(456, 123);
+            this.label12.Size = new System.Drawing.Size(266, 26);
             this.label12.TabIndex = 0;
             this.label12.Text = "Tên:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -674,19 +689,20 @@ namespace QLDSV_TC
             this.panelControl13.Controls.Add(this.lbDataHo);
             this.panelControl13.Controls.Add(this.label10);
             this.panelControl13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl13.Location = new System.Drawing.Point(0, 103);
+            this.panelControl13.Location = new System.Drawing.Point(0, 66);
+            this.panelControl13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl13.Name = "panelControl13";
-            this.panelControl13.Size = new System.Drawing.Size(568, 40);
+            this.panelControl13.Size = new System.Drawing.Size(331, 26);
             this.panelControl13.TabIndex = 2;
             // 
             // lbDataHo
             // 
             this.lbDataHo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbDataHo.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDataHo.Location = new System.Drawing.Point(456, 0);
-            this.lbDataHo.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.lbDataHo.Location = new System.Drawing.Point(266, 0);
+            this.lbDataHo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbDataHo.Name = "lbDataHo";
-            this.lbDataHo.Size = new System.Drawing.Size(435, 40);
+            this.lbDataHo.Size = new System.Drawing.Size(65, 26);
             this.lbDataHo.TabIndex = 1;
             this.lbDataHo.Text = "Nguyễn";
             this.lbDataHo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -696,9 +712,9 @@ namespace QLDSV_TC
             this.label10.Dock = System.Windows.Forms.DockStyle.Left;
             this.label10.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(0, 0);
-            this.label10.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(456, 123);
+            this.label10.Size = new System.Drawing.Size(266, 26);
             this.label10.TabIndex = 0;
             this.label10.Text = "Họ:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -709,19 +725,20 @@ namespace QLDSV_TC
             this.panelControl12.Controls.Add(this.lbDataMaSV);
             this.panelControl12.Controls.Add(this.label8);
             this.panelControl12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl12.Location = new System.Drawing.Point(0, 63);
+            this.panelControl12.Location = new System.Drawing.Point(0, 40);
+            this.panelControl12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl12.Name = "panelControl12";
-            this.panelControl12.Size = new System.Drawing.Size(568, 40);
+            this.panelControl12.Size = new System.Drawing.Size(331, 26);
             this.panelControl12.TabIndex = 1;
             // 
             // lbDataMaSV
             // 
             this.lbDataMaSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbDataMaSV.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDataMaSV.Location = new System.Drawing.Point(456, 0);
-            this.lbDataMaSV.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.lbDataMaSV.Location = new System.Drawing.Point(266, 0);
+            this.lbDataMaSV.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbDataMaSV.Name = "lbDataMaSV";
-            this.lbDataMaSV.Size = new System.Drawing.Size(435, 40);
+            this.lbDataMaSV.Size = new System.Drawing.Size(65, 26);
             this.lbDataMaSV.TabIndex = 1;
             this.lbDataMaSV.Text = "N19DCCN129";
             this.lbDataMaSV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -731,9 +748,9 @@ namespace QLDSV_TC
             this.label8.Dock = System.Windows.Forms.DockStyle.Left;
             this.label8.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(456, 123);
+            this.label8.Size = new System.Drawing.Size(266, 26);
             this.label8.TabIndex = 0;
             this.label8.Text = "Mã sinh viên :";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -742,9 +759,11 @@ namespace QLDSV_TC
             // 
             this.panelControl11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl11.Controls.Add(this.label7);
-            this.panelControl11.Dock = System.Windows.Forms.DockStyle.Top;    this.panelControl11.Location = new System.Drawing.Point(0, 0);
+            this.panelControl11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl11.Location = new System.Drawing.Point(0, 0);
+            this.panelControl11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(568, 63);
+            this.panelControl11.Size = new System.Drawing.Size(331, 40);
             this.panelControl11.TabIndex = 0;
             // 
             // label7
@@ -753,8 +772,9 @@ namespace QLDSV_TC
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(568, 63);
+            this.label7.Size = new System.Drawing.Size(331, 40);
             this.label7.TabIndex = 0;
             this.label7.Text = "Thông tin sinh viên";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -764,9 +784,10 @@ namespace QLDSV_TC
             this.panelControl2.Controls.Add(this.panelControl4);
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(0, 367);
+            this.panelControl2.Location = new System.Drawing.Point(0, 321);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1598, 372);
+            this.panelControl2.Size = new System.Drawing.Size(990, 238);
             this.panelControl2.TabIndex = 17;
             // 
             // panelControl4
@@ -775,10 +796,10 @@ namespace QLDSV_TC
             this.panelControl4.Controls.Add(this.panelControl5);
             this.panelControl4.Controls.Add(this.panelControl27);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl4.Location = new System.Drawing.Point(1951, 1);
-            this.panelControl4.Margin = new System.Windows.Forms.Padding(10);
+            this.panelControl4.Location = new System.Drawing.Point(333, 2);
+            this.panelControl4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1026, 368);
+            this.panelControl4.Size = new System.Drawing.Size(655, 234);
             this.panelControl4.TabIndex = 2;
             // 
             // panelControl5
@@ -786,23 +807,24 @@ namespace QLDSV_TC
             this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl5.Controls.Add(this.gridControlDSLTCHuy);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(0, 63);
+            this.panelControl5.Location = new System.Drawing.Point(0, 40);
+            this.panelControl5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1026, 305);
+            this.panelControl5.Size = new System.Drawing.Size(655, 194);
             this.panelControl5.TabIndex = 2;
             // 
             // gridControlDSLTCHuy
             // 
             this.gridControlDSLTCHuy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlDSLTCHuy.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(8);
+            this.gridControlDSLTCHuy.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.gridControlDSLTCHuy.Location = new System.Drawing.Point(0, 0);
             this.gridControlDSLTCHuy.MainView = this.gridView1;
-            this.gridControlDSLTCHuy.Margin = new System.Windows.Forms.Padding(28, 23, 28, 23);
+            this.gridControlDSLTCHuy.Margin = new System.Windows.Forms.Padding(16, 15, 16, 15);
             this.gridControlDSLTCHuy.MenuManager = this.barManager1;
             this.gridControlDSLTCHuy.Name = "gridControlDSLTCHuy";
             this.gridControlDSLTCHuy.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit2});
-            this.gridControlDSLTCHuy.Size = new System.Drawing.Size(1026, 305);
+            this.gridControlDSLTCHuy.Size = new System.Drawing.Size(655, 194);
             this.gridControlDSLTCHuy.TabIndex = 3;
             this.gridControlDSLTCHuy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -818,7 +840,8 @@ namespace QLDSV_TC
             this.gridColumn12,
             this.Nhóm,
             this.gridColumn13});
-            this.gridView1.DetailHeight = 852;
+            this.gridView1.DetailHeight = 545;
+            this.gridView1.FixedLineWidth = 1;
             this.gridView1.GridControl = this.gridControlDSLTCHuy;
             this.gridView1.LevelIndent = 0;
             this.gridView1.Name = "gridView1";
@@ -832,12 +855,12 @@ namespace QLDSV_TC
             this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn1.Caption = "Mã lớp tín chỉ";
             this.gridColumn1.FieldName = "MALTC";
-            this.gridColumn1.MinWidth = 210;
+            this.gridColumn1.MinWidth = 122;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 778;
+            this.gridColumn1.Width = 454;
             // 
             // gridColumn2
             // 
@@ -847,12 +870,12 @@ namespace QLDSV_TC
             this.gridColumn2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn2.Caption = "Niên khoá";
             this.gridColumn2.FieldName = "NIENKHOA";
-            this.gridColumn2.MinWidth = 210;
+            this.gridColumn2.MinWidth = 122;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 778;
+            this.gridColumn2.Width = 454;
             // 
             // gridColumn3
             // 
@@ -862,12 +885,12 @@ namespace QLDSV_TC
             this.gridColumn3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn3.Caption = "Học kỳ";
             this.gridColumn3.FieldName = "HOCKY";
-            this.gridColumn3.MinWidth = 210;
+            this.gridColumn3.MinWidth = 122;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 778;
+            this.gridColumn3.Width = 454;
             // 
             // gridColumn4
             // 
@@ -875,44 +898,44 @@ namespace QLDSV_TC
             this.gridColumn4.AppearanceCell.Options.UseFont = true;
             this.gridColumn4.Caption = "Mã môn học";
             this.gridColumn4.FieldName = "MAMH";
-            this.gridColumn4.MinWidth = 210;
+            this.gridColumn4.MinWidth = 122;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 778;
+            this.gridColumn4.Width = 454;
             // 
             // gridColumn12
             // 
             this.gridColumn12.Caption = "Tên môn học";
             this.gridColumn12.FieldName = "TENMH";
-            this.gridColumn12.MinWidth = 210;
+            this.gridColumn12.MinWidth = 122;
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.AllowEdit = false;
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 4;
-            this.gridColumn12.Width = 778;
+            this.gridColumn12.Width = 454;
             // 
             // Nhóm
             // 
             this.Nhóm.Caption = "Nhóm";
             this.Nhóm.FieldName = "NHOM";
-            this.Nhóm.MinWidth = 25;
+            this.Nhóm.MinWidth = 15;
             this.Nhóm.Name = "Nhóm";
             this.Nhóm.Visible = true;
             this.Nhóm.VisibleIndex = 5;
-            this.Nhóm.Width = 94;
+            this.Nhóm.Width = 55;
             // 
             // gridColumn13
             // 
             this.gridColumn13.Caption = "Họ và tên giảng viên";
             this.gridColumn13.FieldName = "HOTENGV";
-            this.gridColumn13.MinWidth = 210;
+            this.gridColumn13.MinWidth = 122;
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 6;
-            this.gridColumn13.Width = 227;
+            this.gridColumn13.Width = 132;
             // 
             // repositoryItemButtonEdit2
             // 
@@ -927,8 +950,9 @@ namespace QLDSV_TC
             this.panelControl27.Controls.Add(this.label6);
             this.panelControl27.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl27.Location = new System.Drawing.Point(0, 0);
+            this.panelControl27.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl27.Name = "panelControl27";
-            this.panelControl27.Size = new System.Drawing.Size(1026, 63);
+            this.panelControl27.Size = new System.Drawing.Size(655, 40);
             this.panelControl27.TabIndex = 0;
             // 
             // label6
@@ -937,8 +961,9 @@ namespace QLDSV_TC
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1026, 63);
+            this.label6.Size = new System.Drawing.Size(655, 40);
             this.label6.TabIndex = 1;
             this.label6.Text = "Danh sách lớp tín chỉ đã đăng ký";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -954,11 +979,11 @@ namespace QLDSV_TC
             this.panelControl3.Controls.Add(this.panelControl6);
             this.panelControl3.Controls.Add(this.panelControl22);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl3.Location = new System.Drawing.Point(3, 1);
-            this.panelControl3.Margin = new System.Windows.Forms.Padding(10);
+            this.panelControl3.Location = new System.Drawing.Point(2, 2);
+            this.panelControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.panelControl3.Size = new System.Drawing.Size(568, 368);
+            this.panelControl3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.panelControl3.Size = new System.Drawing.Size(331, 234);
             this.panelControl3.TabIndex = 1;
             // 
             // panelControl25
@@ -967,20 +992,21 @@ namespace QLDSV_TC
             this.panelControl25.Controls.Add(this.txbGV);
             this.panelControl25.Controls.Add(this.label11);
             this.panelControl25.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl25.Location = new System.Drawing.Point(0, 223);
+            this.panelControl25.Location = new System.Drawing.Point(0, 144);
+            this.panelControl25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl25.Name = "panelControl25";
-            this.panelControl25.Size = new System.Drawing.Size(568, 40);
+            this.panelControl25.Size = new System.Drawing.Size(331, 26);
             this.panelControl25.TabIndex = 7;
             // 
             // txbGV
             // 
             this.txbGV.Enabled = false;
             this.txbGV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbGV.Location = new System.Drawing.Point(532, 12);
-            this.txbGV.Margin = new System.Windows.Forms.Padding(10);
+            this.txbGV.Location = new System.Drawing.Point(310, 8);
+            this.txbGV.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txbGV.Name = "txbGV";
             this.txbGV.ReadOnly = true;
-            this.txbGV.Size = new System.Drawing.Size(1382, 46);
+            this.txbGV.Size = new System.Drawing.Size(808, 32);
             this.txbGV.TabIndex = 2;
             // 
             // label11
@@ -989,9 +1015,9 @@ namespace QLDSV_TC
             this.label11.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
             this.label11.Location = new System.Drawing.Point(0, 0);
-            this.label11.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(580, 123);
+            this.label11.Size = new System.Drawing.Size(338, 26);
             this.label11.TabIndex = 0;
             this.label11.Text = "Giảng viên:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1002,20 +1028,21 @@ namespace QLDSV_TC
             this.panelControl24.Controls.Add(this.txbNhom);
             this.panelControl24.Controls.Add(this.label9);
             this.panelControl24.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl24.Location = new System.Drawing.Point(0, 183);
+            this.panelControl24.Location = new System.Drawing.Point(0, 118);
+            this.panelControl24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl24.Name = "panelControl24";
-            this.panelControl24.Size = new System.Drawing.Size(568, 40);
+            this.panelControl24.Size = new System.Drawing.Size(331, 26);
             this.panelControl24.TabIndex = 6;
             // 
             // txbNhom
             // 
             this.txbNhom.Enabled = false;
             this.txbNhom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNhom.Location = new System.Drawing.Point(528, 12);
-            this.txbNhom.Margin = new System.Windows.Forms.Padding(10);
+            this.txbNhom.Location = new System.Drawing.Point(308, 8);
+            this.txbNhom.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txbNhom.Name = "txbNhom";
             this.txbNhom.ReadOnly = true;
-            this.txbNhom.Size = new System.Drawing.Size(1382, 46);
+            this.txbNhom.Size = new System.Drawing.Size(808, 32);
             this.txbNhom.TabIndex = 2;
             // 
             // label9
@@ -1024,9 +1051,9 @@ namespace QLDSV_TC
             this.label9.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
             this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(580, 123);
+            this.label9.Size = new System.Drawing.Size(338, 26);
             this.label9.TabIndex = 0;
             this.label9.Text = "Nhóm:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1037,20 +1064,21 @@ namespace QLDSV_TC
             this.panelControl23.Controls.Add(this.txbTenMH);
             this.panelControl23.Controls.Add(this.label3);
             this.panelControl23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl23.Location = new System.Drawing.Point(0, 143);
+            this.panelControl23.Location = new System.Drawing.Point(0, 92);
+            this.panelControl23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl23.Name = "panelControl23";
-            this.panelControl23.Size = new System.Drawing.Size(568, 40);
+            this.panelControl23.Size = new System.Drawing.Size(331, 26);
             this.panelControl23.TabIndex = 5;
             // 
             // txbTenMH
             // 
             this.txbTenMH.Enabled = false;
             this.txbTenMH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenMH.Location = new System.Drawing.Point(532, 12);
-            this.txbTenMH.Margin = new System.Windows.Forms.Padding(10);
+            this.txbTenMH.Location = new System.Drawing.Point(310, 8);
+            this.txbTenMH.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txbTenMH.Name = "txbTenMH";
             this.txbTenMH.ReadOnly = true;
-            this.txbTenMH.Size = new System.Drawing.Size(1382, 46);
+            this.txbTenMH.Size = new System.Drawing.Size(808, 32);
             this.txbTenMH.TabIndex = 2;
             // 
             // label3
@@ -1059,9 +1087,9 @@ namespace QLDSV_TC
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
             this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(580, 123);
+            this.label3.Size = new System.Drawing.Size(338, 26);
             this.label3.TabIndex = 0;
             this.label3.Text = "Tên môn học:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1072,20 +1100,21 @@ namespace QLDSV_TC
             this.panelControl7.Controls.Add(this.txbMaMH);
             this.panelControl7.Controls.Add(this.label2);
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl7.Location = new System.Drawing.Point(0, 103);
+            this.panelControl7.Location = new System.Drawing.Point(0, 66);
+            this.panelControl7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(568, 40);
+            this.panelControl7.Size = new System.Drawing.Size(331, 26);
             this.panelControl7.TabIndex = 4;
             // 
             // txbMaMH
             // 
             this.txbMaMH.Enabled = false;
             this.txbMaMH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaMH.Location = new System.Drawing.Point(528, 12);
-            this.txbMaMH.Margin = new System.Windows.Forms.Padding(10);
+            this.txbMaMH.Location = new System.Drawing.Point(308, 8);
+            this.txbMaMH.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txbMaMH.Name = "txbMaMH";
             this.txbMaMH.ReadOnly = true;
-            this.txbMaMH.Size = new System.Drawing.Size(1382, 46);
+            this.txbMaMH.Size = new System.Drawing.Size(808, 32);
             this.txbMaMH.TabIndex = 2;
             // 
             // label2
@@ -1094,9 +1123,9 @@ namespace QLDSV_TC
             this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
             this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(580, 123);
+            this.label2.Size = new System.Drawing.Size(338, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã môn học:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1106,9 +1135,10 @@ namespace QLDSV_TC
             this.btnDangky.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnDangky.Enabled = false;
             this.btnDangky.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangky.Location = new System.Drawing.Point(0, 312);
+            this.btnDangky.Location = new System.Drawing.Point(0, 198);
+            this.btnDangky.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDangky.Name = "btnDangky";
-            this.btnDangky.Size = new System.Drawing.Size(568, 48);
+            this.btnDangky.Size = new System.Drawing.Size(331, 31);
             this.btnDangky.TabIndex = 3;
             this.btnDangky.Text = "Đăng ký";
             this.btnDangky.UseVisualStyleBackColor = true;
@@ -1120,19 +1150,20 @@ namespace QLDSV_TC
             this.panelControl6.Controls.Add(this.txbMaLopTC);
             this.panelControl6.Controls.Add(this.label13);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl6.Location = new System.Drawing.Point(0, 63);
+            this.panelControl6.Location = new System.Drawing.Point(0, 40);
+            this.panelControl6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(568, 40);
+            this.panelControl6.Size = new System.Drawing.Size(331, 26);
             this.panelControl6.TabIndex = 2;
             // 
             // txbMaLopTC
             // 
             this.txbMaLopTC.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaLopTC.Location = new System.Drawing.Point(524, 12);
-            this.txbMaLopTC.Margin = new System.Windows.Forms.Padding(10);
+            this.txbMaLopTC.Location = new System.Drawing.Point(306, 8);
+            this.txbMaLopTC.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txbMaLopTC.Name = "txbMaLopTC";
             this.txbMaLopTC.ReadOnly = true;
-            this.txbMaLopTC.Size = new System.Drawing.Size(1382, 46);
+            this.txbMaLopTC.Size = new System.Drawing.Size(808, 32);
             this.txbMaLopTC.TabIndex = 2;
             // 
             // label13
@@ -1141,9 +1172,9 @@ namespace QLDSV_TC
             this.label13.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DimGray;
             this.label13.Location = new System.Drawing.Point(0, 0);
-            this.label13.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(580, 123);
+            this.label13.Size = new System.Drawing.Size(338, 26);
             this.label13.TabIndex = 0;
             this.label13.Text = "Mã Lớp tín chỉ:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1153,8 +1184,9 @@ namespace QLDSV_TC
             this.panelControl22.Controls.Add(this.lbDangKy);
             this.panelControl22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl22.Location = new System.Drawing.Point(0, 0);
+            this.panelControl22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl22.Name = "panelControl22";
-            this.panelControl22.Size = new System.Drawing.Size(568, 63);
+            this.panelControl22.Size = new System.Drawing.Size(331, 40);
             this.panelControl22.TabIndex = 0;
             // 
             // lbDangKy
@@ -1163,8 +1195,9 @@ namespace QLDSV_TC
             this.lbDangKy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbDangKy.Font = new System.Drawing.Font("Tahoma", 14F);
             this.lbDangKy.Location = new System.Drawing.Point(2, 2);
+            this.lbDangKy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDangKy.Name = "lbDangKy";
-            this.lbDangKy.Size = new System.Drawing.Size(564, 59);
+            this.lbDangKy.Size = new System.Drawing.Size(327, 36);
             this.lbDangKy.TabIndex = 0;
             this.lbDangKy.Text = "Thông tin đăng ký";
             this.lbDangKy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1177,9 +1210,9 @@ namespace QLDSV_TC
             // 
             // FormDangKy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1698, 740);
+            this.ClientSize = new System.Drawing.Size(990, 474);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.section1);
             this.Controls.Add(this.panelControl1);
@@ -1188,7 +1221,7 @@ namespace QLDSV_TC
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.Name = "FormDangKy";
             this.Text = "Đăng ký";
             this.Load += new System.EventHandler(this.FormDangKy_Load);

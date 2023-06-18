@@ -46,11 +46,6 @@ namespace QLDSV_TC
             this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.dANGKYTableAdapter.Fill(this.DS2.DANGKY);
 
-
-            DataTable dt = new DataTable();
-            dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
-            BindingSource bdsCN = new BindingSource();
-            bdsCN.DataSource = dt;
             var dataSource = Program.bds_dspm;
             var filteredDataSource = dataSource.Cast<DataRowView>()
                 .Where(row => row["TENKHOA"].ToString() != "Học Phí")
@@ -251,11 +246,11 @@ namespace QLDSV_TC
                 // TODO: This line of code loads data into the 'dS2.SINHVIEN' table. You can move, or remove it, as needed.
                 this.sINHVIENTableAdapter.Fill(this.DS2.SINHVIEN);
 
+                // TODO: This line of code loads data into the 'DS2.DANGKY' table. You can move, or remove it, as needed.
+                this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.dANGKYTableAdapter.Fill(this.DS2.DANGKY);
 
-                DataTable dt = new DataTable();
-                dt = Program.ExecSqlDataTable("SELECT MAKHOA FROM KHOA");
-                BindingSource bdsCN = new BindingSource();
-                bdsCN.DataSource = dt;
+       
             }
 
         }
